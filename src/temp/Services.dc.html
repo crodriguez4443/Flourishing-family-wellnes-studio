@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #EBA040; color: #483E5E; }
+  a { color: #608F84; }
+  a:hover { color: #B7863E; }
+  @media (max-width: 940px) {
+    .r-hero { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .r-cards, .r-progs { grid-template-columns: repeat(2, 1fr) !important; }
+    .r-sect { padding-left: 28px !important; padding-right: 28px !important; }
+    .r-pad-lg { padding-top: 72px !important; padding-bottom: 72px !important; }
+  }
+  @media (max-width: 620px) {
+    .r-cards, .r-progs { grid-template-columns: 1fr !important; }
+    .r-sect { padding-left: 22px !important; padding-right: 22px !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#FCF0DD; color:#194247; font-family:'Hanken Grotesk',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip;">
+
+  <dc-import name="SiteNav" active="services" style="position:sticky; top:0; z-index:50;" hint-size="100%,94px"></dc-import>
+
+  <!-- ===== HERO ===== -->
+  <section class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:74px 32px 60px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
+    <div>
+      <div style="display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:34px;">
+        <span style="width:22px; height:1.5px; background:#608F84; display:inline-block;"></span>
+        Services — the how behind every journey
+      </div>
+      <h1 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(44px,6vw,82px); line-height:1.03; letter-spacing:-.02em; color:#483E5E; margin:0 0 26px;">Five ways we care for your family.</h1>
+      <p style="font-size:20px; line-height:1.62; color:#194247; max-width:31em; margin:0 0 34px; opacity:.92;">Chiropractic, acupuncture, and nutrition are the tools; your program decides how we use them. Choose a service to see exactly what it is — no jargon, no mystery.</p>
+      <a href="#services" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 36px; border-radius:999px; box-shadow:0 6px 22px rgba(235,160,64,.32); display:inline-block;" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.4);">Browse the services</a>
+    </div>
+    <div style="position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#ece0d6; box-shadow:0 30px 60px -28px rgba(72,62,94,.4);">
+      <img src="assets/ila.jpg" alt="A doctor working hands-on with a patient" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+  </section>
+
+  <!-- ===== POSITIONING STRIP ===== -->
+  <section class="r-sect" style="background:#E2DCE2; padding:48px 32px;">
+    <div style="max-width:1000px; margin:0 auto; text-align:center;">
+      <p style="font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:clamp(20px,2.5vw,29px); line-height:1.42; color:#483E5E; margin:0;">These aren’t one-off, quick-fix visits. Each service is a piece of a plan a doctor builds around <em>you</em> — thorough, measurable, coordinated under one roof.</p>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE CARDS ===== -->
+  <section id="services" class="r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:88px 32px;">
+    <div style="max-width:34em; margin-bottom:44px;">
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">Pick a service</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0;">Each one has its own page.</h2>
+    </div>
+    <div class="r-cards" style="display:grid; grid-template-columns:repeat(3,1fr); gap:26px;">
+      <dc-import name="ServiceCard" href="Chiropractic.dc.html" img="assets/card-family.jpg" tag="Structure &amp; nervous system" title="Chiropractic" blurb="Gentle, precise adjustments — Webster, Gonstead, Non-Force, and Tonal — chosen to fit you, not the other way around." hint-size="100%,360px"></dc-import>
+      <dc-import name="ServiceCard" href="Acupuncture.dc.html" img="assets/card-fertility.jpg" tag="Hormones &amp; calm" title="Acupuncture" blurb="Fertility, pregnancy, and hormone support with Dr. Alexandra — the quiet, steadying half of care." hint-size="100%,360px"></dc-import>
+      <dc-import name="ServiceCard" href="Functional Nutrition.dc.html" img="assets/card-pregnancy.jpg" tag="Fuel &amp; foundation" title="Functional Nutrition" blurb="Root-cause nutrition and supplement guidance — not a diet, but a plan you can actually keep." hint-size="100%,360px"></dc-import>
+      <dc-import name="ServiceCard" href="Pediatric &amp; Postpartum.dc.html" img="assets/card-family.jpg" tag="The little ones &amp; mom" title="Pediatric &amp; Postpartum" blurb="Gentle milestone care for newborns and children, plus recovery-focused support for mom after birth." hint-size="100%,360px"></dc-import>
+      <dc-import name="ServiceCard" href="Sports &amp; Extremity Care.dc.html" img="assets/hero.jpg" tag="Move &amp; perform" title="Sports &amp; Extremity Care" blurb="Extremity adjusting and performance care for student-athletes and active adults — beyond the spine." hint-size="100%,360px"></dc-import>
+      <a href="Contact.dc.html" style="text-decoration:none; display:flex; flex-direction:column; justify-content:center; background:#483E5E; color:#FCF0DD; border-radius:10px; padding:34px 32px; box-shadow:0 10px 30px -16px rgba(72,62,94,.4);" style-hover="transform:translateY(-4px);">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#EBA040; margin-bottom:12px;">Not sure which?</div>
+        <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:26px; line-height:1.15; color:#FCF0DD; margin:0 0 12px;">Start with a conversation.</h3>
+        <p style="font-size:15.5px; line-height:1.55; color:#d6cfe0; margin:0 0 18px;">Tell us what’s going on. We’ll be straight about what would actually help — one service or a full program.</p>
+        <span style="font-size:15px; font-weight:600; color:#EBA040;">Get in touch&nbsp;→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES POWER PROGRAMS ===== -->
+  <section class="r-sect r-pad-lg" style="background:#E2DCE2; padding:88px 32px;">
+    <div style="max-width:1220px; margin:0 auto;">
+      <div style="max-width:36em; margin-bottom:40px;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">Services power the programs</div>
+        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(30px,4vw,48px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 16px;">Looking for a full plan, not a single visit?</h2>
+        <p style="font-size:18px; line-height:1.6; color:#194247; opacity:.88; margin:0;">Each program combines these services on a defined timeline, with one doctor and a clear guarantee.</p>
+      </div>
+      <div class="r-progs" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+        <a href="Fertility Journey.dc.html" style="text-decoration:none; background:#FCF0DD; border-radius:8px; padding:30px 28px; box-shadow:0 10px 30px -18px rgba(72,62,94,.4); display:flex; flex-direction:column;" style-hover="transform:translateY(-4px); box-shadow:0 22px 42px -22px rgba(72,62,94,.5);">
+          <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#B7863E; margin-bottom:10px;">Trying</div>
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:23px; color:#483E5E; margin:0 0 8px;">Fertility Journey</h3>
+          <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0 0 16px;">Acupuncture-led · chiro + nutrition · ~90 days</p>
+          <span style="font-size:15px; font-weight:600; color:#608F84; margin-top:auto;">Explore&nbsp;→</span>
+        </a>
+        <a href="Pregnancy Journey.dc.html" style="text-decoration:none; background:#FCF0DD; border-radius:8px; padding:30px 28px; box-shadow:0 10px 30px -18px rgba(72,62,94,.4); display:flex; flex-direction:column;" style-hover="transform:translateY(-4px); box-shadow:0 22px 42px -22px rgba(72,62,94,.5);">
+          <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#B7863E; margin-bottom:10px;">Expecting</div>
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:23px; color:#483E5E; margin:0 0 8px;">Pregnancy Journey</h3>
+          <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0 0 16px;">Webster chiro + acupuncture, by trimester</p>
+          <span style="font-size:15px; font-weight:600; color:#608F84; margin-top:auto;">Explore&nbsp;→</span>
+        </a>
+        <a href="Family Membership.dc.html" style="text-decoration:none; background:#FCF0DD; border-radius:8px; padding:30px 28px; box-shadow:0 10px 30px -18px rgba(72,62,94,.4); display:flex; flex-direction:column;" style-hover="transform:translateY(-4px); box-shadow:0 22px 42px -22px rgba(72,62,94,.5);">
+          <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#B7863E; margin-bottom:10px;">Raising a family</div>
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:23px; color:#483E5E; margin:0 0 8px;">Family Membership</h3>
+          <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0 0 16px;">Recurring whole-household care</p>
+          <span style="font-size:15px; font-weight:600; color:#608F84; margin-top:auto;">Explore&nbsp;→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="r-sect r-pad-lg" style="background:#483E5E; color:#FCF0DD; padding:100px 32px;">
+    <div style="max-width:760px; margin:0 auto; text-align:center;">
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(34px,4.6vw,58px); line-height:1.05; letter-spacing:-.02em; margin:0 0 24px; color:#FCF0DD;">One practice. Every kind of care.</h2>
+      <p style="font-size:18px; line-height:1.65; color:#d6cfe0; max-width:32em; margin:0 auto 36px;">Book a first visit one-on-one with a doctor, or start with a no-pressure conversation about what would actually help.</p>
+      <div style="display:flex; gap:18px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://portal.sked.life" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.45);">Book a visit</a>
+        <a href="Contact.dc.html" style="text-decoration:none; background:transparent; color:#FCF0DD; font-weight:700; font-size:17px; padding:17px 38px; border-radius:999px; display:inline-block; border:1.5px solid rgba(252,240,221,.45);" style-hover="border-color:#EBA040; color:#EBA040;">Start with a conversation&nbsp;→</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,340px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1220, &quot;height&quot;: 900 }
+}"></script>
+</body>
+</html>

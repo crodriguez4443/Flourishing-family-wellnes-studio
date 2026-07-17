@@ -1,0 +1,30 @@
+---
+import { bookingUrl } from '../data/site';
+
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  text?: string;
+  href?: string;
+  label?: string;
+}
+
+const {
+  id = 'start',
+  eyebrow = 'Not sure where to begin?',
+  title = 'Start with a conversation, not a commitment.',
+  text = "Come tell us what's going on - the achiness, the rough nights, the thing a few doctors already brushed off. We'll be straight with you about whether we can help and what it would really take. No pressure, no hard sell. Just a plan that fits your life and a doctor who'll remember your name next time you walk in.",
+  href = bookingUrl,
+  label = 'Book a Visit',
+} = Astro.props;
+---
+
+<section id={id} class="start-cta r-sect r-pad-lg">
+  <div class="start-cta-inner">
+    <div class="start-cta-eyebrow">{eyebrow}</div>
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <a href={href} class="h-btn-primary">{label}</a>
+  </div>
+</section>

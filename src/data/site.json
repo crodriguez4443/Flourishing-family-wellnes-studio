@@ -1,0 +1,37 @@
+{
+  "bookingUrl": "https://portal.sked.life",
+  "contactInfo": {
+    "phone": "(908) 653-0000",
+    "phoneHref": "tel:+19086530000",
+    "address": "68 Washington Street, Clark, NJ 07066",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=68%20Washington%20Street%2C%20Clark%2C%20NJ%2007066",
+    "hours": "Mon 9:00a-1:00p & 3:00p-7:00p; Tue closed; Wed 3:00p-6:30p; Thu 9:00a-1:00p & 3:00p-6:00p; Fri 8:00a-12:00p; Sat 8:00a-11:30a; Sun closed",
+    "serviceArea": "Serving Clark, Westfield, Cranford, Scotch Plains, and nearby families."
+  },
+  "socialLinks": [
+    { "label": "Facebook", "href": "https://www.facebook.com/flourishingfamilywellness", "icon": "facebook" },
+    { "label": "Instagram", "href": "https://www.instagram.com/flourishingfamilywellness/", "icon": "instagram" },
+    { "label": "Yelp", "href": "https://www.yelp.com/biz/flourishing-family-chiropractic-clark", "icon": "yelp" },
+    { "label": "Nextdoor", "href": "https://nextdoor.com/pages/flourishing-family-chiropractic-clark-nj/", "icon": "nextdoor" }
+  ],
+  "doctors": [
+    {
+      "name": "Dr. Shelley",
+      "role": "Founder · Chiropractor",
+      "image": "/assets/doctors/shelley.jpg",
+      "bio": "Started Flourishing Family in 2011 to practice from a place of abundance: gentle, low-force care for the smallest patients and the tenderest stages."
+    },
+    {
+      "name": "Dr. Ila Clemente",
+      "role": "Chiropractor",
+      "image": "/assets/doctors/ila.jpg",
+      "bio": "Joined in 2021 to reach more families with perinatal and pediatric care. Ila is Webster certified and calm presence that helps people feel understood, and wanting to keep coming back."
+    },
+    {
+      "name": "Dr. Alexandra",
+      "role": "Acupuncturist",
+      "image": "/assets/doctors/alex.jpg",
+      "bio": "Completed the picture in 2025. She specializes in fertility and pregnancy acupuncture and female hormone balance - work that women at all stages of life can appreciate."
+    }
+  ]
+}

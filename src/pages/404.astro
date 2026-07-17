@@ -1,0 +1,34 @@
+---
+import DraftReferenceLayout from '../layouts/DraftReferenceLayout.astro';
+import { contactInfo } from '../data/site';
+---
+
+<DraftReferenceLayout
+  title="Page Not Found"
+  description="That page doesn't exist, but the care does. Find your way back."
+  current="resources"
+>
+  <section class="draft-simple-hero">
+    <p class="i-eyebrow draft-centered-eyebrow">
+      <span></span>
+      404 — page not found
+    </p>
+    <h1 class="draft-page-title">Well, that page is out of alignment.</h1>
+    <p class="draft-page-text draft-page-text-spaced">
+      The page you’re looking for moved or never existed. Everything else is right where it should be.
+    </p>
+    <div class="draft-actions draft-actions-centered draft-actions-spaced">
+      <a class="draft-btn h-btn-primary" href="/">Back to the homepage</a>
+      <a class="draft-text-link h-link-underline" href={contactInfo.phoneHref}>or call {contactInfo.phone}</a>
+    </div>
+    <nav aria-label="Popular pages">
+      <ul class="draft-link-list">
+        <li><a class="draft-text-link h-link-underline" href="/programs/fertility-preconception/">Fertility</a></li>
+        <li><a class="draft-text-link h-link-underline" href="/programs/pregnancy-care/">Pregnancy</a></li>
+        <li><a class="draft-text-link h-link-underline" href="/programs/family-wellness/">Family Wellness</a></li>
+        <li><a class="draft-text-link h-link-underline" href="/services/">Services</a></li>
+        <li><a class="draft-text-link h-link-underline" href="/resources/">Resources</a></li>
+      </ul>
+    </nav>
+  </section>
+</DraftReferenceLayout>

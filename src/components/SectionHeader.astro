@@ -1,0 +1,30 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  text?: string;
+  titleHtml?: string;
+  maxWidth?: string;
+  centered?: boolean;
+  className?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  text,
+  titleHtml,
+  maxWidth = '34em',
+  centered = false,
+  className = '',
+} = Astro.props;
+---
+
+<div
+  class={`section-header ${centered ? 'section-header-centered' : ''} ${className}`}
+  style={`max-width:${maxWidth};`}
+>
+  <div class="section-header-eyebrow">{eyebrow}</div>
+  <h2 set:html={titleHtml || title}></h2>
+  {text && <p>{text}</p>}
+</div>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #EBA040; color: #483E5E; }
+  a { color: #608F84; }
+  a:hover { color: #B7863E; }
+  .r-dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .16s ease, transform .16s ease, visibility .16s; }
+  .r-dropdown:hover .r-dropdown-menu, .r-dropdown:focus-within .r-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  @media (max-width: 940px) {
+    .r-hero, .r-price { grid-template-columns: 1fr !important; gap: 44px !important; }
+    .r-grid3, .r-grid2 { grid-template-columns: 1fr !important; }
+    .r-footer { grid-template-columns: 1fr 1fr !important; }
+    .r-sect { padding-left: 28px !important; padding-right: 28px !important; }
+    .r-pad-lg { padding-top: 72px !important; padding-bottom: 72px !important; }
+  }
+  @media (max-width: 620px) {
+    .r-navlink { display: none !important; }
+    .r-footer { grid-template-columns: 1fr !important; gap: 36px !important; }
+    .r-sect { padding-left: 22px !important; padding-right: 22px !important; }
+    .r-navbar { padding-left: 20px !important; padding-right: 20px !important; }
+    .r-logo { height: 46px !important; }
+    .r-timeline { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#FCF0DD; color:#194247; font-family:'Hanken Grotesk',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip;">
+
+  <!-- ===== NAV ===== -->
+  <dc-import name="SiteNav" active="resources" style="position:sticky; top:0; z-index:50;" hint-size="100%,94px"></dc-import>
+
+  <!-- ===== HERO ===== -->
+  <section class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:74px 32px 80px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
+    <div>
+      <div style="display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:34px;">
+        <span style="width:22px; height:1.5px; background:#608F84; display:inline-block;"></span>
+        Patient resources — Start Here
+      </div>
+      <h1 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(44px,6vw,84px); line-height:1.03; letter-spacing:-.02em; color:#483E5E; margin:0 0 26px;">New here?<br>Start here.</h1>
+      <p style="font-size:20px; line-height:1.62; color:#194247; max-width:31em; margin:0 0 36px; opacity:.92;">What to expect, what it costs, and how long this really takes — answered up front, before you ever pick up the phone. No surprises, no runaround.</p>
+      <div style="display:flex; align-items:center; gap:26px; flex-wrap:wrap;">
+        <a href="#firstvisit" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 36px; border-radius:999px; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.4);">What to expect</a>
+        <a href="#pricing" style="text-decoration:none; color:#483E5E; font-weight:600; font-size:16px; border-bottom:2px solid rgba(72,62,94,.25); padding-bottom:3px;" style-hover="border-color:#EBA040;">Insurance &amp; pricing&nbsp;→</a>
+      </div>
+    </div>
+    <div style="position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#ece0d6; box-shadow:0 30px 60px -28px rgba(72,62,94,.4);">
+      <img src="assets/card-pregnancy.jpg" alt="A welcoming first visit at Flourishing Family" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+  </section>
+
+  <!-- ===== WHAT TO EXPECT / FIRST VISIT ===== -->
+  <section id="firstvisit" class="r-sect r-pad-lg" style="background:#E2DCE2; padding:96px 32px;">
+    <div style="max-width:1220px; margin:0 auto;">
+      <div style="max-width:36em; margin-bottom:52px;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">What to expect</div>
+        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 18px;">Your first visit, and the road after it.</h2>
+        <p style="font-size:18px; line-height:1.62; color:#194247; opacity:.9; margin:0;">This isn’t a quick-fix, one-and-done kind of place. Real change is a relationship — here’s how it unfolds.</p>
+      </div>
+      <div class="r-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+        <div style="background:#FCF0DD; border-radius:8px; padding:34px 30px; box-shadow:0 8px 26px -18px rgba(72,62,94,.4);">
+          <div style="font-family:'Fraunces',serif; font-size:34px; color:#EBA040; line-height:1; margin-bottom:16px;">01</div>
+          <h3 style="font-family:'Fraunces',serif; font-weight:500; font-size:21px; color:#483E5E; margin:0 0 10px;">A real conversation</h3>
+          <p style="font-size:15.5px; line-height:1.58; color:#194247; opacity:.85; margin:0;">We start by listening — your history, your goals, the things others brushed off. One-on-one with a doctor, always.</p>
+        </div>
+        <div style="background:#FCF0DD; border-radius:8px; padding:34px 30px; box-shadow:0 8px 26px -18px rgba(72,62,94,.4);">
+          <div style="font-family:'Fraunces',serif; font-size:34px; color:#EBA040; line-height:1; margin-bottom:16px;">02</div>
+          <h3 style="font-family:'Fraunces',serif; font-weight:500; font-size:21px; color:#483E5E; margin:0 0 10px;">A thorough assessment</h3>
+          <p style="font-size:15.5px; line-height:1.58; color:#194247; opacity:.85; margin:0;">We find what’s actually going on and build a plan around you — measurable and explained, never generic.</p>
+        </div>
+        <div style="background:#FCF0DD; border-radius:8px; padding:34px 30px; box-shadow:0 8px 26px -18px rgba(72,62,94,.4);">
+          <div style="font-family:'Fraunces',serif; font-size:34px; color:#EBA040; line-height:1; margin-bottom:16px;">03</div>
+          <h3 style="font-family:'Fraunces',serif; font-weight:500; font-size:21px; color:#483E5E; margin:0 0 10px;">Care over time</h3>
+          <p style="font-size:15.5px; line-height:1.58; color:#194247; opacity:.85; margin:0;">Progress reviews and adjustments as your body changes, with the same doctor who started with you.</p>
+        </div>
+      </div>
+      <!-- Expectation banner -->
+      <div style="margin-top:34px; background:#483E5E; color:#FCF0DD; border-radius:12px; padding:38px 40px; display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#EBA040" stroke-width="1.5" style="flex:none;"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        <div style="flex:1 1 340px;">
+          <div style="font-family:'Fraunces',serif; font-size:23px; color:#FCF0DD; margin-bottom:8px;">Set your expectations honestly: this is a 6–12 month journey.</div>
+          <p style="font-size:16px; line-height:1.6; color:#d6cfe0; margin:0;">Meaningful, lasting change takes time. We’d rather tell you that up front than oversell a single visit. If you’re looking for a one-time crack-and-go, we’re probably not your place — and we’ll say so.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSURANCE & PRICING ===== -->
+  <section id="pricing" class="r-price r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:100px 32px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+    <div>
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">Insurance &amp; pricing</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(30px,3.8vw,46px); line-height:1.1; letter-spacing:-.015em; color:#483E5E; margin:0 0 24px;">Clear pricing, before the objection.</h2>
+      <p style="font-size:18px; line-height:1.66; color:#194247; max-width:32em; margin:0 0 22px; opacity:.92;">We keep money out of the shadows. You’ll know what things cost, what your options are, and exactly what you’re paying for — so the decision is about fit, not fine print.</p>
+      <div style="display:flex; flex-direction:column; gap:16px; margin-top:26px;">
+        <div style="display:flex; gap:14px; align-items:flex-start;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
+          <p style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;"><strong style="color:#483E5E;">Payment plans</strong> available on every program.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
+          <p style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;"><strong style="color:#483E5E;">FSA / HSA accepted</strong>, and a superbill provided for reimbursement.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
+          <p style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;">A clear <strong style="color:#483E5E;">guarantee</strong> — unused care always comes back to you.</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:12px; padding:14px 32px; box-shadow:0 16px 40px -26px rgba(72,62,94,.4);">
+      <div style="display:flex; justify-content:space-between; gap:18px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(72,62,94,.12);">
+        <div style="font-size:16.5px; color:#194247;">Single chiropractic adjustment</div>
+        <div style="font-family:'Fraunces',serif; font-size:19px; color:#483E5E; white-space:nowrap;">$65</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; gap:18px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(72,62,94,.12);">
+        <div style="font-size:16.5px; color:#194247;">Single acupuncture session</div>
+        <div style="font-family:'Fraunces',serif; font-size:19px; color:#483E5E; white-space:nowrap;">$125</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; gap:18px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(72,62,94,.12);">
+        <div style="font-size:16.5px; color:#194247;">Fertility Journey <span style="color:#194247; opacity:.6; font-size:14px;">(~90 days)</span></div>
+        <div style="font-family:'Fraunces',serif; font-size:19px; color:#483E5E; white-space:nowrap;">$2,800</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; gap:18px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(72,62,94,.12);">
+        <div style="font-size:16.5px; color:#194247;">Pregnancy Journey <span style="color:#194247; opacity:.6; font-size:14px;">(by trimester)</span></div>
+        <div style="font-family:'Fraunces',serif; font-size:16px; color:#608F84; white-space:nowrap;">packages</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; gap:18px; align-items:baseline; padding:20px 0;">
+        <div style="font-size:16.5px; color:#194247;">Family Membership <span style="color:#194247; opacity:.6; font-size:14px;">(family of 4)</span></div>
+        <div style="font-family:'Fraunces',serif; font-size:19px; color:#483E5E; white-space:nowrap;">~$325/mo</div>
+      </div>
+      <p style="font-size:13px; line-height:1.5; color:#194247; opacity:.66; margin:6px 0 20px;">Figures are current program guides and confirmed at your assessment. Acupuncture is never discounted.</p>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="r-sect r-pad-lg" style="background:#483E5E; color:#FCF0DD; padding:100px 32px;">
+    <div style="max-width:1220px; margin:0 auto;">
+      <div style="max-width:34em; margin-bottom:48px;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#EBA040; margin-bottom:18px;">Success stories</div>
+        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#FCF0DD; margin:0;">In their words.</h2>
+      </div>
+      <div class="r-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+        <div style="background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:32px 30px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#EBA040" stroke-width="1.4" style="opacity:.85; margin-bottom:18px;"><path d="M7 7h4v4c0 3-2 5-4 5M14 7h4v4c0 3-2 5-4 5"></path></svg>
+          <p style="font-family:'Fraunces',serif; font-size:20px; line-height:1.4; color:#FCF0DD; margin:0 0 18px;">They support you like family — and they’re the best chiropractor I’ve seen in twenty years.</p>
+          <div style="font-size:13.5px; letter-spacing:.05em; color:#c9c2d4; font-weight:600;">— Patient, Westfield</div>
+        </div>
+        <div style="background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:32px 30px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#EBA040" stroke-width="1.4" style="opacity:.85; margin-bottom:18px;"><path d="M7 7h4v4c0 3-2 5-4 5M14 7h4v4c0 3-2 5-4 5"></path></svg>
+          <p style="font-family:'Fraunces',serif; font-size:20px; line-height:1.4; color:#FCF0DD; margin:0 0 18px;">Not just chiropractors — so much more. They actually listened when no one else would.</p>
+          <div style="font-size:13.5px; letter-spacing:.05em; color:#c9c2d4; font-weight:600;">— Patient, Cranford</div>
+        </div>
+        <div style="background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:32px 30px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#EBA040" stroke-width="1.4" style="opacity:.85; margin-bottom:18px;"><path d="M7 7h4v4c0 3-2 5-4 5M14 7h4v4c0 3-2 5-4 5"></path></svg>
+          <p style="font-family:'Fraunces',serif; font-size:20px; line-height:1.4; color:#FCF0DD; margin:0 0 18px;">My whole family goes now. One place that knows all of us by name — it’s rare.</p>
+          <div style="font-size:13.5px; letter-spacing:.05em; color:#c9c2d4; font-weight:600;">— Patient, Scotch Plains</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG (PHASE 2) ===== -->
+  <section class="r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:100px 32px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:40px; flex-wrap:wrap;">
+      <div style="max-width:32em;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">From the studio</div>
+        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(30px,3.8vw,46px); line-height:1.1; letter-spacing:-.015em; color:#483E5E; margin:0;">Notes &amp; guides, coming soon.</h2>
+      </div>
+      <span style="font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#B7863E; background:rgba(235,160,64,.16); padding:8px 16px; border-radius:999px;">In progress</span>
+    </div>
+    <div class="r-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <div style="background:#FCF0DD; border:1px dashed rgba(72,62,94,.28); border-radius:10px; padding:32px 30px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#B7863E; margin-bottom:12px;">Fertility</div>
+        <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:21px; color:#483E5E; margin:0 0 10px; line-height:1.25;">Preparing your body 3 months before trying</h3>
+        <p style="font-size:14.5px; line-height:1.55; color:#194247; opacity:.7; margin:0;">A practical guide to the preconception window — coming soon.</p>
+      </div>
+      <div style="background:#FCF0DD; border:1px dashed rgba(72,62,94,.28); border-radius:10px; padding:32px 30px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#B7863E; margin-bottom:12px;">Pregnancy</div>
+        <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:21px; color:#483E5E; margin:0 0 10px; line-height:1.25;">Is chiropractic safe during pregnancy?</h3>
+        <p style="font-size:14.5px; line-height:1.55; color:#194247; opacity:.7; margin:0;">What Webster-certified care really looks like — coming soon.</p>
+      </div>
+      <div style="background:#FCF0DD; border:1px dashed rgba(72,62,94,.28); border-radius:10px; padding:32px 30px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#B7863E; margin-bottom:12px;">Family</div>
+        <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:21px; color:#483E5E; margin:0 0 10px; line-height:1.25;">Why we adjust the nervous system, not just the back</h3>
+        <p style="font-size:14.5px; line-height:1.55; color:#194247; opacity:.7; margin:0;">The longevity philosophy, explained — coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="r-sect r-pad-lg" style="background:#E2DCE2; padding:104px 32px;">
+    <div style="max-width:760px; margin:0 auto; text-align:center;">
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(34px,4.6vw,58px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 26px;">Know what to expect? Let’s begin.</h2>
+      <p style="font-size:19px; line-height:1.65; color:#194247; opacity:.9; max-width:30em; margin:0 auto 40px;">Book your first visit, or start with a no-pressure conversation about whether we’re the right fit.</p>
+      <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://portal.sked.life" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.4);">Book your first visit</a>
+        <a href="Contact.dc.html" style="text-decoration:none; background:transparent; color:#483E5E; font-weight:700; font-size:17px; padding:17px 38px; border-radius:999px; display:inline-block; border:1.5px solid rgba(72,62,94,.3);" style-hover="border-color:#EBA040;">Start with a conversation&nbsp;→</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <dc-import name="SiteFooter" hint-size="100%,340px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1220, &quot;height&quot;: 900 }
+}"></script>
+</body>
+</html>

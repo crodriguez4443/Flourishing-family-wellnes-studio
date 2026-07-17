@@ -1,0 +1,60 @@
+---
+import StatsStrip from './StatsStrip.astro';
+import ReviewsCube from './ReviewsCube.astro';
+
+type Treatment = 'Deep Plum' | 'Sage Teal';
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  quote?: string;
+  source?: string;
+  treatment?: Treatment;
+  stats?: Stat[];
+  showStats?: boolean;
+  rotating?: boolean;
+}
+
+const {
+  quote = "They support you like family - and they're the best chiropractor I've seen in twenty years.",
+  source = 'A Flourishing Family patient, Westfield',
+  treatment = 'Deep Plum',
+  stats,
+  showStats = true,
+  rotating = false,
+} = Astro.props;
+
+const proof =
+  treatment === 'Sage Teal'
+    ? { bg: '#608F84', accent: '#FCF0DD', sub: '#dceae5', quote: '#FCF0DD' }
+    : { bg: '#483E5E', accent: '#EBA040', sub: '#c9c2d4', quote: '#FCF0DD' };
+---
+
+<section class="proof-band r-sect r-pad-lg" style={`background:${proof.bg};`}>
+  <div class="proof-band-inner">
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={proof.accent}
+      stroke-width="1.4"
+      aria-hidden="true"
+    >
+      <path d="M7 7h4v4c0 3-2 5-4 5M14 7h4v4c0 3-2 5-4 5"></path>
+    </svg>
+    {rotating ? (
+      <ReviewsCube variant="quote" />
+    ) : (
+      <>
+        <blockquote style={`color:${proof.quote};`}>{quote}</blockquote>
+        <div class="proof-band-source" style={`color:${proof.sub};`}>—&nbsp;{source}</div>
+      </>
+    )}
+
+    {showStats && <StatsStrip stats={stats} accent={proof.accent} subColor={proof.sub} />}
+  </div>
+</section>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #EBA040; color: #483E5E; }
+  a { color: #608F84; }
+  a:hover { color: #B7863E; }
+  @media (max-width: 940px) {
+    .r-hero { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .r-grid2 { grid-template-columns: 1fr !important; }
+    .r-tech { grid-template-columns: 1fr 1fr !important; }
+    .r-sect { padding-left: 28px !important; padding-right: 28px !important; }
+    .r-pad-lg { padding-top: 72px !important; padding-bottom: 72px !important; }
+  }
+  @media (max-width: 620px) {
+    .r-tech { grid-template-columns: 1fr !important; }
+    .r-sect { padding-left: 22px !important; padding-right: 22px !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#FCF0DD; color:#194247; font-family:'Hanken Grotesk',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip;">
+
+  <dc-import name="SiteNav" active="pediatric" style="position:sticky; top:0; z-index:50;" hint-size="100%,94px"></dc-import>
+
+  <!-- ===== HERO ===== -->
+  <section class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:64px 32px 72px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
+    <div>
+      <div style="font-size:13px; margin-bottom:26px; color:#194247; opacity:.7;"><a href="Services.dc.html" style="color:#608F84; text-decoration:none; font-weight:600;">Services</a> <span style="opacity:.5;">/</span> Pediatric &amp; Postpartum</div>
+      <div style="display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:22px;">
+        <span style="width:22px; height:1.5px; background:#608F84; display:inline-block;"></span>
+        Service 04
+      </div>
+      <h1 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(38px,4.8vw,68px); line-height:1.05; letter-spacing:-.02em; color:#483E5E; margin:0 0 24px;">Pediatric &amp; Postpartum</h1>
+      <p style="font-size:20px; line-height:1.62; color:#194247; max-width:31em; margin:0 0 34px; opacity:.92;">Gentle, low-force care for newborns and children — we call the first year <em>milestone care</em> — and recovery-focused support for mom after birth. The tenderest stages, in the most careful hands.</p>
+      <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+        <a href="https://portal.sked.life" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 36px; border-radius:999px; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.4);">Book a visit</a>
+        <a href="Patient Resources.dc.html#pricing" style="text-decoration:none; color:#483E5E; font-weight:600; font-size:16px; border-bottom:2px solid rgba(72,62,94,.25); padding-bottom:3px;" style-hover="border-color:#EBA040;">See pricing&nbsp;→</a>
+      </div>
+    </div>
+    <div style="position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#ece0d6; box-shadow:0 30px 60px -28px rgba(72,62,94,.4);">
+      <img src="assets/card-family.jpg" alt="A gentle pediatric wellness visit" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+  </section>
+
+  <!-- ===== WHAT IT IS ===== -->
+  <section class="r-sect r-pad-lg" style="background:#E2DCE2; padding:88px 32px;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div class="r-grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+        <div>
+          <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:16px;">For the little ones</div>
+          <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(28px,3.4vw,40px); line-height:1.12; color:#483E5E; margin:0 0 18px;">Milestone care, from day one.</h2>
+          <p style="font-size:17px; line-height:1.62; color:#194247; opacity:.9; margin:0;">Newborn and pediatric adjustments are extremely gentle and low-force — nothing like adult care. We support healthy spines and regulated nervous systems as your child grows and hits each milestone.</p>
+        </div>
+        <div>
+          <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:16px;">For mom</div>
+          <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(28px,3.4vw,40px); line-height:1.12; color:#483E5E; margin:0 0 18px;">Recovery, taken seriously.</h2>
+          <p style="font-size:17px; line-height:1.62; color:#194247; opacity:.9; margin:0;">Postpartum is its own season. We help your body find its footing again after birth — realigning, recovering, and rebuilding at a pace that respects everything it just did.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HIGHLIGHTS ===== -->
+  <section class="r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:96px 32px;">
+    <div style="max-width:34em; margin-bottom:44px;">
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">What families come for</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0;">Small bodies, careful hands.</h2>
+    </div>
+    <div class="r-tech" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+      <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:10px; padding:30px 26px; box-shadow:0 8px 26px -20px rgba(72,62,94,.4);">
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:#483E5E; margin-bottom:10px;">Newborn spinal check</div>
+        <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0;">A gentle first assessment in the earliest weeks.</p>
+      </div>
+      <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:10px; padding:30px 26px; box-shadow:0 8px 26px -20px rgba(72,62,94,.4);">
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:#483E5E; margin-bottom:10px;">Growing-child care</div>
+        <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0;">Regular, low-force check-ins as they hit milestones.</p>
+      </div>
+      <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:10px; padding:30px 26px; box-shadow:0 8px 26px -20px rgba(72,62,94,.4);">
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:#483E5E; margin-bottom:10px;">Postpartum recovery</div>
+        <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0;">Realignment and support for mom after birth.</p>
+      </div>
+      <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:10px; padding:30px 26px; box-shadow:0 8px 26px -20px rgba(72,62,94,.4);">
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:#483E5E; margin-bottom:10px;">Warm referrals</div>
+        <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0;">To lactation and pelvic-floor PT when it helps.</p>
+      </div>
+    </div>
+    <div style="margin-top:30px; padding:22px 26px; background:rgba(96,143,132,.12); border-radius:8px; display:flex; gap:14px; align-items:center; max-width:52em;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.6" style="flex:none;"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
+      <span style="font-size:15px; line-height:1.55; color:#194247;">Our wellness care <strong style="color:#483E5E;">complements — never replaces</strong> — your pediatrician and medical care.</span>
+    </div>
+  </section>
+
+  <!-- ===== FITS INTO PROGRAMS ===== -->
+  <section class="r-sect r-pad-lg" style="background:#483E5E; color:#FCF0DD; padding:88px 32px;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div style="max-width:34em; margin-bottom:40px;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#EBA040; margin-bottom:16px;">Part of a bigger plan</div>
+        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(28px,3.6vw,44px); line-height:1.1; color:#FCF0DD; margin:0;">Where the family journey continues.</h2>
+      </div>
+      <div class="r-grid2" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <a href="Family Membership.dc.html" style="text-decoration:none; background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:24px 24px; display:block;" style-hover="background:rgba(252,240,221,.12);">
+          <div style="font-family:'Fraunces',serif; font-size:19px; color:#FCF0DD; margin-bottom:6px;">Family Membership</div>
+          <div style="font-size:14px; color:#EBA040; font-weight:600;">Whole-household care&nbsp;→</div>
+        </a>
+        <a href="Pregnancy Journey.dc.html" style="text-decoration:none; background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:24px 24px; display:block;" style-hover="background:rgba(252,240,221,.12);">
+          <div style="font-family:'Fraunces',serif; font-size:19px; color:#FCF0DD; margin-bottom:6px;">Pregnancy Journey</div>
+          <div style="font-size:14px; color:#EBA040; font-weight:600;">Includes newborn check&nbsp;→</div>
+        </a>
+        <a href="Services.dc.html" style="text-decoration:none; background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:24px 24px; display:block;" style-hover="background:rgba(252,240,221,.12);">
+          <div style="font-family:'Fraunces',serif; font-size:19px; color:#FCF0DD; margin-bottom:6px;">All Services</div>
+          <div style="font-size:14px; color:#EBA040; font-weight:600;">See everything&nbsp;→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:96px 32px; text-align:center;">
+    <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.4vw,54px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 24px; max-width:16em; margin-left:auto; margin-right:auto;">Ready for care that actually listens?</h2>
+    <p style="font-size:18px; line-height:1.62; color:#194247; opacity:.9; max-width:30em; margin:0 auto 34px;">Book a first visit one-on-one with a doctor, or start with a no-pressure conversation.</p>
+    <div style="display:flex; gap:18px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://portal.sked.life" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.4);">Book a visit</a>
+      <a href="Contact.dc.html" style="text-decoration:none; background:transparent; color:#483E5E; font-weight:700; font-size:17px; padding:17px 36px; border-radius:999px; display:inline-block; border:1.5px solid rgba(72,62,94,.3);" style-hover="border-color:#EBA040;">Start with a conversation&nbsp;→</a>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,340px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1220, &quot;height&quot;: 900 }
+}"></script>
+</body>
+</html>

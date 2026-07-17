@@ -1,0 +1,53 @@
+---
+import PageHero from '../../components/PageHero.astro';
+import ProgramCards from '../../components/ProgramCards.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import InternalLayout from '../../layouts/InternalLayout.astro';
+
+const programSteps = [
+  {
+    title: 'Start with a conversation',
+    text: "Come tell us what's going on. We'll be straight with you about whether we can help and what it would take.",
+  },
+  {
+    title: 'One doctor every visit',
+    text: 'No PAs, no students, no handoff. The doctor who meets you is the doctor who treats you.',
+  },
+  {
+    title: 'Warm, measurable care',
+    text: 'Thorough, reproducible, and human. Confident expertise, plainly stated.',
+  },
+];
+---
+
+<InternalLayout
+  title="Programs"
+  description="Fertility, pregnancy, postpartum, and family wellness programs in Clark, NJ."
+  current="programs"
+>
+  <PageHero
+    eyebrow="Programs"
+    title="Care for every season of your family."
+    text="Most families find us for one thing and stay for the rest of life. Wherever you are - trying, expecting, recovering, or raising a houseful - there's a program built for you, and one doctor who'll know you through all of it."
+    image="/assets/opt/hero.jpg"
+    imageAlt="Doctor talking with a patient in natural light"
+    primaryHref="/resources/start-here/"
+    primaryLabel="Start with a conversation"
+  />
+
+  <section class="i-section-band">
+    <div class="i-sect i-pad">
+      <SectionHeader
+        eyebrow="The arc"
+        title="Trying, expecting, recovering, raising a family."
+        text="The four programs are separate doors into one trusted place. Start where you are now; the care can grow with you."
+      />
+      <ProgramCards />
+    </div>
+  </section>
+
+  <section class="i-sect i-pad">
+    <StepGrid steps={programSteps} />
+  </section>
+</InternalLayout>

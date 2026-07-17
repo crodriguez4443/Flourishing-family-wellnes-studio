@@ -1,0 +1,40 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { testimonials as defaultTestimonials } from '../data/site';
+
+interface Testimonial {
+  quote: string;
+  source: string;
+}
+
+interface Props {
+  testimonials?: Testimonial[];
+  eyebrow?: string;
+  title?: string;
+  text?: string;
+  band?: boolean;
+}
+
+const {
+  testimonials = defaultTestimonials,
+  eyebrow = 'Patient words',
+  title = 'Warm referrals are the heart of the practice.',
+  text = 'Specific, human trust matters when someone is deciding whether to book.',
+  band = true,
+} = Astro.props;
+---
+
+<section class={band ? 'i-section-band' : ''}>
+  <div class="r-sect r-pad-lg testimonial-grid-section">
+    <SectionHeader eyebrow={eyebrow} title={title} text={text} maxWidth="42em" />
+    <div class="testimonial-grid">
+      {testimonials.map((testimonial) => (
+        <article class="testimonial-card">
+          <p>Patient story</p>
+          <h3>“{testimonial.quote}”</h3>
+          <span>{testimonial.source}</span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

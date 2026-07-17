@@ -1,0 +1,23 @@
+---
+interface Step {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  steps: Step[];
+  columns?: 2 | 3 | 4;
+  variant?: 'standard' | 'compact';
+}
+
+const { steps, columns = 3, variant = 'standard' } = Astro.props;
+---
+
+<div class={`step-grid step-grid-${columns} step-grid-${variant}`}>
+  {steps.map((step) => (
+    <div class="step-grid-item">
+      <strong>{step.title}</strong>
+      <p>{step.text}</p>
+    </div>
+  ))}
+</div>

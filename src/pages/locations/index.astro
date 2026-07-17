@@ -1,0 +1,36 @@
+---
+import CardGrid from '../../components/CardGrid.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import InternalLayout from '../../layouts/InternalLayout.astro';
+import { locations } from '../../data/site';
+
+const cards = locations.map((location) => ({
+  href: `/locations/${location.slug}/`,
+  eyebrow: 'Serving',
+  title: location.town,
+  text: location.summary,
+}));
+---
+
+<InternalLayout title="Locations" description="Family wellness care serving Clark, Westfield, Cranford, and Scotch Plains.">
+  <PageHero
+    eyebrow="Locations"
+    title="A Clark studio for nearby families."
+    text="Flourishing Family serves families across Clark, Westfield, Cranford, Scotch Plains, and the surrounding communities."
+    image="/assets/opt/hero.jpg"
+    imageAlt="Doctor talking with a patient"
+  />
+
+  <section class="i-section-band">
+    <div class="i-sect i-pad">
+      <SectionHeader
+        eyebrow="Local care"
+        title="Warm, doctor-led care close to home."
+        text="These local pages support the search behavior the structure document called out: families looking for pregnancy, chiropractic, acupuncture, and postpartum support nearby."
+        maxWidth="42em"
+      />
+      <CardGrid cards={cards} />
+    </div>
+  </section>
+</InternalLayout>

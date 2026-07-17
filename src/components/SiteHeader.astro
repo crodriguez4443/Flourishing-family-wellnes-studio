@@ -1,0 +1,92 @@
+---
+import { programs } from '../data/programs';
+import { services } from '../data/services';
+import { bookingUrl } from '../data/site';
+
+type Variant = 'home' | 'internal';
+
+interface Props {
+  current?: 'home' | 'programs' | 'services' | 'about' | 'resources' | 'contact';
+  variant?: Variant;
+}
+
+const { current = 'home', variant = 'internal' } = Astro.props;
+const isHome = variant === 'home';
+const logoHref = '/';
+const bookHref = isHome ? '#book' : bookingUrl;
+const headerClass = isHome ? 'site-header r-site-header' : 'site-header i-header';
+const navClass = isHome ? 'site-navbar r-navbar' : 'site-navbar i-navbar';
+const logoLinkClass = isHome ? 'site-logo-link' : 'site-logo-link i-logo-link';
+const logoClass = isHome ? 'site-logo r-logo' : 'site-logo i-logo';
+const linksClass = isHome ? 'site-navlinks r-navlinks' : 'site-navlinks i-navlinks';
+const linkClass = isHome ? 'site-navlink r-navlink' : 'site-navlink i-navlink';
+const ctaClass = isHome ? 'site-nav-cta h-nav-cta' : 'site-nav-cta i-nav-cta h-nav-cta';
+
+const dropdowns = {
+  programs: programs.map((program) => ({
+    label: program.eyebrow,
+    href: `/programs/${program.slug}/`,
+  })),
+  services: services.map((service) => ({
+    label: service.eyebrow,
+    href: `/services/${service.slug}/`,
+  })),
+};
+
+const navItems = [
+  { label: 'Programs', href: '/programs/', key: 'programs', dropdown: dropdowns.programs },
+  { label: 'Services', href: '/services/', key: 'services', dropdown: dropdowns.services },
+  { label: 'About', href: '/about/', key: 'about' },
+  { label: 'Resources', href: '/resources/', key: 'resources' },
+  { label: 'Contact', href: '/contact/', key: 'contact' },
+] as const;
+---
+
+<header class={headerClass}>
+  <nav class={navClass} aria-label="Main navigation">
+    <a href={logoHref} class={logoLinkClass} aria-label="Flourishing Family Wellness Studio home">
+      <img class={logoClass} src="/assets/logo-horizontal-transparent.png" alt="Flourishing Family Wellness Studio" />
+    </a>
+    <div class={linksClass}>
+      {navItems.map((item) => (
+        item.dropdown ? (
+          <div class="site-navitem has-dropdown">
+            <a class:list={[linkClass, current === item.key && 'is-active']} href={item.href} aria-haspopup="true">
+              {item.label}
+            </a>
+            <div class="site-dropdown">
+              {item.dropdown.map((dropdownItem) => (
+                <a href={dropdownItem.href}>{dropdownItem.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a class:list={[linkClass, current === item.key && 'is-active']} href={item.href}>{item.label}</a>
+        )
+      ))}
+      <a href={bookHref} class={ctaClass}>Book a Visit</a>
+    </div>
+    <details class="site-mobile-menu">
+      <summary class="site-mobile-summary">
+        <span class="sr-only">Open navigation menu</span>
+        <span class="site-mobile-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </summary>
+      <div class="site-mobile-panel">
+        {navItems.map((item) => (
+          item.dropdown ? (
+            <details class="site-mobile-group">
+              <summary>{item.label}</summary>
+              <a href={item.href}>All {item.label}</a>
+              {item.dropdown.map((dropdownItem) => (
+                <a href={dropdownItem.href}>{dropdownItem.label}</a>
+              ))}
+            </details>
+          ) : (
+            <a class:list={[current === item.key && 'is-active']} href={item.href}>{item.label}</a>
+          )
+        ))}
+        <a class="site-mobile-cta" href={bookHref}>Book a Visit</a>
+      </div>
+    </details>
+  </nav>
+</header>

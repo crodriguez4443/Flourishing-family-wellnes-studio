@@ -1,0 +1,66 @@
+---
+import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
+import { contactInfo } from '../../data/site';
+---
+
+<DraftReferenceLayout
+  title="Privacy Policy"
+  description="Privacy policy for Flourishing Family Wellness Studio."
+  current="resources"
+>
+  <section class="r-sect r-pad-lg" style="max-width:900px; margin:0 auto; padding:88px 32px 104px;">
+    <div style="margin-bottom:44px;">
+      <p class="i-eyebrow">
+        <span></span>
+        Privacy Policy
+      </p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(42px,5.8vw,72px); line-height:1.05; letter-spacing:-.02em; color:#483E5E; margin:0 0 22px;">
+        Privacy Policy
+      </h1>
+      <p style="font-size:18px; line-height:1.65; color:#194247; opacity:.9; margin:0;">
+        Last updated: July 8, 2026
+      </p>
+    </div>
+
+    <div class="privacy-policy-content">
+      <h2>Information we collect</h2>
+      <p>
+        Flourishing Family Wellness Studio may collect information you choose to share with us,
+        such as your name, phone number, email address, appointment details, and messages submitted
+        through booking, phone, email, or other communication tools.
+      </p>
+
+      <h2>How we use information</h2>
+      <p>
+        We use this information to respond to inquiries, help schedule visits, provide patient
+        support, improve the website, and communicate with you about care or administrative needs.
+      </p>
+
+      <h2>Third-party services</h2>
+      <p>
+        Our website may link to third-party services, including online booking, maps, social media,
+        and review platforms. Those services have their own privacy practices, and we encourage you
+        to review their policies when you use them.
+      </p>
+
+      <h2>Cookies and analytics</h2>
+      <p>
+        This website may use basic cookies, analytics, or performance tools to understand site usage
+        and improve the visitor experience. You can manage cookies through your browser settings.
+      </p>
+
+      <h2>Medical information</h2>
+      <p>
+        Please do not submit sensitive medical information through general website links or social
+        media. Patient care information should be shared directly through appropriate practice
+        communication channels.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have questions about this Privacy Policy, contact Flourishing Family Wellness Studio
+        at <a href={contactInfo.phoneHref}>{contactInfo.phone}</a> or visit us at {contactInfo.address}.
+      </p>
+    </div>
+  </section>
+</DraftReferenceLayout>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #EBA040; color: #483E5E; }
+  a { color: #608F84; }
+  a:hover { color: #B7863E; }
+
+  .r-dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .16s ease, transform .16s ease, visibility .16s; }
+  .r-dropdown:hover .r-dropdown-menu, .r-dropdown:focus-within .r-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  details.r-faq summary::-webkit-details-marker { display: none; }
+  details.r-faq[open] .r-faq-plus { transform: rotate(45deg); }
+
+  @media (max-width: 900px) {
+    .r-hero, .r-split, .r-book, .r-invest { grid-template-columns: 1fr !important; gap: 44px !important; }
+    .r-grid3, .r-grid2 { grid-template-columns: 1fr !important; }
+    .r-related { grid-template-columns: 1fr !important; }
+    .r-footer { grid-template-columns: 1fr 1fr !important; }
+    .r-sect { padding-left: 28px !important; padding-right: 28px !important; }
+    .r-pad-lg { padding-top: 72px !important; padding-bottom: 72px !important; }
+    .r-arrow { display: none !important; }
+  }
+  @media (max-width: 620px) {
+    .r-navlink { display: none !important; }
+    .r-hero { padding-top: 40px !important; padding-bottom: 52px !important; }
+    .r-stack-row { flex-wrap: wrap !important; gap: 2px !important; }
+    .r-footer { grid-template-columns: 1fr !important; gap: 36px !important; }
+    .r-sect { padding-left: 22px !important; padding-right: 22px !important; }
+    .r-navbar { padding-left: 20px !important; padding-right: 20px !important; }
+    .r-logo { height: 46px !important; }
+    .r-steps { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#FCF0DD; color:#194247; font-family:'Hanken Grotesk',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip;">
+
+
+  <!-- ===== NAV ===== -->
+  <dc-import name="SiteNav" active="fertility" style="position:sticky; top:0; z-index:50;" hint-size="100%,94px"></dc-import>
+
+  <!-- ===== 1 · HERO ===== -->
+  <section id="top" class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:74px 32px 88px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
+    <div>
+      <div style="display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:34px;">
+        <span style="width:22px; height:1.5px; background:#608F84; display:inline-block;"></span>
+        The Flourishing Fertility Journey
+      </div>
+      <h1 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(44px,6vw,84px); line-height:1.03; letter-spacing:-.02em; color:#483E5E; margin:0 0 26px;">Prepare your body.<br>Trust it again.</h1>
+      <p style="font-size:20px; line-height:1.62; color:#194247; max-width:31em; margin:0 0 36px; opacity:.92;">A 90-day, doctor-led plan for women who are done being told “everything looks normal — just relax.” Acupuncture-led, with chiropractic and nutrition support. One-on-one, from your first visit to your last.</p>
+      <div style="display:flex; align-items:center; gap:26px; flex-wrap:wrap;">
+        <a href="#book" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 36px; border-radius:999px; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.4);">Book a free Fertility Roadmap Call</a>
+        <a href="#included" style="text-decoration:none; color:#483E5E; font-weight:600; font-size:16px; border-bottom:2px solid rgba(72,62,94,.25); padding-bottom:3px;" style-hover="border-color:#EBA040;">See what’s included&nbsp;→</a>
+      </div>
+      <div style="margin-top:38px; font-size:14.5px; color:#194247; opacity:.78; letter-spacing:.01em;">Acupuncture-led · chiro + nutrition support · ~90 days</div>
+    </div>
+    <div style="position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#ece0d6; box-shadow:0 30px 60px -28px rgba(72,62,94,.4);">
+      <img src="assets/card-fertility.jpg" alt="Doctor reviewing care with a fertility patient in natural light" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+  </section>
+
+  <!-- ===== 2 · IS THIS YOU ===== -->
+  <section class="r-sect r-pad-lg" style="background:#E2DCE2; padding:96px 32px;">
+    <div style="max-width:1220px; margin:0 auto;">
+      <div style="max-width:36em; margin-bottom:52px;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">Is this you?</div>
+        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 20px;">You’ve done the bloodwork. You’ve heard “everything looks normal.” And you still don’t feel heard.</h2>
+        <p style="font-size:18px; line-height:1.6; color:#194247; opacity:.88; margin:0;">This is for you if you’re —</p>
+      </div>
+      <div class="r-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:44px;">
+        <div style="background:#FCF0DD; border-radius:8px; padding:32px 30px; box-shadow:0 8px 26px -18px rgba(72,62,94,.4);">
+          <div style="font-family:'Fraunces',serif; font-size:34px; color:#EBA040; line-height:1; margin-bottom:16px;">01</div>
+          <p style="font-size:16.5px; line-height:1.58; color:#194247; margin:0;"><strong style="color:#483E5E;">Trying to conceive for 6–18 months</strong> and tired of guessing what to do next.</p>
+        </div>
+        <div style="background:#FCF0DD; border-radius:8px; padding:32px 30px; box-shadow:0 8px 26px -18px rgba(72,62,94,.4);">
+          <div style="font-family:'Fraunces',serif; font-size:34px; color:#EBA040; line-height:1; margin-bottom:16px;">02</div>
+          <p style="font-size:16.5px; line-height:1.58; color:#194247; margin:0;"><strong style="color:#483E5E;">Preparing for IVF or IUI</strong> and want your body ready before transfer.</p>
+        </div>
+        <div style="background:#FCF0DD; border-radius:8px; padding:32px 30px; box-shadow:0 8px 26px -18px rgba(72,62,94,.4);">
+          <div style="font-family:'Fraunces',serif; font-size:34px; color:#EBA040; line-height:1; margin-bottom:16px;">03</div>
+          <p style="font-size:16.5px; line-height:1.58; color:#194247; margin:0;"><strong style="color:#483E5E;">Recovering from a loss</strong> and want to feel supported before trying again.</p>
+        </div>
+      </div>
+      <p style="font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:clamp(19px,2.3vw,26px); line-height:1.4; color:#483E5E; max-width:26em; margin:0;">What you’ve been missing isn’t another test. It’s someone who takes your whole body — and your nervous system — seriously, and builds a plan around you.</p>
+    </div>
+  </section>
+
+  <!-- ===== 3 · OUR APPROACH ===== -->
+  <section class="r-split r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:100px 32px; display:grid; grid-template-columns:.92fr 1.08fr; gap:72px; align-items:center;">
+    <div style="position:relative; aspect-ratio:5/6; border-radius:6px; overflow:hidden; background:linear-gradient(155deg,#dde8e2,#ece0d6); box-shadow:0 28px 56px -30px rgba(72,62,94,.42);">
+      <img src="assets/ila.jpg" alt="A doctor working hands-on and unhurried with a patient" style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; border-radius:3px; display:block;">
+    </div>
+    <div>
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">Our approach — honestly</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(30px,4vw,50px); line-height:1.1; letter-spacing:-.015em; color:#483E5E; margin:0 0 24px;">We can’t promise a pregnancy. No honest provider can.</h2>
+      <p style="font-size:18.5px; line-height:1.66; color:#194247; max-width:32em; margin:0 0 22px; opacity:.92;">What we <em>can</em> do is help optimize the body you’ll carry it in: calming the nervous system, supporting hormonal balance and circulation, and nourishing what conception asks of you. Thorough, measurable, reproducible.</p>
+      <p style="font-size:18.5px; line-height:1.66; color:#194247; max-width:32em; margin:0 0 30px; opacity:.92;"><strong style="color:#483E5E;">And your partner starts with you</strong> — because both bodies, and both stress levels, matter.</p>
+      <div style="display:flex; gap:14px; align-items:center; padding:18px 22px; background:rgba(96,143,132,.12); border-radius:8px; max-width:34em;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.6" style="flex:none;"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        <span style="font-size:15px; line-height:1.5; color:#194247;">Chiropractic &amp; acupuncture <strong style="color:#483E5E;">support the body’s work</strong> — they don’t cause pregnancy, and we’ll never claim otherwise.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4 · WHAT'S INCLUDED ===== -->
+  <section id="included" class="r-sect r-pad-lg" style="background:#483E5E; color:#FCF0DD; padding:100px 32px;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div style="max-width:34em; margin-bottom:48px;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#EBA040; margin-bottom:18px;">What’s included</div>
+        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#FCF0DD; margin:0;">Everything, coordinated. One plan, one doctor.</h2>
+      </div>
+      <div style="background:rgba(252,240,221,.05); border:1px solid rgba(252,240,221,.16); border-radius:12px; padding:14px 34px;">
+        <div class="r-stack-row" style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(252,240,221,.14);">
+          <div style="font-size:17px; line-height:1.5; color:#FCF0DD;">Initial chiropractic + acupuncture assessment <span style="color:#c9c2d4; font-size:14.5px;">(60 + 90 min)</span></div>
+          <div style="font-family:'Fraunces',serif; font-size:20px; color:#EBA040; white-space:nowrap;">$300</div>
+        </div>
+        <div class="r-stack-row" style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(252,240,221,.14);">
+          <div style="font-size:17px; line-height:1.5; color:#FCF0DD;">12 chiropractic adjustments <span style="color:#c9c2d4; font-size:14.5px;">(nervous-system + pelvic alignment)</span></div>
+          <div style="font-family:'Fraunces',serif; font-size:20px; color:#EBA040; white-space:nowrap;">$780</div>
+        </div>
+        <div class="r-stack-row" style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(252,240,221,.14);">
+          <div style="font-size:17px; line-height:1.5; color:#FCF0DD;">12 acupuncture sessions <span style="color:#c9c2d4; font-size:14.5px;">(hormonal support + stress regulation)</span></div>
+          <div style="font-family:'Fraunces',serif; font-size:20px; color:#EBA040; white-space:nowrap;">$1,500</div>
+        </div>
+        <div class="r-stack-row" style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(252,240,221,.14);">
+          <div style="font-size:17px; line-height:1.5; color:#FCF0DD;">Nutrition + supplement guidance</div>
+          <div style="font-family:'Fraunces',serif; font-size:20px; color:#EBA040; white-space:nowrap;">$600</div>
+        </div>
+        <div class="r-stack-row" style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(252,240,221,.14);">
+          <div style="font-size:17px; line-height:1.5; color:#FCF0DD;">Monthly progress reviews &amp; care-plan updates</div>
+          <div style="font-size:15px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#608F84; white-space:nowrap;">Included</div>
+        </div>
+        <div class="r-stack-row" style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(252,240,221,.14);">
+          <div style="font-size:17px; line-height:1.5; color:#FCF0DD;"><span style="color:#EBA040; font-weight:600;">Bonus</span> — priority booking + week-6 check-in call</div>
+          <div style="font-size:15px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#608F84; white-space:nowrap;">Included</div>
+        </div>
+        <div class="r-stack-row" style="display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0;">
+          <div style="font-size:17px; line-height:1.5; color:#FCF0DD;"><span style="color:#EBA040; font-weight:600;">Bonus</span> — warm referral to trusted RE / naturopath / pelvic-floor PT</div>
+          <div style="font-family:'Fraunces',serif; font-style:italic; font-size:18px; color:#608F84; white-space:nowrap;">priceless</div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; margin-top:22px; padding:0 34px;">
+        <div style="font-size:15px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; color:#c9c2d4;">Total value</div>
+        <div style="font-family:'Fraunces',serif; font-size:clamp(30px,4vw,44px); color:#EBA040; line-height:1;">~$3,180</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5 · HOW IT WORKS ===== -->
+  <section class="r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:100px 32px;">
+    <div style="max-width:34em; margin-bottom:54px;">
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">How it works</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0;">Ninety days, mapped from the first conversation.</h2>
+    </div>
+    <div class="r-steps" style="display:grid; grid-template-columns:repeat(4,1fr); gap:28px;">
+      <div style="border-top:2px solid #EBA040; padding-top:22px;">
+        <div style="font-family:'Fraunces',serif; font-size:15px; letter-spacing:.14em; color:#B7863E; font-weight:600; margin-bottom:16px;">STEP 01</div>
+        <h3 style="font-family:'Fraunces',serif; font-weight:500; font-size:22px; color:#483E5E; margin:0 0 10px;">Roadmap call</h3>
+        <p style="font-size:15.5px; line-height:1.58; color:#194247; opacity:.85; margin:0;">Free, 20 minutes. See if we’re the right fit. No pressure.</p>
+      </div>
+      <div style="border-top:2px solid rgba(72,62,94,.2); padding-top:22px;">
+        <div style="font-family:'Fraunces',serif; font-size:15px; letter-spacing:.14em; color:#B7863E; font-weight:600; margin-bottom:16px;">STEP 02</div>
+        <h3 style="font-family:'Fraunces',serif; font-weight:500; font-size:22px; color:#483E5E; margin:0 0 10px;">Thorough assessment</h3>
+        <p style="font-size:15.5px; line-height:1.58; color:#194247; opacity:.85; margin:0;">We find what’s been missed and build your plan around you.</p>
+      </div>
+      <div style="border-top:2px solid rgba(72,62,94,.2); padding-top:22px;">
+        <div style="font-family:'Fraunces',serif; font-size:15px; letter-spacing:.14em; color:#B7863E; font-weight:600; margin-bottom:16px;">STEP 03</div>
+        <h3 style="font-family:'Fraunces',serif; font-weight:500; font-size:22px; color:#483E5E; margin:0 0 10px;">~90 days of care</h3>
+        <p style="font-size:15.5px; line-height:1.58; color:#194247; opacity:.85; margin:0;">Chiro + acupuncture + nutrition, coordinated and one-on-one.</p>
+      </div>
+      <div style="border-top:2px solid rgba(72,62,94,.2); padding-top:22px;">
+        <div style="font-family:'Fraunces',serif; font-size:15px; letter-spacing:.14em; color:#B7863E; font-weight:600; margin-bottom:16px;">STEP 04</div>
+        <h3 style="font-family:'Fraunces',serif; font-weight:500; font-size:22px; color:#483E5E; margin:0 0 10px;">Monthly reviews</h3>
+        <p style="font-size:15.5px; line-height:1.58; color:#194247; opacity:.85; margin:0;">Measurable, and adjusted to you as things change.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6 · WHY TRUST + 7 · INVESTMENT ===== -->
+  <section class="r-invest r-sect r-pad-lg" style="background:#E2DCE2; padding:100px 32px; display:grid; grid-template-columns:1fr 1fr; gap:64px; max-width:1220px; margin:0 auto; align-items:start;">
+    <div>
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">Why trust this</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(30px,3.6vw,44px); line-height:1.1; letter-spacing:-.015em; color:#483E5E; margin:0 0 30px;">Doctor-led. Never delegated.</h2>
+      <div style="display:flex; flex-direction:column; gap:22px;">
+        <div style="display:flex; gap:14px; align-items:flex-start;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
+          <p style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;"><strong style="color:#483E5E;">Acupuncture-led</strong> by a doctor credentialed in fertility &amp; pregnancy.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
+          <p style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;"><strong style="color:#483E5E;">One doctor, every visit</strong> — no PAs, no students.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
+          <p style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;">Grounded in research on <strong style="color:#483E5E;">nervous-system / HPA-axis regulation</strong>.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:flex-start;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
+          <p style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;">Caring for families <strong style="color:#483E5E;">since 2011</strong>.</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#FCF0DD; border-radius:12px; padding:40px 38px; box-shadow:0 20px 44px -24px rgba(72,62,94,.45);">
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">The investment</div>
+      <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:8px;">
+        <div style="font-family:'Fraunces',serif; font-size:clamp(44px,6vw,64px); color:#483E5E; line-height:1;">$2,800</div>
+        <div style="font-size:16px; color:#194247; opacity:.8;">for the full 90-day program</div>
+      </div>
+      <div style="font-size:16px; color:#194247; margin-bottom:26px;">Payment plan available — <strong style="color:#483E5E;">3 × $1,000</strong>.</div>
+      <div style="padding:22px 24px; background:rgba(96,143,132,.12); border-radius:8px; margin-bottom:24px;">
+        <div style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:#608F84; margin-bottom:8px;">For perspective</div>
+        <p style="font-size:16px; line-height:1.55; color:#194247; margin:0;">A single cancelled IVF cycle runs <strong style="color:#483E5E;">$15,000–$20,000</strong>. This is the part focused on <em>you</em>.</p>
+      </div>
+      <p style="font-size:14.5px; line-height:1.55; color:#194247; opacity:.78; margin:0;">Acupuncture is never discounted; chiropractic and nutrition can be bundled.</p>
+    </div>
+  </section>
+
+  <!-- ===== 8 · OUR PROMISE ===== -->
+  <section class="r-sect r-pad-lg" style="background:{{ promiseBg }}; padding:104px 32px;">
+    <div style="max-width:820px; margin:0 auto; text-align:center;">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="{{ promiseAccent }}" stroke-width="1.3" style="margin-bottom:28px;"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:{{ promiseAccent }}; margin-bottom:22px;">Our promise</div>
+      <p style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(24px,3.2vw,38px); line-height:1.32; letter-spacing:-.01em; color:{{ promiseText }}; margin:0 0 24px;">We guarantee the care, not a medical outcome.</p>
+      <p style="font-size:18px; line-height:1.68; color:{{ promiseSub }}; max-width:34em; margin:0 auto;">Complete your 90 days and follow the plan; if you don’t feel your body is in a better place for conception, we keep working with you. And if life changes and you need to stop, any care you haven’t used comes back to you. We never keep money for care we didn’t provide.</p>
+    </div>
+  </section>
+
+  <!-- ===== 9 · FAQ ===== -->
+  <section class="r-sect r-pad-lg" style="max-width:840px; margin:0 auto; padding:100px 32px;">
+    <div style="margin-bottom:44px;">
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">The real questions</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0;">Answered honestly.</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:0;">
+      <details class="r-faq" style="border-top:1px solid rgba(72,62,94,.16);">
+        <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:24px 0; font-family:'Fraunces',serif; font-size:clamp(19px,2.2vw,23px); color:#483E5E;">Can chiropractic and acupuncture actually help with fertility?<span class="r-faq-plus" style="flex:none; color:#EBA040; font-size:26px; line-height:1; transition:transform .2s;">+</span></summary>
+        <p style="font-size:16.5px; line-height:1.62; color:#194247; opacity:.9; margin:0 0 24px; max-width:52em;">They don’t cause pregnancy — they support the body doing the work: regulating the nervous system, supporting circulation and hormonal balance, lowering stress load.</p>
+      </details>
+      <details class="r-faq" style="border-top:1px solid rgba(72,62,94,.16);">
+        <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:24px 0; font-family:'Fraunces',serif; font-size:clamp(19px,2.2vw,23px); color:#483E5E;">I’m already spending a fortune on treatment.<span class="r-faq-plus" style="flex:none; color:#EBA040; font-size:26px; line-height:1; transition:transform .2s;">+</span></summary>
+        <p style="font-size:16.5px; line-height:1.62; color:#194247; opacity:.9; margin:0 0 24px; max-width:52em;">This is a fraction of one cancelled cycle, and it’s the part focused on <em>you</em>, not just your numbers. Payment plans available.</p>
+      </details>
+      <details class="r-faq" style="border-top:1px solid rgba(72,62,94,.16);">
+        <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:24px 0; font-family:'Fraunces',serif; font-size:clamp(19px,2.2vw,23px); color:#483E5E;">My partner thinks this is “alternative.”<span class="r-faq-plus" style="flex:none; color:#EBA040; font-size:26px; line-height:1; transition:transform .2s;">+</span></summary>
+        <p style="font-size:16.5px; line-height:1.62; color:#194247; opacity:.9; margin:0 0 24px; max-width:52em;">Good — bring them. They start care with you. Both bodies matter, and we’ll show you why.</p>
+      </details>
+      <details class="r-faq" style="border-top:1px solid rgba(72,62,94,.16);">
+        <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:24px 0; font-family:'Fraunces',serif; font-size:clamp(19px,2.2vw,23px); color:#483E5E;">I’m scared to get my hopes up again.<span class="r-faq-plus" style="flex:none; color:#EBA040; font-size:26px; line-height:1; transition:transform .2s;">+</span></summary>
+        <p style="font-size:16.5px; line-height:1.62; color:#194247; opacity:.9; margin:0 0 24px; max-width:52em;">We won’t sell you false hope. We’ll be honest about what we can and can’t do, and focus on what’s in your control.</p>
+      </details>
+      <details class="r-faq" style="border-top:1px solid rgba(72,62,94,.16); border-bottom:1px solid rgba(72,62,94,.16);">
+        <summary style="list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:24px 0; font-family:'Fraunces',serif; font-size:clamp(19px,2.2vw,23px); color:#483E5E;">How does this fit with my OB / RE?<span class="r-faq-plus" style="flex:none; color:#EBA040; font-size:26px; line-height:1; transition:transform .2s;">+</span></summary>
+        <p style="font-size:16.5px; line-height:1.62; color:#194247; opacity:.9; margin:0 0 24px; max-width:52em;">Alongside it. We coordinate, we don’t compete, and we’ll make warm referrals when you need them.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== 10 · CTA ===== -->
+  <section id="book" class="r-sect r-pad-lg" style="background:#483E5E; color:#FCF0DD; padding:104px 32px;">
+    <div style="max-width:760px; margin:0 auto; text-align:center;">
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(36px,5vw,64px); line-height:1.05; letter-spacing:-.02em; margin:0 0 26px; color:#FCF0DD;">Book a free Fertility Roadmap Call.</h2>
+      <p style="font-size:18px; line-height:1.65; color:#d6cfe0; max-width:32em; margin:0 auto 38px;">We take only a limited number of new fertility patients each week, so each woman gets the attention she deserves. Acupuncture research points to ~3 months of preparation before trying or transfer — every cycle counts.</p>
+      <a href="https://portal.sked.life" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.45);">Book a free Fertility Roadmap Call</a>
+    </div>
+  </section>
+
+  <!-- ===== 11 · RELATED PROGRAMS ===== -->
+  <section class="r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:100px 32px;">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">One practice, every season</div>
+      <div style="display:inline-flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center; font-family:'Fraunces',serif; font-size:clamp(18px,2.4vw,26px); color:#483E5E;">
+        <span style="color:#EBA040;">Trying</span>
+        <svg class="r-arrow" width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="#B7863E" stroke-width="1.5"><path d="M0 6h27M22 1l6 5-6 5"></path></svg>
+        <span>Expecting</span>
+        <svg class="r-arrow" width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="#B7863E" stroke-width="1.5"><path d="M0 6h27M22 1l6 5-6 5"></path></svg>
+        <span>Raising a family</span>
+      </div>
+    </div>
+    <div class="r-grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:44px;">
+      <a href="Pregnancy Journey.dc.html" style="text-decoration:none; display:flex; flex-direction:column; background:#FCF0DD; border-radius:8px; overflow:hidden; box-shadow:0 10px 30px -16px rgba(72,62,94,.32), 0 2px 6px rgba(72,62,94,.08);" style-hover="transform:translateY(-4px); box-shadow:0 24px 44px -22px rgba(72,62,94,.5);">
+        <div style="aspect-ratio:16/9; background:linear-gradient(140deg,#f5e8d1,#e6dde2); position:relative;">
+          <img src="assets/card-pregnancy.jpg" alt="Prenatal chiropractic visit" style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; border-radius:3px; display:block;">
+        </div>
+        <div style="padding:26px 28px 30px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#B7863E; margin-bottom:10px;">Expecting</div>
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:24px; line-height:1.2; color:#483E5E; margin:0 0 8px;">The Flourishing Pregnancy Journey</h3>
+          <p style="font-size:15.5px; line-height:1.55; color:#194247; opacity:.85; margin:0 0 16px;">A pregnancy that feels like yours. Webster-certified, built around your trimester.</p>
+          <span style="font-size:15px; font-weight:600; color:#608F84;">Explore&nbsp;→</span>
+        </div>
+      </a>
+      <a href="Family Membership.dc.html" style="text-decoration:none; display:flex; flex-direction:column; background:#FCF0DD; border-radius:8px; overflow:hidden; box-shadow:0 10px 30px -16px rgba(72,62,94,.32), 0 2px 6px rgba(72,62,94,.08);" style-hover="transform:translateY(-4px); box-shadow:0 24px 44px -22px rgba(72,62,94,.5);">
+        <div style="aspect-ratio:16/9; background:linear-gradient(140deg,#e6dde2,#dde8e2); position:relative;">
+          <img src="assets/card-family.jpg" alt="Whole-family wellness visit" style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; border-radius:3px; display:block;">
+        </div>
+        <div style="padding:26px 28px 30px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#B7863E; margin-bottom:10px;">Raising a family</div>
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:24px; line-height:1.2; color:#483E5E; margin:0 0 8px;">The Family Wellness Membership</h3>
+          <p style="font-size:15.5px; line-height:1.55; color:#194247; opacity:.85; margin:0 0 16px;">One home base for everyone. Proactive whole-family care under one roof.</p>
+          <span style="font-size:15px; font-weight:600; color:#608F84;">Explore&nbsp;→</span>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center; padding:36px; background:#E2DCE2; border-radius:12px;">
+      <p style="font-size:17px; line-height:1.55; color:#194247; max-width:34em; margin:0 auto 22px;">Not sure which stage you’re in? Come tell us what’s going on. We’ll be straight with you about whether we can help and what it would take. No hard sell.</p>
+      <a href="#book" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:16px; padding:15px 32px; border-radius:999px; display:inline-block; box-shadow:0 6px 20px rgba(235,160,64,.3);" style-hover="transform:translateY(-2px);">Start with a conversation</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <dc-import name="SiteFooter" hint-size="100%,340px"></dc-import>
+
+  <sc-if value="{{ stickyBookButton }}" hint-placeholder-val="{{ true }}">
+    <a href="#book" style="position:fixed; bottom:24px; right:24px; z-index:60; background:#EBA040; color:#483E5E; font-weight:700; font-size:15px; padding:15px 26px; border-radius:999px; text-decoration:none; box-shadow:0 10px 30px -6px rgba(72,62,94,.5);" style-hover="transform:translateY(-2px);">Book a Roadmap Call</a>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1220, &quot;height&quot;: 900 },
+  &quot;announcementBar&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot; },
+  &quot;stickyBookButton&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot; },
+  &quot;promiseTreatment&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;Deep Plum&quot;, &quot;options&quot;: [&quot;Deep Plum&quot;, &quot;Sage Teal&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const treatment = this.props.promiseTreatment ?? 'Deep Plum';
+    const p = treatment === 'Sage Teal'
+      ? { bg: '#608F84', accent: '#FCF0DD', text: '#FCF0DD', sub: '#eef4f1' }
+      : { bg: '#483E5E', accent: '#EBA040', text: '#FCF0DD', sub: '#d6cfe0' };
+    return {
+      announcementBar: this.props.announcementBar ?? true,
+      stickyBookButton: this.props.stickyBookButton ?? true,
+      promiseBg: p.bg,
+      promiseAccent: p.accent,
+      promiseText: p.text,
+      promiseSub: p.sub,
+    };
+  }
+}
+</script>
+</body>
+</html>

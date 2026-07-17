@@ -1,0 +1,34 @@
+---
+interface Card {
+  href: string;
+  eyebrow: string;
+  title: string;
+  text: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+interface Props {
+  cards: Card[];
+}
+
+const { cards } = Astro.props;
+---
+
+<div class="i-card-grid">
+  {cards.map((card) => (
+    <a class="i-card h-card" href={card.href}>
+      {card.image && (
+        <div class="i-card-image">
+          <img src={card.image} alt={card.imageAlt || ''} />
+        </div>
+      )}
+      <div class="i-card-body">
+        <p class="i-card-eyebrow">{card.eyebrow}</p>
+        <h3>{card.title}</h3>
+        <p>{card.text}</p>
+        <span>Explore&nbsp;→</span>
+      </div>
+    </a>
+  ))}
+</div>

@@ -1,0 +1,23 @@
+---
+import ReferenceProgramPage from '../../components/ReferenceProgramPage.astro';
+import { programs, type Program } from '../../data/programs';
+
+export function getStaticPaths() {
+  return programs.map((program) => ({
+    params: { slug: program.slug },
+    props: {
+      program,
+      relatedPrograms: programs.filter((item) => item.slug !== program.slug),
+    },
+  }));
+}
+
+interface Props {
+  program: Program;
+  relatedPrograms: Program[];
+}
+
+const { program, relatedPrograms } = Astro.props;
+---
+
+<ReferenceProgramPage program={program} relatedPrograms={relatedPrograms} />

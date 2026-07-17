@@ -1,0 +1,36 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  stats?: Stat[];
+  accent?: string;
+  subColor?: string;
+  withTopBorder?: boolean;
+}
+
+const {
+  stats = [
+    { value: '110K+', label: 'Adjustments given' },
+    { value: '2011', label: 'Caring for families since' },
+    { value: '1-on-1', label: 'Doctor-only, always' },
+  ],
+  accent = '#EBA040',
+  subColor = '#c9c2d4',
+  withTopBorder = true,
+} = Astro.props;
+---
+
+<div
+  class={`stats-strip ${withTopBorder ? 'stats-strip-bordered' : ''}`}
+  style={`--stats-accent:${accent}; --stats-sub:${subColor};`}
+>
+  {stats.map((stat) => (
+    <div>
+      <div class="stats-strip-value">{stat.value}</div>
+      <div class="stats-strip-label">{stat.label}</div>
+    </div>
+  ))}
+</div>

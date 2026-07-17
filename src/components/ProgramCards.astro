@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { programs as defaultPrograms } from '../data/programs';
+
+interface ProgramCard {
+  slug: string;
+  routeSlug?: string;
+  eyebrow: string;
+  title: string;
+  summary: string;
+  image?: string;
+  imageAlt?: string;
+  cardEyebrow?: string;
+  cardTitle?: string;
+  cardText?: string;
+}
+
+interface Props {
+  items?: ProgramCard[];
+  columns?: 2 | 3 | 4;
+  linkMode?: 'public' | 'draft';
+  className?: string;
+}
+
+const {
+  items = defaultPrograms,
+  columns,
+  linkMode = 'public',
+  className = '',
+} = Astro.props;
+
+const resolvedColumns = columns ?? (items.length === 4 ? 4 : 3);
+
+const optimizedImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/**/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true },
+);
+const resolveImage = (path?: string) => (path ? optimizedImages[`/src${path}`]?.default : undefined);
+
+const hrefFor = (program: ProgramCard) =>
+  linkMode === 'draft' && program.routeSlug ? `/${program.routeSlug}/` : `/programs/${program.slug}/`;
+---
+
+<div class={`program-card-grid ${className}`} data-columns={resolvedColumns}>
+  {items.map((program) => {
+    const optimizedImage = resolveImage(program.image);
+    const title = program.cardTitle ?? program.title;
+    const text = program.cardText ?? program.summary;
+    const eyebrow = program.cardEyebrow ?? program.eyebrow;
+
+    return (
+      <a class="program-card h-card" href={hrefFor(program)}>
+        {program.image && (
+          <div class="program-card-image">
+            {optimizedImage ? (
+              <Image
+                src={optimizedImage}
+                alt={program.imageAlt || ''}
+                widths={[280, 420, 560, 720, 900]}
+                sizes={resolvedColumns === 2 ? '(max-width: 940px) calc(100vw - 84px), 45vw' : resolvedColumns === 4 ? '(max-width: 940px) calc(100vw - 84px), 23vw' : '(max-width: 940px) calc(100vw - 84px), 31vw'}
+                format="webp"
+                quality="high"
+                loading="eager"
+                decoding="async"
+              />
+            ) : (
+              <Image
+                src={program.image}
+                alt={program.imageAlt || ''}
+                inferSize
+                widths={[280, 420, 560, 720, 900]}
+                sizes={resolvedColumns === 2 ? '(max-width: 940px) calc(100vw - 84px), 45vw' : resolvedColumns === 4 ? '(max-width: 940px) calc(100vw - 84px), 23vw' : '(max-width: 940px) calc(100vw - 84px), 31vw'}
+                format="webp"
+                quality="high"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+          </div>
+        )}
+        <div class="program-card-body">
+          <p class="program-card-eyebrow">{eyebrow}</p>
+          <h3 set:html={title}></h3>
+          <p set:html={text}></p>
+          <span>Explore&nbsp;→</span>
+        </div>
+      </a>
+    );
+  })}
+</div>

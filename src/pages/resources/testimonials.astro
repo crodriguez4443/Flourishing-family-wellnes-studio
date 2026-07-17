@@ -1,0 +1,44 @@
+---
+import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
+import reviews from '../../data/reviews.json';
+import { bookingUrl } from '../../data/site';
+---
+
+<DraftReferenceLayout
+  title="Success Stories"
+  description={`${reviews.length} reviews from real Flourishing Family patients: fertility, pregnancy, postpartum, pediatric, and whole-family care in Clark, NJ.`}
+  current="resources"
+>
+  <section class="draft-simple-hero draft-simple-hero-short">
+    <p class="i-eyebrow draft-centered-eyebrow">
+      <span></span>
+      Success stories
+    </p>
+    <h1 class="draft-page-title">In their words, not ours.</h1>
+    <p class="draft-page-text">
+      {reviews.length} patient stories from first adjustments, whole-family care, and bodies that finally felt understood.
+    </p>
+  </section>
+
+  <section class="draft-soft-band" aria-label="Patient reviews">
+    <div class="draft-wide-section">
+      <div class="review-grid">
+        {reviews.map((review) => (
+          <article class="review-card">
+            <p>{review.rating}-star review</p>
+            <h3>“{review.review}”</h3>
+            <span>{review.name}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="draft-simple-cta">
+    <h2>Ready for your own story?</h2>
+    <div class="draft-actions draft-actions-centered">
+      <a class="draft-btn h-btn-primary" href={bookingUrl}>Book a Visit</a>
+      <a class="draft-text-link h-link-underline" href="/resources/start-here/">Read Start Here&nbsp;→</a>
+    </div>
+  </section>
+</DraftReferenceLayout>

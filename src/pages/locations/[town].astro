@@ -1,0 +1,68 @@
+---
+import PageHero from '../../components/PageHero.astro';
+import ProgramCards from '../../components/ProgramCards.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import InternalLayout from '../../layouts/InternalLayout.astro';
+import { locations, type Location } from '../../data/site';
+
+export function getStaticPaths() {
+  return locations.map((location) => ({
+    params: { town: location.slug },
+    props: { location },
+  }));
+}
+
+interface Props {
+  location: Location;
+}
+
+const { location } = Astro.props;
+
+const localCareSteps = [
+  {
+    title: 'Close enough to become familiar',
+    text: `Our Clark studio is an easy home base for ${location.town} families who want care that feels personal, not transactional.`,
+  },
+  {
+    title: 'One doctor, one clear plan',
+    text: 'You are not passed around. We listen, assess, explain what we see, and help you understand the next step before you commit.',
+  },
+  {
+    title: 'Care that fits your season',
+    text: 'Chiropractic, acupuncture, nutrition, pregnancy, pediatric, postpartum, and family wellness care can work together without feeling chaotic.',
+  },
+];
+---
+
+<InternalLayout title={location.title} description={location.summary}>
+  <PageHero
+    eyebrow={`Serving ${location.town}`}
+    title={location.title}
+    text={location.summary}
+    image="/assets/opt/hero.jpg"
+    imageAlt="Doctor talking with a patient"
+  />
+
+  <section class="i-section-band">
+    <div class="i-sect i-pad">
+      <SectionHeader
+        eyebrow="Close to home"
+        title={`Doctor-only care for ${location.town} families.`}
+        text="Whether you were sent by a friend, a doula, an OB, or your own search history, the first job is the same: help you feel understood quickly and give you a clear next step."
+        maxWidth="42em"
+      />
+      <StepGrid steps={localCareSteps} />
+    </div>
+  </section>
+
+  <section class="i-sect i-pad">
+    <SectionHeader
+      eyebrow="Care paths"
+      title="Choose the path that sounds like your season."
+      text="Fertility, pregnancy, postpartum, and family wellness are the front door because they match how real patients describe the help they need."
+      maxWidth="42em"
+    />
+    <ProgramCards />
+  </section>
+</InternalLayout>

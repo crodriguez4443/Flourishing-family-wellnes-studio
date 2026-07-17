@@ -1,0 +1,216 @@
+# Sveltia CMS configuration for Flourishing Family Wellness Studio
+#
+# HOW THIS SITE IS WIRED (read before editing this file):
+#   - Program/Service pages are NOT Astro content collections. Each .md file's
+#     FRONTMATTER is imported directly in src/data/programs.ts / services.ts and
+#     rendered by page components. The markdown BODY is unused.
+#   - IMPORTANT: Sveltia (like Decap) DROPS any frontmatter field that is not
+#     declared below when an entry is saved. So EVERY field a file uses must be
+#     listed here, or a client save would silently delete it and break the page.
+#     That is why many fields are `widget: hidden` — they carry structural /
+#     styled-HTML / routing values through a save untouched, without showing the
+#     client something they could break.
+#   - Images are glob-mapped from src/assets (not public URLs), so all image
+#     paths are `hidden`. Swapping an image is a developer task, not a CMS one.
+#   - `create: false` / `delete: false`: clients edit existing entries only.
+#     Adding a new program/service requires a dev to add its import in
+#     src/data/*.ts, so creation via the CMS is intentionally disabled.
+
+backend:
+  name: github
+  # NOTE: verify this matches the real GitHub repo before go-live.
+  # From the URL you gave: https://github.com/crodriguez4443/Flourishing-family-wellnes-studio.git
+  repo: crodriguez4443/Flourishing-family-wellnes-studio
+  branch: main
+
+# Harmless defaults; image fields are hidden so uploads aren't part of the flow yet.
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  # ---------------------------------------------------------------------------
+  # PROGRAMS — the 4 flagship landing pages (fertility, pregnancy, postpartum,
+  # family membership). Clients edit copy; layout/pricing HTML is preserved.
+  # ---------------------------------------------------------------------------
+  - name: "programs"
+    label: "Programs"
+    label_singular: "Program"
+    folder: "src/content/programs"
+    extension: "md"
+    format: "yaml-frontmatter"
+    identifier_field: "programName"
+    create: false      # adding a program needs a dev (import in src/data/programs.ts)
+    delete: false      # deleting would break that import
+    fields:
+      # --- Editable copy -----------------------------------------------------
+      - { name: "eyebrow", label: "Eyebrow (small label above title)", widget: "string" }
+      - { name: "programName", label: "Program name", widget: "string" }
+      - { name: "title", label: "Headline", widget: "text" }
+      - { name: "summary", label: "Summary", widget: "text" }
+      - { name: "metaLine", label: "Meta line (the short · separated tagline)", widget: "string", required: false }
+      - { name: "imageAlt", label: "Main image alt text", widget: "string", required: false }
+      - { name: "ctaLabel", label: "Primary button label", widget: "string", required: false }
+      - { name: "secondaryCtaLabel", label: "Secondary button label", widget: "string", required: false }
+      - { name: "isThisTitle", label: "‘Is this you?’ heading", widget: "text", required: false }
+      - { name: "isThisText", label: "‘Is this you?’ intro line", widget: "string", required: false }
+      - { name: "before", label: "Intro paragraph (before the approach)", widget: "text", required: false }
+      - { name: "approachEyebrow", label: "Approach — eyebrow", widget: "string", required: false }
+      - { name: "approachImageAlt", label: "Approach image alt text", widget: "string", required: false }
+      - { name: "includedTitle", label: "‘What’s included’ heading", widget: "string", required: false }
+      - { name: "totalLabel", label: "Total value — label", widget: "string", required: false }
+      - { name: "totalValue", label: "Total value — amount", widget: "string", required: false }
+      - { name: "howEyebrow", label: "How it works — eyebrow", widget: "string", required: false }
+      - { name: "howTitle", label: "How it works — heading", widget: "string", required: false }
+      - { name: "howText", label: "How it works — intro", widget: "text", required: false }
+      - { name: "roadmapNote", label: "Roadmap note", widget: "text", required: false }
+      - { name: "trustTitle", label: "Trust section — heading", widget: "string", required: false }
+      - { name: "investmentTitle", label: "Investment — heading", widget: "string", required: false }
+      - { name: "investmentSub", label: "Investment — subtitle", widget: "string", required: false }
+      - { name: "investmentFootnote", label: "Investment — footnote", widget: "text", required: false }
+      - { name: "perspectiveEyebrow", label: "‘For perspective’ eyebrow", widget: "string", required: false }
+      - { name: "promiseTitle", label: "Guarantee — heading", widget: "text", required: false }
+      - { name: "promiseText", label: "Guarantee — body", widget: "text", required: false }
+      - { name: "bookTitle", label: "Final booking heading", widget: "string", required: false }
+      - { name: "finalNote", label: "Final note (scarcity line)", widget: "text", required: false }
+      - { name: "stickyLabel", label: "Sticky button label", widget: "string", required: false }
+      - { name: "relatedStageLabel", label: "Related journey — stage label", widget: "string", required: false }
+      - { name: "relatedSummary", label: "Related journey — summary", widget: "text", required: false }
+      - { name: "proof", label: "Proof line", widget: "string", required: false }
+      # FAQs are plain Q&A — safe and valuable to edit.
+      - name: "faqs"
+        label: "FAQs"
+        widget: "list"
+        required: false
+        summary: "{{fields.question}}"
+        fields:
+          - { name: "question", label: "Question", widget: "string" }
+          - { name: "answer", label: "Answer", widget: "text" }
+
+      # --- Preserved, not shown (routing / styling / styled-HTML blocks) ------
+      # These MUST stay declared so a save doesn't drop them. Do not delete.
+      - { name: "slug", label: "slug", widget: "hidden" }
+      - { name: "routeSlug", label: "routeSlug", widget: "hidden" }
+      - { name: "order", label: "order", widget: "hidden" }
+      - { name: "heroSize", label: "heroSize", widget: "hidden", required: false }
+      - { name: "image", label: "image", widget: "hidden", required: false }
+      - { name: "approachImage", label: "approachImage", widget: "hidden", required: false }
+      - { name: "approachBg", label: "approachBg", widget: "hidden", required: false }
+      - { name: "secondaryCtaHref", label: "secondaryCtaHref", widget: "hidden", required: false }
+      - { name: "approachTitle", label: "approachTitle", widget: "hidden", required: false }
+      - { name: "approachNote", label: "approachNote", widget: "hidden", required: false }
+      - { name: "investmentVariant", label: "investmentVariant", widget: "hidden", required: false }
+      - { name: "investmentPrice", label: "investmentPrice", widget: "hidden", required: false }
+      - { name: "investmentLine", label: "investmentLine", widget: "hidden", required: false }
+      - { name: "investmentText", label: "investmentText", widget: "hidden", required: false }
+      - { name: "investmentPills", label: "investmentPills", widget: "hidden", required: false }
+      - { name: "perspective", label: "perspective", widget: "hidden", required: false }
+      - { name: "roadmapVariant", label: "roadmapVariant", widget: "hidden", required: false }
+      - { name: "isThisYou", label: "isThisYou", widget: "hidden", required: false }
+      - { name: "approachParagraphs", label: "approachParagraphs", widget: "hidden", required: false }
+      - { name: "includes", label: "includes", widget: "hidden", required: false }
+      - { name: "roadmap", label: "roadmap", widget: "hidden", required: false }
+      - { name: "trust", label: "trust", widget: "hidden", required: false }
+      - { name: "relatedStages", label: "relatedStages", widget: "hidden", required: false }
+
+  # ---------------------------------------------------------------------------
+  # SERVICES — the 5 supporting pages (chiropractic, acupuncture, nutrition,
+  # pediatric & postpartum, sports & extremity).
+  # ---------------------------------------------------------------------------
+  - name: "services"
+    label: "Services"
+    label_singular: "Service"
+    folder: "src/content/services"
+    extension: "md"
+    format: "yaml-frontmatter"
+    identifier_field: "title"
+    create: false
+    delete: false
+    fields:
+      # --- Editable copy -----------------------------------------------------
+      - { name: "eyebrow", label: "Eyebrow", widget: "string" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "summary", label: "Summary", widget: "text" }
+      - { name: "cardTag", label: "Card tag", widget: "string", required: false }
+      - { name: "cardBlurb", label: "Card blurb", widget: "text", required: false }
+      - { name: "imageAlt", label: "Image alt text", widget: "string", required: false }
+      - { name: "leftEyebrow", label: "Left column — eyebrow", widget: "string", required: false }
+      - { name: "leftTitle", label: "Left column — heading", widget: "string", required: false }
+      - { name: "leftText", label: "Left column — text", widget: "text", required: false }
+      - { name: "rightEyebrow", label: "Right column — eyebrow", widget: "string", required: false }
+      - { name: "rightTitle", label: "Right column — heading", widget: "string", required: false }
+      - { name: "rightText", label: "Right column — text", widget: "text", required: false }
+      - { name: "highlightsEyebrow", label: "Highlights — eyebrow", widget: "string", required: false }
+      - { name: "highlightsTitle", label: "Highlights — heading", widget: "string", required: false }
+      - { name: "planTitle", label: "Plan title", widget: "string", required: false }
+      - name: "details"
+        label: "Details (bullet list)"
+        widget: "list"
+        required: false
+        field: { name: "item", label: "Detail", widget: "string" }
+      - name: "highlights"
+        label: "Highlights"
+        widget: "list"
+        required: false
+        summary: "{{fields.title}}"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "text", label: "Text", widget: "text" }
+
+      # --- Preserved, not shown ---------------------------------------------
+      - { name: "slug", label: "slug", widget: "hidden" }
+      - { name: "routeSlug", label: "routeSlug", widget: "hidden" }
+      - { name: "order", label: "order", widget: "hidden" }
+      - { name: "number", label: "number", widget: "hidden", required: false }
+      - { name: "highlightTitleSize", label: "highlightTitleSize", widget: "hidden", required: false }
+      - { name: "heroSize", label: "heroSize", widget: "hidden", required: false }
+      - { name: "heroLineHeight", label: "heroLineHeight", widget: "hidden", required: false }
+      - { name: "image", label: "image", widget: "hidden", required: false }
+      - { name: "cardImage", label: "cardImage", widget: "hidden", required: false }
+      - { name: "note", label: "note", widget: "hidden", required: false }
+      - { name: "programLinks", label: "programLinks", widget: "hidden", required: false }
+
+  # ---------------------------------------------------------------------------
+  # SITE INFO — global contact details, booking link, social links, doctors.
+  # Backed by src/data/site.json (imported by src/data/site.ts). Single file.
+  # Every key in that JSON is declared here so a save preserves the whole file.
+  # ---------------------------------------------------------------------------
+  - name: "site"
+    label: "Site Info"
+    files:
+      - name: "global"
+        label: "Global Settings"
+        file: "src/data/site.json"
+        fields:
+          - { name: "bookingUrl", label: "Booking URL (Sked)", widget: "string" }
+          - name: "contactInfo"
+            label: "Contact Info"
+            widget: "object"
+            fields:
+              - { name: "phone", label: "Phone (display)", widget: "string" }
+              - { name: "phoneHref", label: "Phone link (tel: — keep in sync with phone)", widget: "string", hint: "Format: tel:+19086530000" }
+              - { name: "address", label: "Address", widget: "string" }
+              - { name: "mapsUrl", label: "Google Maps URL", widget: "string" }
+              - { name: "hours", label: "Hours", widget: "text" }
+              - { name: "serviceArea", label: "Service area line", widget: "string" }
+          - name: "socialLinks"
+            label: "Social Links"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { name: "label", label: "Label", widget: "string" }
+              - { name: "href", label: "URL", widget: "string" }
+              - name: "icon"
+                label: "Icon"
+                widget: "select"
+                hint: "Pick a known icon — typing a new value would render blank."
+                options: ["facebook", "instagram", "yelp", "nextdoor", "youtube", "tiktok", "linkedin", "google"]
+          - name: "doctors"
+            label: "Doctors"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "role", label: "Role", widget: "string" }
+              - { name: "bio", label: "Bio", widget: "text" }
+              # Photo path is glob-mapped from src/assets — changing it is a dev task.
+              - { name: "image", label: "image", widget: "hidden" }

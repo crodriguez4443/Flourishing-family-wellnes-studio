@@ -1,0 +1,57 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { doctors as defaultDoctors } from '../data/site';
+
+interface Doctor {
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+}
+
+interface Props {
+  doctors?: Doctor[];
+  id?: string;
+  band?: boolean;
+  eyebrow?: string;
+  title?: string;
+  titleHtml?: string;
+  text?: string;
+  linkHref?: string;
+  linkLabel?: string;
+}
+
+const {
+  doctors = defaultDoctors,
+  id,
+  band = false,
+  eyebrow = 'Meet your doctors',
+  title = "The people you'll actually see.",
+  titleHtml,
+  text = "Same faces every time. The doctor you meet on day one is the one who's still with you a year later.",
+  linkHref,
+  linkLabel = 'Read our story',
+} = Astro.props;
+---
+
+<section id={id} class={`meet-doctors ${band ? 'meet-doctors-band' : ''} r-sect r-pad-lg`}>
+  <div class="meet-doctors-inner">
+    <div class="meet-doctors-head">
+      <SectionHeader eyebrow={eyebrow} title={title} titleHtml={titleHtml} text={text} maxWidth="30em" />
+      {linkHref && <a href={linkHref} class="h-link-underline">{linkLabel}&nbsp;→</a>}
+    </div>
+
+    <div class="meet-doctors-grid">
+      {doctors.map((doctor, index) => (
+        <article class="meet-doctor">
+          <div class={`meet-doctor-image meet-doctor-image-${index % 3}`}>
+            <img src={doctor.image} alt={doctor.name} />
+          </div>
+          <h3>{doctor.name}</h3>
+          <div class="meet-doctor-role">{doctor.role}</div>
+          <p>{doctor.bio}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

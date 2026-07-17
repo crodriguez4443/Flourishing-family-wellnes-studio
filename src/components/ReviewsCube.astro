@@ -1,0 +1,189 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import reviewsData from '../data/reviews.json';
+
+interface Review {
+  name: string;
+  rating: number;
+  review: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  slotSeconds?: number;
+  band?: boolean;
+  variant?: 'card' | 'quote';
+}
+
+const {
+  eyebrow = 'What patients say',
+  title = 'Real reviews, real families.',
+  slotSeconds = 6.5,
+  band = true,
+  variant = 'card',
+} = Astro.props;
+
+const MAX_LENGTH = 130;
+const reviews = (reviewsData as Review[]).filter((r) => r.review.length <= MAX_LENGTH);
+const count = reviews.length;
+const namePrefix = variant === 'quote' ? '— ' : '';
+// ponytail: fixed 0.85s turn, tuned for a 6.5s slot — retune both together if slotSeconds changes a lot
+const TRANSITION = 0.85;
+const total = count * slotSeconds;
+const p1 = +((TRANSITION / total) * 100).toFixed(4);
+const p2 = +(((slotSeconds - TRANSITION) / total) * 100).toFixed(4);
+const p3 = +((slotSeconds / total) * 100).toFixed(4);
+
+// shared by the quote stack and the name stack — each resolves --h and --peak-opacity locally
+const keyframesCss = `
+@keyframes reviews-cube-turn {
+  0% { opacity: 0; transform: rotateX(78deg) translateZ(calc(var(--h) / 2)); }
+  ${p1}% { opacity: var(--peak-opacity, 1); transform: rotateX(0deg) translateZ(calc(var(--h) / 2)); }
+  ${p2}% { opacity: var(--peak-opacity, 1); transform: rotateX(0deg) translateZ(calc(var(--h) / 2)); }
+  ${p3}%, 100% { opacity: 0; transform: rotateX(-78deg) translateZ(calc(var(--h) / 2)); }
+}`;
+
+const cubeStyle = `--slot:${slotSeconds}s; --total:${total}s;`;
+---
+
+{variant === 'quote' ? (
+  <div class="reviews-cube reviews-cube--quote" role="region" aria-label="Patient reviews" style={cubeStyle}>
+    <div class="reviews-cube__stars" aria-hidden="true">★★★★★</div>
+    <div class="reviews-cube__quote-stack">
+      {reviews.map((r, i) => <p class="reviews-cube__quote" style={`--i:${i};`}>“{r.review}”</p>)}
+    </div>
+    <div class="reviews-cube__name-stack">
+      {reviews.map((r, i) => <p class="reviews-cube__name" style={`--i:${i};`}>{namePrefix}{r.name}</p>)}
+    </div>
+  </div>
+) : (
+  <section class={band ? 'i-section-band' : ''}>
+    <div class="r-sect r-pad-lg reviews-cube-section" style="padding-top:96px; padding-bottom:96px;">
+      <SectionHeader eyebrow={eyebrow} title={title} maxWidth="34em" centered />
+      <div class="reviews-cube reviews-cube--card" role="region" aria-label="Patient reviews" style={cubeStyle}>
+        <div class="reviews-cube__stars" aria-hidden="true">★★★★★</div>
+        <div class="reviews-cube__quote-stack">
+          {reviews.map((r, i) => <p class="reviews-cube__quote" style={`--i:${i};`}>“{r.review}”</p>)}
+        </div>
+        <div class="reviews-cube__name-stack">
+          {reviews.map((r, i) => <p class="reviews-cube__name" style={`--i:${i};`}>{namePrefix}{r.name}</p>)}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<style set:html={keyframesCss} />
+
+<style>
+  .reviews-cube-section :global(.section-header) {
+    margin: 0 auto 52px;
+  }
+
+  .reviews-cube {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1400px;
+  }
+
+  .reviews-cube__stars {
+    color: #EBA040;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+  }
+
+  .reviews-cube__quote-stack,
+  .reviews-cube__name-stack {
+    position: relative;
+    width: 100%;
+  }
+
+  .reviews-cube__quote-stack { --h: 100px; height: var(--h); margin-bottom: 16px; }
+  .reviews-cube__name-stack { --h: 26px; height: var(--h); }
+
+  .reviews-cube__quote,
+  .reviews-cube__name {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    text-align: center;
+    opacity: 0;
+    backface-visibility: hidden;
+    animation: reviews-cube-turn var(--total) infinite;
+    animation-delay: calc(var(--i) * var(--slot));
+  }
+
+  .reviews-cube__quote {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.5;
+    color: #483E5E;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .reviews-cube__name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #194247;
+    --peak-opacity: .75;
+  }
+
+  .reviews-cube--quote .reviews-cube__stars {
+    font-size: 19px;
+    margin-bottom: 24px;
+  }
+
+  .reviews-cube--quote .reviews-cube__quote-stack { --h: 62px; }
+  .reviews-cube--quote .reviews-cube__name-stack { --h: 28px; }
+
+  .reviews-cube--quote .reviews-cube__quote {
+    font-style: normal;
+    font-size: clamp(24px, 3.2vw, 40px);
+    line-height: 1.24;
+    letter-spacing: -.01em;
+    color: #FCF0DD;
+    -webkit-line-clamp: 3;
+  }
+
+  .reviews-cube--quote .reviews-cube__name {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: none;
+    color: #c9c2d4;
+    --peak-opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    .reviews-cube--card .reviews-cube__quote-stack { --h: 230px; }
+    .reviews-cube--quote .reviews-cube__quote-stack { --h: 260px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reviews-cube__quote,
+    .reviews-cube__name {
+      animation: none;
+      opacity: 0;
+    }
+    .reviews-cube__quote:first-of-type,
+    .reviews-cube__name:first-of-type {
+      opacity: var(--peak-opacity, 1);
+    }
+  }
+</style>

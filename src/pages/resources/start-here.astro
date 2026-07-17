@@ -1,0 +1,78 @@
+---
+import PageHero from '../../components/PageHero.astro';
+import ProofBand from '../../components/ProofBand.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import InternalLayout from '../../layouts/InternalLayout.astro';
+
+const firstVisitSteps = [
+  {
+    title: '1. Tell the story',
+    text: 'We ask about symptoms, history, goals, prior care, pregnancy or fertility context, and what has been missed.',
+  },
+  {
+    title: '2. Get specific',
+    text: 'Your doctor examines what is relevant and explains what they are looking for in plain English.',
+  },
+  {
+    title: '3. Leave with a plan',
+    text: 'If we can help, you will understand the recommended rhythm, timeline, and next step.',
+  },
+];
+---
+
+<InternalLayout title="Book Your First Visit" description="New patient expectations, first visit, pricing, insurance, and next steps." current="resources">
+  <PageHero
+    eyebrow="New patients"
+    title="What do I actually do first?"
+    text="Start with a visit where we listen, assess, explain what we see, and tell you honestly whether we think care here makes sense."
+    image="/assets/opt/hero.jpg"
+    imageAlt="Doctor talking with a patient"
+    primaryHref="https://portal.sked.life"
+    primaryLabel="Book Your First Visit"
+    secondaryHref="/programs/"
+    secondaryLabel="Explore programs"
+  />
+
+  <section class="i-section-band">
+    <div class="i-sect i-pad">
+      <SectionHeader
+        eyebrow="The first visit"
+        title="A conversation before a commitment."
+        text="We want you to know what is happening, why it matters, and what the next step would be before you are asked to make a bigger decision."
+        maxWidth="42em"
+      />
+      <StepGrid steps={firstVisitSteps} />
+    </div>
+  </section>
+
+  <section class="i-sect i-pad i-split">
+    <div class="i-text-block">
+      <p class="i-eyebrow">Timeline</p>
+      <h2>Real care usually has a rhythm.</h2>
+      <p>
+        Some people come in with one acute issue. Many come in with a body that has been compensating
+        for months or years. We will be honest about that. A meaningful plan may be a focused season,
+        a pregnancy timeline, or a longer 6-12 month relationship.
+      </p>
+      <p>
+        The point is not to keep you forever. The point is to stop pretending that one visit can undo
+        everything your body has been carrying.
+      </p>
+    </div>
+    <div>
+      <p class="i-eyebrow">Common questions</p>
+      <ul class="i-list">
+        <li><strong>Do you take insurance?</strong> We will explain payment and insurance expectations before you commit to a care plan.</li>
+        <li><strong>Can I just book?</strong> Yes. Sked handles booking for chiropractic and acupuncture visits.</li>
+        <li><strong>What if I am not sure where I fit?</strong> Book your first visit. We will help route you.</li>
+      </ul>
+    </div>
+  </section>
+
+  <ProofBand
+    quote="“If you get your tires rotated more often than your nervous system gets regulated, we should talk.”"
+    source="Flourishing Family Wellness Studio"
+    showStats={false}
+  />
+</InternalLayout>

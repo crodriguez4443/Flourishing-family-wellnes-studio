@@ -1,0 +1,79 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import Layout from './Layout.astro';
+import { programs } from '../data/programs';
+import { services } from '../data/services';
+import { locations } from '../data/site';
+import { bookingUrl } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  current?: string;
+}
+
+const { title, current = '' } = Astro.props;
+---
+
+<Layout title={`${title} | Flourishing Family Wellness Studio`}>
+  <div class="draft-site">
+    <div class="i-announcement">
+      <span>Now welcoming new fertility, pregnancy & family patients in Clark, NJ</span>
+      <a href={bookingUrl}>Book a visit&nbsp;→</a>
+    </div>
+    <SiteHeader current={current} />
+    <main>
+      <slot />
+    </main>
+    <footer class="i-footer">
+      <div class="i-footer-inner">
+        <div class="i-footer-brand-block">
+          <a class="i-footer-brand" href="/" aria-label="Flourishing Family Wellness Studio home">
+            <span class="i-footer-icon"><img src="/assets/logo-icon.jpg" alt="" /></span>
+            <span>
+              <strong>Flourishing&nbsp;Family</strong>
+              <small>Wellness Studio · Clark, NJ</small>
+            </span>
+          </a>
+          <SocialLinks />
+        </div>
+        <div class="i-footer-grid">
+          <div>
+            <h3>Programs</h3>
+            {programs.map((program) => (
+              <a class="h-footer-link" href={`/programs/${program.slug}/`}>{program.eyebrow}</a>
+            ))}
+          </div>
+          <div>
+            <h3>Services</h3>
+            {services.slice(0, 4).map((service) => (
+              <a class="h-footer-link" href={`/services/${service.slug}/`}>{service.eyebrow}</a>
+            ))}
+          </div>
+          <div>
+            <h3>Start Here</h3>
+            <a class="h-footer-link" href="/resources/start-here/">Book your first visit</a>
+            <a class="h-footer-link" href="/about/">About the doctors</a>
+            <a class="h-footer-link" href="/resources/testimonials/">Testimonials</a>
+            <a class="h-footer-link" href="/contact/">Contact</a>
+          </div>
+          <div>
+            <h3>Location</h3>
+            {locations.map((location) => (
+              <a class="h-footer-link" href={`/locations/${location.slug}/`}>{location.town}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="i-footer-bottom">
+        <span>
+          © 2026 Flourishing Family Wellness Studio ·
+          <a href="/privacy-policy/">Privacy Policy</a>
+          · Site by
+          <a href="https://solsticewebstudio.com/" target="_blank" rel="noopener noreferrer">Solstice Web Studio</a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</Layout>

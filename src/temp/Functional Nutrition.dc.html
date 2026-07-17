@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #EBA040; color: #483E5E; }
+  a { color: #608F84; }
+  a:hover { color: #B7863E; }
+  .r-dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .16s ease, transform .16s ease, visibility .16s; }
+  .r-dropdown:hover .r-dropdown-menu, .r-dropdown:focus-within .r-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  @media (max-width: 940px) {
+    .r-hero { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .r-grid2 { grid-template-columns: 1fr !important; }
+    .r-tech { grid-template-columns: 1fr 1fr !important; }
+    .r-footer { grid-template-columns: 1fr 1fr !important; }
+    .r-sect { padding-left: 28px !important; padding-right: 28px !important; }
+    .r-pad-lg { padding-top: 72px !important; padding-bottom: 72px !important; }
+  }
+  @media (max-width: 620px) {
+    .r-navlink { display: none !important; }
+    .r-tech { grid-template-columns: 1fr !important; }
+    .r-footer { grid-template-columns: 1fr !important; gap: 36px !important; }
+    .r-sect { padding-left: 22px !important; padding-right: 22px !important; }
+    .r-navbar { padding-left: 20px !important; padding-right: 20px !important; }
+    .r-logo { height: 46px !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#FCF0DD; color:#194247; font-family:'Hanken Grotesk',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip;">
+
+  <!-- ===== NAV ===== -->
+  <dc-import name="SiteNav" active="nutrition" style="position:sticky; top:0; z-index:50;" hint-size="100%,94px"></dc-import>
+
+  <!-- ===== HERO ===== -->
+  <section class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:64px 32px 72px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
+    <div>
+      <div style="font-size:13px; margin-bottom:26px; color:#194247; opacity:.7;"><a href="Services.dc.html" style="color:#608F84; text-decoration:none; font-weight:600;">Services</a> <span style="opacity:.5;">/</span> Functional Nutrition</div>
+      <div style="display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:22px;">
+        <span style="width:22px; height:1.5px; background:#608F84; display:inline-block;"></span>
+        Service 03
+      </div>
+      <h1 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(38px,4.8vw,68px); line-height:1.05; letter-spacing:-.02em; color:#483E5E; margin:0 0 24px;">Functional Nutrition</h1>
+      <p style="font-size:20px; line-height:1.62; color:#194247; max-width:31em; margin:0 0 34px; opacity:.92;">Not a diet — a plan. Root-cause nutrition and supplement guidance that supports fertility prep, a healthier pregnancy, and steady family energy. Measurable, and adjusted as your body changes.</p>
+      <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+        <a href="https://portal.sked.life" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 36px; border-radius:999px; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.4);">Book a visit</a>
+        <a href="Patient Resources.dc.html#pricing" style="text-decoration:none; color:#483E5E; font-weight:600; font-size:16px; border-bottom:2px solid rgba(72,62,94,.25); padding-bottom:3px;" style-hover="border-color:#EBA040;">See pricing&nbsp;→</a>
+      </div>
+    </div>
+    <div style="position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#ece0d6; box-shadow:0 30px 60px -28px rgba(72,62,94,.4);">
+      <img src="assets/card-pregnancy.jpg" alt="A nutrition guidance conversation" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+  </section>
+
+  <!-- ===== WHAT IT IS ===== -->
+  <section class="r-sect r-pad-lg" style="background:#E2DCE2; padding:88px 32px;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div class="r-grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+        <div>
+          <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:16px;">What it is</div>
+          <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(28px,3.4vw,40px); line-height:1.12; color:#483E5E; margin:0 0 18px;">Food and support, with a reason.</h2>
+          <p style="font-size:17px; line-height:1.62; color:#194247; opacity:.9; margin:0;">We look at what your body actually needs — not a trend — and translate it into a plan you can keep. Nutrition and supplement guidance that fits your season and your goals.</p>
+        </div>
+        <div>
+          <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:16px;">Who it’s for</div>
+          <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(28px,3.4vw,40px); line-height:1.12; color:#483E5E; margin:0 0 18px;">Anyone building a foundation.</h2>
+          <p style="font-size:17px; line-height:1.62; color:#194247; opacity:.9; margin:0;">Preparing to conceive, nourishing a pregnancy, or just wanting steadier energy for a full family life. Woven into every program, or offered on its own as a nutrition-first start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT'S INSIDE ===== -->
+  <section class="r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:96px 32px;">
+    <div style="max-width:34em; margin-bottom:44px;">
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">What guidance looks like</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0;">Practical, personal, trackable.</h2>
+    </div>
+    <div class="r-tech" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+      <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:10px; padding:30px 26px; box-shadow:0 8px 26px -20px rgba(72,62,94,.4);">
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:#483E5E; margin-bottom:10px;">Root-cause review</div>
+        <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0;">Understanding what’s driving the symptoms, not just naming them.</p>
+      </div>
+      <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:10px; padding:30px 26px; box-shadow:0 8px 26px -20px rgba(72,62,94,.4);">
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:#483E5E; margin-bottom:10px;">Supplement guidance</div>
+        <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0;">Clear, no-guesswork recommendations for your stage and goals.</p>
+      </div>
+      <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:10px; padding:30px 26px; box-shadow:0 8px 26px -20px rgba(72,62,94,.4);">
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:#483E5E; margin-bottom:10px;">A plan you can keep</div>
+        <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0;">Realistic changes that fit a busy life — not an all-or-nothing overhaul.</p>
+      </div>
+      <div style="background:#FCF0DD; border:1px solid rgba(72,62,94,.12); border-radius:10px; padding:30px 26px; box-shadow:0 8px 26px -20px rgba(72,62,94,.4);">
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:#483E5E; margin-bottom:10px;">Progress reviews</div>
+        <p style="font-size:15px; line-height:1.55; color:#194247; opacity:.85; margin:0;">We measure and adjust as your body and season change.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FITS INTO PROGRAMS ===== -->
+  <section class="r-sect r-pad-lg" style="background:#483E5E; color:#FCF0DD; padding:88px 32px;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div style="max-width:34em; margin-bottom:40px;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#EBA040; margin-bottom:16px;">Part of a bigger plan</div>
+        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(28px,3.6vw,44px); line-height:1.1; color:#FCF0DD; margin:0;">Nutrition supports every journey.</h2>
+      </div>
+      <div class="r-grid2" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <a href="Fertility Journey.dc.html" style="text-decoration:none; background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:24px 24px; display:block;" style-hover="background:rgba(252,240,221,.12);">
+          <div style="font-family:'Fraunces',serif; font-size:19px; color:#FCF0DD; margin-bottom:6px;">Fertility Journey</div>
+          <div style="font-size:14px; color:#EBA040; font-weight:600;">Preconception fuel&nbsp;→</div>
+        </a>
+        <a href="Pregnancy Journey.dc.html" style="text-decoration:none; background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:24px 24px; display:block;" style-hover="background:rgba(252,240,221,.12);">
+          <div style="font-family:'Fraunces',serif; font-size:19px; color:#FCF0DD; margin-bottom:6px;">Pregnancy Journey</div>
+          <div style="font-size:14px; color:#EBA040; font-weight:600;">Nourish the trimesters&nbsp;→</div>
+        </a>
+        <a href="Family Membership.dc.html" style="text-decoration:none; background:rgba(252,240,221,.06); border:1px solid rgba(252,240,221,.14); border-radius:10px; padding:24px 24px; display:block;" style-hover="background:rgba(252,240,221,.12);">
+          <div style="font-family:'Fraunces',serif; font-size:19px; color:#FCF0DD; margin-bottom:6px;">Family Membership</div>
+          <div style="font-size:14px; color:#EBA040; font-weight:600;">Member course&nbsp;→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:96px 32px; text-align:center;">
+    <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.4vw,54px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 24px; max-width:16em; margin-left:auto; margin-right:auto;">Ready for care that actually listens?</h2>
+    <p style="font-size:18px; line-height:1.62; color:#194247; opacity:.9; max-width:30em; margin:0 auto 34px;">Book a first visit one-on-one with a doctor, or start with a no-pressure conversation.</p>
+    <div style="display:flex; gap:18px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://portal.sked.life" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(235,160,64,.4);">Book a visit</a>
+      <a href="Contact.dc.html" style="text-decoration:none; background:transparent; color:#483E5E; font-weight:700; font-size:17px; padding:17px 36px; border-radius:999px; display:inline-block; border:1.5px solid rgba(72,62,94,.3);" style-hover="border-color:#EBA040;">Start with a conversation&nbsp;→</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <dc-import name="SiteFooter" hint-size="100%,340px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1220, &quot;height&quot;: 900 }
+}"></script>
+</body>
+</html>
