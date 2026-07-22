@@ -11,9 +11,29 @@ const cards = locations.map((location) => ({
   title: location.town,
   text: location.summary,
 }));
+
+const locationsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Locations',
+  url: new URL(Astro.url.pathname, Astro.site!).href,
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: locations.map((location, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: location.town,
+      url: new URL(`/locations/${location.slug}/`, Astro.site!).href,
+    })),
+  },
+};
 ---
 
-<InternalLayout title="Locations" description="Family wellness care serving Clark, Westfield, Cranford, and Scotch Plains.">
+<InternalLayout
+  title="Locations"
+  description="One-on-one chiropractic, acupuncture, and family wellness care for Clark, Westfield, Cranford, and Scotch Plains families — close to home, easy to reach."
+  schema={locationsSchema}
+>
   <PageHero
     eyebrow="Locations"
     title="A Clark studio for nearby families."

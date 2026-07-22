@@ -47,6 +47,9 @@ collections:
       - { name: "programName", label: "Program name", widget: "string" }
       - { name: "title", label: "Headline", widget: "text" }
       - { name: "summary", label: "Summary", widget: "text" }
+      # Search-result copy. Separate from Summary so the visible page text can
+      # stay long while the Google snippet stays under ~160 characters.
+      - { name: "metaDescription", label: "Google search description (aim for 140–160 characters)", widget: "string", required: false, hint: "What shows under the blue link in Google. If blank, the Summary is used." }
       - { name: "metaLine", label: "Meta line (the short · separated tagline)", widget: "string", required: false }
       - { name: "imageAlt", label: "Main image alt text", widget: "string", required: false }
       - { name: "ctaLabel", label: "Primary button label", widget: "string", required: false }
@@ -130,6 +133,9 @@ collections:
       - { name: "eyebrow", label: "Eyebrow", widget: "string" }
       - { name: "title", label: "Title", widget: "string" }
       - { name: "summary", label: "Summary", widget: "text" }
+      # Search-result copy. Separate from Summary so the visible page text can
+      # stay long while the Google snippet stays under ~160 characters.
+      - { name: "metaDescription", label: "Google search description (aim for 140–160 characters)", widget: "string", required: false, hint: "What shows under the blue link in Google. If blank, the Summary is used." }
       - { name: "cardTag", label: "Card tag", widget: "string", required: false }
       - { name: "cardBlurb", label: "Card blurb", widget: "text", required: false }
       - { name: "imageAlt", label: "Image alt text", widget: "string", required: false }

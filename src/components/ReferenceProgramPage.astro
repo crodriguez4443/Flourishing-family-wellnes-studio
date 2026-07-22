@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import DraftReferenceLayout from '../layouts/DraftReferenceLayout.astro';
 import ProgramCards from './ProgramCards.astro';
 import { bookingUrl } from '../data/site';
@@ -38,6 +40,9 @@ interface ProgramPageData {
   programName: string;
   title: string;
   summary: string;
+  // Search-result copy, kept separate from `summary` so the visible hero text
+  // can stay long. Falls back to `summary` when unset.
+  metaDescription?: string;
   image: string;
   imageAlt: string;
   heroSize?: string;
@@ -113,9 +118,49 @@ const perspectiveEyebrow = program.perspectiveEyebrow ?? 'For perspective';
 const approachSectionId = program.secondaryCtaHref?.startsWith('#') && program.secondaryCtaHref !== '#included'
   ? program.secondaryCtaHref.slice(1)
   : undefined;
+
+const optimizedImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/**/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true },
+);
+const resolveImage = (path?: string) => (path ? optimizedImages[`/src${path}`]?.default : undefined);
+const optimizedHeroImage = resolveImage(program.image);
+const optimizedApproachImage = resolveImage(approachImage);
+
+const stripHtml = (value: string) => value.replace(/<[^>]*>/g, '').trim();
+const programDescription = stripHtml(program.metaDescription ?? program.summary);
+const programUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: program.programName,
+  description: programDescription,
+  serviceType: program.eyebrow,
+  provider: { '@id': 'https://myflourishingfamily.com/#business' },
+  areaServed: ['Clark', 'Westfield', 'Cranford', 'Scotch Plains'].map((name) => ({
+    '@type': 'City',
+    name,
+  })),
+  url: programUrl,
+};
+
+const faqSchema = program.faqs?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: program.faqs.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    }
+  : null;
+
+const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
 ---
 
-<DraftReferenceLayout title={program.programName} description={program.summary} current={current}>
+<DraftReferenceLayout title={program.programName} description={programDescription} schema={programSchema} current={current}>
   <section id="top" class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:74px 32px 88px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
     <div>
       <div style="display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:34px;">
@@ -131,7 +176,11 @@ const approachSectionId = program.secondaryCtaHref?.startsWith('#') && program.s
       <div set:html={program.metaLine} style="margin-top:38px; font-size:14.5px; color:#194247; opacity:.78; letter-spacing:.01em;"></div>
     </div>
     <div style="position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#ece0d6; box-shadow:0 30px 60px -28px rgba(72,62,94,.4);">
-      <img src={program.image} alt={program.imageAlt} style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
+      {optimizedHeroImage ? (
+        <Image src={optimizedHeroImage} alt={program.imageAlt} widths={[420, 640, 820, 1040, 1280]} sizes="(max-width: 940px) calc(100vw - 56px), 46vw" format="webp" quality="high" priority loading="eager" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
+      ) : (
+        <Image src={program.image} alt={program.imageAlt} inferSize widths={[420, 640, 820, 1040, 1280]} sizes="(max-width: 940px) calc(100vw - 56px), 46vw" format="webp" quality="high" priority loading="eager" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
+      )}
     </div>
   </section>
 
@@ -156,7 +205,11 @@ const approachSectionId = program.secondaryCtaHref?.startsWith('#') && program.s
 
   <section id={approachSectionId} class="r-split r-sect r-pad-lg" style="max-width:1220px; margin:0 auto; padding:100px 32px; display:grid; grid-template-columns:.92fr 1.08fr; gap:72px; align-items:center;">
     <div style={`position:relative; aspect-ratio:5/6; border-radius:6px; overflow:hidden; background:${approachBg}; box-shadow:0 28px 56px -30px rgba(72,62,94,.42);`}>
-      <img src={approachImage} alt={approachImageAlt} style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; border-radius:3px; display:block;" />
+      {optimizedApproachImage ? (
+        <Image src={optimizedApproachImage} alt={approachImageAlt} widths={[360, 540, 720, 900]} sizes="(max-width: 940px) calc(100vw - 84px), 39vw" format="webp" quality="high" loading="lazy" decoding="async" style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; border-radius:3px; display:block;" />
+      ) : (
+        <Image src={approachImage} alt={approachImageAlt} inferSize widths={[360, 540, 720, 900]} sizes="(max-width: 940px) calc(100vw - 84px), 39vw" format="webp" quality="high" loading="lazy" decoding="async" style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; border-radius:3px; display:block;" />
+      )}
     </div>
     <div>
       <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">{program.approachEyebrow}</div>

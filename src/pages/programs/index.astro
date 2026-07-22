@@ -4,6 +4,23 @@ import ProgramCards from '../../components/ProgramCards.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import StepGrid from '../../components/StepGrid.astro';
 import InternalLayout from '../../layouts/InternalLayout.astro';
+import { programs } from '../../data/programs';
+
+const programsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Programs',
+  description: "Trying, expecting, recovering, or raising a family — there’s a program built for your season, with one doctor who knows you through all of it, in Clark, NJ.",
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: programs.map((program, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: program.programName,
+      url: new URL(`/programs/${program.slug}/`, Astro.site).toString(),
+    })),
+  },
+};
 
 const programSteps = [
   {
@@ -23,7 +40,8 @@ const programSteps = [
 
 <InternalLayout
   title="Programs"
-  description="Fertility, pregnancy, postpartum, and family wellness programs in Clark, NJ."
+  description="Trying, expecting, recovering, or raising a family — there’s a program built for your season, with one doctor who knows you through all of it, in Clark, NJ."
+  schema={programsSchema}
   current="programs"
 >
   <PageHero

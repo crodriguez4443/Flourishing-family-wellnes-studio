@@ -1,4 +1,5 @@
 ---
+metaDescription: "Baby-inclusive postpartum recovery care for mothers who want to feel like themselves again, without being left to figure it out alone."
 slug: postpartum-care
 routeSlug: 2postpartum-care
 order: 3

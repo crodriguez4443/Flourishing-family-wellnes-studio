@@ -33,9 +33,30 @@ const localCareSteps = [
     text: 'Chiropractic, acupuncture, nutrition, pregnancy, pediatric, postpartum, and family wellness care can work together without feeling chaotic.',
   },
 ];
+
+const businessId = new URL('/#business', Astro.site!).href;
+
+const locationSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: location.title,
+    description: location.summary,
+    url: new URL(Astro.url.pathname, Astro.site!).href,
+    about: { '@id': businessId },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: location.title,
+    description: location.summary,
+    areaServed: { '@type': 'City', name: location.town },
+    provider: { '@id': businessId },
+  },
+];
 ---
 
-<InternalLayout title={location.title} description={location.summary}>
+<InternalLayout title={location.title} description={location.summary} schema={locationSchema}>
   <PageHero
     eyebrow={`Serving ${location.town}`}
     title={location.title}

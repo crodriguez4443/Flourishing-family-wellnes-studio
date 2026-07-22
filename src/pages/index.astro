@@ -21,9 +21,20 @@ const {
   testimonialTreatment = 'Deep Plum',
 } = Astro.props;
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Flourishing Family Wellness Studio',
+  url: new URL('/', Astro.site!).href,
+  publisher: { '@id': new URL('/#business', Astro.site!).href },
+};
 ---
 
-<Layout>
+<Layout
+  title="Clark NJ Chiropractor"
+  description="One-on-one chiropractic, acupuncture, and family wellness care in Clark, NJ for fertility, pregnancy, postpartum, and family life. Since 2011."
+  schema={websiteSchema}
+>
 
     <!-- ===== HERO ===== -->
     <section id="top" class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:72px 32px 84px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">

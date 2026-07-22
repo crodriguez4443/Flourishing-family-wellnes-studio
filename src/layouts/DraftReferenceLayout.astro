@@ -10,13 +10,24 @@ import { bookingUrl } from '../data/site';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  schema?: object | object[];
   current?: string;
 }
 
-const { title, current = '' } = Astro.props;
+const { title, description, ogImage, ogType, noindex, schema, current = '' } = Astro.props;
 ---
 
-<Layout title={`${title} | Flourishing Family Wellness Studio`}>
+<Layout
+  title={`${title} | Flourishing Family Wellness Studio`}
+  description={description}
+  ogImage={ogImage}
+  ogType={ogType}
+  noindex={noindex}
+  schema={schema}
+>
   <div class="draft-site">
     <div class="i-announcement">
       <span>Now welcoming new fertility, pregnancy & family patients in Clark, NJ</span>

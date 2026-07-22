@@ -1,4 +1,5 @@
 ---
+metaDescription: "Extremity adjusting and performance care for student-athletes and active adults: shoulders, hips, knees, ankles, not just the spine. Clark, NJ."
 slug: sports-extremity-care
 routeSlug: 2sports-extremity-care
 order: 5

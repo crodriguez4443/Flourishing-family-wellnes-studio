@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Flourishing Family Wellness Studio">
+  <defs>
+    <radialGradient id="ffPetal" cx="256" cy="256" r="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fdf6e6"/>
+      <stop offset="0.32" stop-color="#f0cd86"/>
+      <stop offset="0.7" stop-color="#eba040"/>
+      <stop offset="1" stop-color="#b7863e"/>
+    </radialGradient>
+  </defs>
+
+  <!-- cream field + plum ring (echoes the logo's double ring) -->
+  <circle cx="256" cy="256" r="248" fill="#fcf0dd"/>
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#483e5e" stroke-width="12"/>
+  <circle cx="256" cy="256" r="222" fill="none" stroke="#eba040" stroke-width="3" opacity="0.55"/>
+
+  <!-- 8-petal flower, gold gradient -->
+  <g fill="url(#ffPetal)" stroke="#b7863e" stroke-width="1.5" stroke-opacity="0.35">
+    <path d="M256 256 C 206 196 210 116 256 66 C 302 116 306 196 256 256 Z"/>
+    <path d="M256 256 C 206 196 210 116 256 66 C 302 116 306 196 256 256 Z" transform="rotate(45 256 256)"/>
+    <path d="M256 256 C 206 196 210 116 256 66 C 302 116 306 196 256 256 Z" transform="rotate(90 256 256)"/>
+    <path d="M256 256 C 206 196 210 116 256 66 C 302 116 306 196 256 256 Z" transform="rotate(135 256 256)"/>
+    <path d="M256 256 C 206 196 210 116 256 66 C 302 116 306 196 256 256 Z" transform="rotate(180 256 256)"/>
+    <path d="M256 256 C 206 196 210 116 256 66 C 302 116 306 196 256 256 Z" transform="rotate(225 256 256)"/>
+    <path d="M256 256 C 206 196 210 116 256 66 C 302 116 306 196 256 256 Z" transform="rotate(270 256 256)"/>
+    <path d="M256 256 C 206 196 210 116 256 66 C 302 116 306 196 256 256 Z" transform="rotate(315 256 256)"/>
+  </g>
+
+  <!-- soft center highlight -->
+  <circle cx="256" cy="256" r="26" fill="#fdf6e6" opacity="0.9"/>
+</svg>

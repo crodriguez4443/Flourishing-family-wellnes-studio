@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Card {
   href: string;
   eyebrow: string;
@@ -13,22 +16,35 @@ interface Props {
 }
 
 const { cards } = Astro.props;
+
+const optimizedImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/**/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true },
+);
+const resolveImage = (path?: string) => (path ? optimizedImages[`/src${path}`]?.default : undefined);
 ---
 
 <div class="i-card-grid">
-  {cards.map((card) => (
-    <a class="i-card h-card" href={card.href}>
-      {card.image && (
-        <div class="i-card-image">
-          <img src={card.image} alt={card.imageAlt || ''} />
+  {cards.map((card) => {
+    const optimizedImage = resolveImage(card.image);
+    return (
+      <a class="i-card h-card" href={card.href}>
+        {card.image && (
+          <div class="i-card-image">
+            {optimizedImage ? (
+              <Image src={optimizedImage} alt={card.imageAlt || ''} widths={[280, 420, 560, 720]} sizes="(max-width: 940px) calc(100vw - 84px), 31vw" format="webp" quality="high" loading="lazy" decoding="async" />
+            ) : (
+              <Image src={card.image} alt={card.imageAlt || ''} inferSize widths={[280, 420, 560, 720]} sizes="(max-width: 940px) calc(100vw - 84px), 31vw" format="webp" quality="high" loading="lazy" decoding="async" />
+            )}
+          </div>
+        )}
+        <div class="i-card-body">
+          <p class="i-card-eyebrow">{card.eyebrow}</p>
+          <h3>{card.title}</h3>
+          <p>{card.text}</p>
+          <span>Explore&nbsp;→</span>
         </div>
-      )}
-      <div class="i-card-body">
-        <p class="i-card-eyebrow">{card.eyebrow}</p>
-        <h3>{card.title}</h3>
-        <p>{card.text}</p>
-        <span>Explore&nbsp;→</span>
-      </div>
-    </a>
-  ))}
+      </a>
+    );
+  })}
 </div>

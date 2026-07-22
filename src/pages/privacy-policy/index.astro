@@ -1,12 +1,21 @@
 ---
 import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
 import { contactInfo } from '../../data/site';
+
+const privacySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Privacy Policy',
+  url: new URL(Astro.url.pathname, Astro.site!).href,
+  about: { '@id': new URL('/#business', Astro.site!).href },
+};
 ---
 
 <DraftReferenceLayout
   title="Privacy Policy"
-  description="Privacy policy for Flourishing Family Wellness Studio."
+  description="How Flourishing Family Wellness Studio collects, uses, and protects the information you share with us online, by phone, or when booking a visit."
   current="resources"
+  schema={privacySchema}
 >
   <section class="r-sect r-pad-lg" style="max-width:900px; margin:0 auto; padding:88px 32px 104px;">
     <div style="margin-bottom:44px;">

@@ -1,9 +1,22 @@
 ---
 import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
 import SocialLinks from '../../components/SocialLinks.astro';
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact',
+  url: new URL(Astro.url.pathname, Astro.site!).href,
+  about: { '@id': new URL('/#business', Astro.site!).href },
+};
 ---
 
-<DraftReferenceLayout title="Contact" description="Contact Flourishing Family Wellness Studio." current="contact">
+<DraftReferenceLayout
+  title="Contact"
+  description="Book a visit, call, or stop by our Clark, NJ studio. Find hours, directions, and the fastest way to reach a doctor at Flourishing Family Wellness Studio."
+  current="contact"
+  schema={contactSchema}
+>
   <!-- ===== HERO + CONTACT DETAILS ===== -->
   <section class="r-contact r-sect" style="max-width:1220px; margin:0 auto; padding:74px 32px 88px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
     <div>

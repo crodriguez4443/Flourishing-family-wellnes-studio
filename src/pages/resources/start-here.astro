@@ -19,9 +19,54 @@ const firstVisitSteps = [
     text: 'If we can help, you will understand the recommended rhythm, timeline, and next step.',
   },
 ];
+
+const startHereSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Book Your First Visit',
+    url: new URL(Astro.url.pathname, Astro.site!).href,
+    about: { '@id': new URL('/#business', Astro.site!).href },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you take insurance?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We will explain payment and insurance expectations before you commit to a care plan.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I just book?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Sked handles booking for chiropractic and acupuncture visits.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What if I am not sure where I fit?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Book your first visit. We will help route you.',
+        },
+      },
+    ],
+  },
+];
 ---
 
-<InternalLayout title="Book Your First Visit" description="New patient expectations, first visit, pricing, insurance, and next steps." current="resources">
+<InternalLayout
+  title="Book Your First Visit"
+  description="New to Flourishing Family? Here’s what your first visit looks like, what it costs, and how care unfolds over time. No pressure, no surprises."
+  current="resources"
+  schema={startHereSchema}
+>
   <PageHero
     eyebrow="New patients"
     title="What do I actually do first?"

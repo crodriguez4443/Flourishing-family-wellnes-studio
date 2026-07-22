@@ -2,12 +2,21 @@
 import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
 import reviews from '../../data/reviews.json';
 import { bookingUrl } from '../../data/site';
+
+const testimonialsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Success Stories',
+  url: new URL(Astro.url.pathname, Astro.site!).href,
+  about: { '@id': new URL('/#business', Astro.site!).href },
+};
 ---
 
 <DraftReferenceLayout
   title="Success Stories"
-  description={`${reviews.length} reviews from real Flourishing Family patients: fertility, pregnancy, postpartum, pediatric, and whole-family care in Clark, NJ.`}
+  description={`${reviews.length} patient stories from real Flourishing Family families — fertility, pregnancy, postpartum, pediatric, and whole-family care in Clark, NJ and nearby towns.`}
   current="resources"
+  schema={testimonialsSchema}
 >
   <section class="draft-simple-hero draft-simple-hero-short">
     <p class="i-eyebrow draft-centered-eyebrow">

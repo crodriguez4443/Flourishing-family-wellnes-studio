@@ -1,11 +1,34 @@
 ---
 import '../styles/global.css';
+import { getOrganizationSchema } from '../lib/organizationSchema';
 
 interface Props {
   title?: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  schema?: object | object[];
 }
 
-const { title = 'Flourishing Family Wellness Studio' } = Astro.props;
+const {
+  title = 'Flourishing Family Wellness Studio',
+  description,
+  ogImage = '/default-og-image.jpg',
+  ogType = 'website',
+  noindex = false,
+  schema,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+const organizationSchema = getOrganizationSchema(Astro.site!);
+const pageSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+
+// JSON.stringify does not escape `<`, so CMS-authored copy containing a literal
+// `</script>` would break out of the JSON-LD block. Page schema carries client-
+// editable FAQ answers, so escape it rather than trusting the input.
+const ld = (value: object) => JSON.stringify(value).replace(/</g, '\\u003c');
 ---
 
 <!doctype html>
@@ -14,12 +37,32 @@ const { title = 'Flourishing Family Wellness Studio' } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {noindex && <meta name="robots" content="noindex" />}
+
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Flourishing Family Wellness Studio" />
+    <meta property="og:image" content={ogImageURL} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImageURL} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={ld(organizationSchema)} />
+    {pageSchemas.map((item) => <script type="application/ld+json" set:html={ld(item)} />)}
   </head>
   <body>
     <slot />

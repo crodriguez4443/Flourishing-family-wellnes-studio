@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import SectionHeader from './SectionHeader.astro';
 import { doctors as defaultDoctors } from '../data/site';
 
@@ -32,6 +34,12 @@ const {
   linkHref,
   linkLabel = 'Read our story',
 } = Astro.props;
+
+const optimizedImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/**/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true },
+);
+const resolveImage = (path: string) => optimizedImages[`/src${path}`]?.default;
 ---
 
 <section id={id} class={`meet-doctors ${band ? 'meet-doctors-band' : ''} r-sect r-pad-lg`}>
@@ -42,16 +50,23 @@ const {
     </div>
 
     <div class="meet-doctors-grid">
-      {doctors.map((doctor, index) => (
-        <article class="meet-doctor">
-          <div class={`meet-doctor-image meet-doctor-image-${index % 3}`}>
-            <img src={doctor.image} alt={doctor.name} />
-          </div>
-          <h3>{doctor.name}</h3>
-          <div class="meet-doctor-role">{doctor.role}</div>
-          <p>{doctor.bio}</p>
-        </article>
-      ))}
+      {doctors.map((doctor, index) => {
+        const optimizedImage = resolveImage(doctor.image);
+        return (
+          <article class="meet-doctor">
+            <div class={`meet-doctor-image meet-doctor-image-${index % 3}`}>
+              {optimizedImage ? (
+                <Image src={optimizedImage} alt={doctor.name} widths={[280, 420, 560, 720]} sizes="(max-width: 940px) calc(100vw - 84px), 31vw" format="webp" quality="high" loading="lazy" decoding="async" />
+              ) : (
+                <Image src={doctor.image} alt={doctor.name} inferSize widths={[280, 420, 560, 720]} sizes="(max-width: 940px) calc(100vw - 84px), 31vw" format="webp" quality="high" loading="lazy" decoding="async" />
+              )}
+            </div>
+            <h3>{doctor.name}</h3>
+            <div class="meet-doctor-role">{doctor.role}</div>
+            <p>{doctor.bio}</p>
+          </article>
+        );
+      })}
     </div>
   </div>
 </section>
