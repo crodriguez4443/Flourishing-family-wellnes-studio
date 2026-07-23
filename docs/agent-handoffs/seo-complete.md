@@ -141,18 +141,34 @@ baby, and mother intact.
 - Sitemap: 23 URLs, no `/Contact3/`, `/agents/`, `/admin/`, or 404
 - `node src/lib/hours.test.mjs` passes
 
+## Title length — RESOLVED (client-approved)
+
+All page titles are now ≤ 60 chars (verified decoded, ignoring `&amp;` inflation).
+Two changes, per client direction:
+
+1. **Title suffix shortened** ` | Flourishing Family Wellness Studio` →
+   ` | Flourishing Family` in both wrapper layouts (saves 16 chars everywhere).
+   `og:site_name` and the JSON-LD `name` keep the full brand — only the `<title>`
+   tag abbreviates it, which is standard.
+2. **Short `<title>` overrides via an optional `metaTitle` field** (same fallback
+   pattern as `metaDescription`; the long text stays the visible H1):
+   - 4 location pages — `metaTitle` in `src/data/site.ts` (code-only, keyword+town led)
+   - `family-wellness` program — `metaTitle` in frontmatter, also killing the
+     "Flourishing Family … | Flourishing Family" duplication. Declared in
+     `public/admin/config.yml` so a Sveltia save cannot drop it.
+
+Home title is `Clark NJ Chiropractor | Flourishing Family` (42 chars).
+
+## Client added a 5th program (noticed, auto-handled)
+
+`src/content/programs/busy-professional-plan.md` + its import in
+`src/data/programs.ts` were added client-side after the first SEO commit. It flowed
+through the existing machinery with zero extra work: `Service` + `FAQPage` (5 Q&A),
+valid JSON-LD, 157-char meta description, 47-char title. This is the intended
+behavior — any program the client adds inherits the full SEO layer automatically.
+
 ## Outstanding — needs human action
 
-- [ ] **10 titles exceed 60 chars** and will truncate in search results. Root cause:
-      the ` | Flourishing Family Wellness Studio` suffix is 38 of the ~60 budget.
-      Two-part fix, both **copy/brand decisions I did not want to make unilaterally**:
-      (a) shorten the suffix to ` | Flourishing Family` (saves 17 chars everywhere);
-      (b) give the 4 location pages short `<title>` overrides — their titles are full
-      sentences (48–53 chars) before any suffix. Affected: all 4 location pages, all
-      4 program pages, `services/pediatric-postpartum`, `services/sports-extremity-care`.
-- [ ] **Home title is a judgment call worth reviewing.** `Clark NJ Chiropractor` is the
-      strongest keyword but sits in tension with the repositioning *away* from
-      "chiropractic office" toward "family wellness hub." Nothing longer fit in 60 chars.
 - [ ] **SUPPLY still missing:** last names + license/credential IDs (DC, L.Ac., NPI)
       for Dr. Shelley and Dr. Alexandra. Person schema is thin without them. Dr. Ila
       Clemente's Webster certification is on file and can be added as `hasCredential`.

@@ -56,7 +56,7 @@ const locationSchema = [
 ];
 ---
 
-<InternalLayout title={location.title} description={location.summary} schema={locationSchema}>
+<InternalLayout title={location.metaTitle ?? location.title} description={location.summary} schema={locationSchema}>
   <PageHero
     eyebrow={`Serving ${location.town}`}
     title={location.title}

@@ -6,7 +6,7 @@ order: 3
 eyebrow: Postpartum Care
 programName: The Returning to You Postpartum Program
 heroSize: clamp(42px,5.6vw,78px)
-title: Feel like yourself again — with your baby included.
+title: Feel like yourself again... with your baby included.
 summary: Fully guided, baby-inclusive postpartum recovery care for mothers who want to restore function, clarity, and confidence without being left to figure it out alone.
 image: /assets/programs/postpartum.jpg
 imageAlt: A doctor supporting a mother and child during a gentle postpartum visit
@@ -26,7 +26,7 @@ isThisYou:
 before: |
   Postpartum recovery is most responsive when addressed early. When care is delayed, the body often adapts around unresolved patterns: fatigue compensation, pelvic and core dysfunction, and stress-load accumulation.
 approachEyebrow: Our approach — fully guided postpartum care
-approachImage: /assets/opt/ila.jpg
+approachImage: /assets/programs/postpartum2.jpg
 approachImageAlt: A doctor offering calm, one-on-one postpartum care
 approachBg: linear-gradient(155deg,#e6dde2,#dde8e2)
 approachTitle: Recovery works better when you’re not left on your own.
@@ -124,6 +124,6 @@ relatedStages:
   - label: Expecting
   - label: Postpartum
     active: true
-  - label: Raising a family
+  # - label: Raising a family
 proof: Baby-inclusive postpartum care, one-on-one with a doctor.
 ---

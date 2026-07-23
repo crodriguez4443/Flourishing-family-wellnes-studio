@@ -28,7 +28,7 @@ isThisYou:
 before: |
   What you’ve been missing isn’t another test. It’s someone who takes your whole body — and your nervous system — seriously, and builds a plan around you.
 approachEyebrow: Our approach — honestly
-approachImage: /assets/programs/fertility.jpg
+approachImage: /assets/programs/fertility2.jpg
 approachImageAlt: A doctor working hands-on and unhurried with a patient
 approachBg: linear-gradient(155deg,#dde8e2,#ece0d6)
 approachTitle: We can’t promise a pregnancy. No honest provider can.
@@ -122,6 +122,6 @@ relatedStages:
     active: true
   - label: Expecting
   - label: Postpartum
-  - label: Raising a family
+  # - label: Raising a family
 proof: '"They support you like family."'
 ---

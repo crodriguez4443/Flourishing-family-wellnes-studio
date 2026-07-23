@@ -1,4 +1,5 @@
 ---
+metaTitle: Whole-Family Wellness Membership
 metaDescription: "Proactive nervous-system care for the whole family under one roof: biweekly for parents, check-ins for the kids. Caring for families since 2011."
 slug: family-wellness
 routeSlug: 2family-membership
@@ -117,7 +118,7 @@ relatedStages:
   - label: Trying
   - label: Expecting
   - label: Postpartum
-  - label: Raising a family
+  # - label: Raising a family
     active: true
 proof: 110K+ adjustments given.
 ---

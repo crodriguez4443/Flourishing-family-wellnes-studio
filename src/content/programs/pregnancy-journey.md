@@ -7,7 +7,7 @@ programName: The Flourishing Pregnancy Journey
 title: |
   Helping you enjoy pregnancy, not just get through it.
 summary: Webster-certified prenatal care, one-on-one with a doctor who’s guided mothers for 15 years. Sleep better, move easier, and walk into birth ready — not braced.
-image: /assets/opt/card-pregnancy.jpg
+image: /assets/programs/pregnancy1.jpg
 imageAlt: Hands resting on a pregnant belly during a gentle prenatal visit
 ctaLabel: Book your pregnancy assessment
 secondaryCtaLabel: Is it safe?
@@ -23,7 +23,7 @@ isThisYou:
       <strong style="color:#483E5E;">Sent by your midwife or doula</strong>, motivated, and ready to invest in this pregnancy.
 before: You want to know you did everything you could for you and your baby. So do we.
 approachEyebrow: 'Our approach — and the #1 question: is it safe?'
-approachImage: /assets/opt/ila.jpg
+approachImage: /assets/programs/pregnancy2.jpg
 approachImageAlt: A gentle, hands-on prenatal adjustment
 approachBg: linear-gradient(155deg,#f5e8d1,#e6dde2)
 approachTitle: Gentle, biomechanically sound, and made for a pregnant body.
@@ -115,6 +115,6 @@ relatedStages:
   - label: Expecting
     active: true
   - label: Postpartum
-  - label: Raising a family
+  # - label: Raising a family
 proof: Trusted by Clark-area families since 2011.
 ---

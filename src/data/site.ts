@@ -31,6 +31,10 @@ export const locations = [
     slug: 'clark',
     town: 'Clark',
     title: 'Family wellness care in Clark, NJ',
+    // Short <title>-tag override — the long `title` above stays the visible H1.
+    // Keeps the rendered tag under 60 chars once " | Flourishing Family" is
+    // appended; keyword + town leads for local search.
+    metaTitle: 'Family Chiropractic in Clark, NJ',
     summary:
       'One-on-one chiropractic, acupuncture, pregnancy, fertility, postpartum, and family wellness care from our Clark studio.',
   },
@@ -38,6 +42,7 @@ export const locations = [
     slug: 'westfield',
     town: 'Westfield',
     title: 'Pregnancy and family wellness care near Westfield',
+    metaTitle: 'Prenatal & Family Care near Westfield',
     summary:
       'A warm, doctor-led care home for Westfield families looking for pregnancy support, pediatric care, and whole-family wellness.',
   },
@@ -45,6 +50,7 @@ export const locations = [
     slug: 'cranford',
     town: 'Cranford',
     title: 'Prenatal, postpartum, and family care near Cranford',
+    metaTitle: 'Prenatal & Family Care near Cranford',
     summary:
       'Support for Cranford families who want thorough, calm care through pregnancy, postpartum, fertility, and the everyday body.',
   },
@@ -52,6 +58,7 @@ export const locations = [
     slug: 'scotch-plains',
     town: 'Scotch Plains',
     title: 'Family chiropractic and acupuncture near Scotch Plains',
+    metaTitle: 'Family Care near Scotch Plains, NJ',
     summary:
       'A one-on-one wellness studio for Scotch Plains families who want care that is personal, measured, and easy to understand.',
   },
