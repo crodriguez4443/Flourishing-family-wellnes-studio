@@ -37,14 +37,4 @@ highlights:
     text: Realignment and support for mom after birth.
   - title: Warm referrals
     text: To lactation and pelvic-floor PT when it helps.
-programLinks:
-  - title: Family Membership
-    label: Whole-household care
-    href: /2family-membership/
-  - title: Pregnancy Journey
-    label: Includes newborn check
-    href: /2pregnancy-journey/
-  - title: All Services
-    label: See everything
-    href: /2services/
 ---

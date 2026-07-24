@@ -30,7 +30,7 @@ public_folder: "/images"
 collections:
   # ---------------------------------------------------------------------------
   # PROGRAMS — the 4 flagship landing pages (fertility, pregnancy, postpartum,
-  # family membership). Clients edit copy; layout/pricing HTML is preserved.
+  # busy professional plan). Clients edit copy; layout/pricing HTML is preserved.
   # ---------------------------------------------------------------------------
   - name: "programs"
     label: "Programs"
@@ -176,7 +176,6 @@ collections:
       - { name: "image", label: "image", widget: "hidden", required: false }
       - { name: "cardImage", label: "cardImage", widget: "hidden", required: false }
       - { name: "note", label: "note", widget: "hidden", required: false }
-      - { name: "programLinks", label: "programLinks", widget: "hidden", required: false }
 
   # ---------------------------------------------------------------------------
   # SITE INFO — global contact details, booking link, social links, doctors.

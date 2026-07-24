@@ -2,7 +2,7 @@
 metaDescription: "High-efficiency reset care for busy professionals — 10–20 minute sessions that cut tension and stress so you perform better, without adding to your schedule."
 slug: busy-professional-plan
 routeSlug: 2busy-professional-plan
-order: 5
+order: 4
 eyebrow: Busy Professional Plan
 programName: The Busy Professional Plan
 heroSize: clamp(42px,5.6vw,78px)

@@ -33,14 +33,4 @@ highlights:
     text: Extremely light-touch — no twisting, no cracking. Ideal for newborns, pregnancy, and tender stages.
   - title: Tonal
     text: Focused on how the whole nervous system holds tension — steadying the body’s baseline over time.
-programLinks:
-  - title: Pregnancy Journey
-    label: Webster-certified
-    href: /2pregnancy-journey/
-  - title: Family Membership
-    label: Whole-family care
-    href: /2family-membership/
-  - title: Fertility Journey
-    label: Chiro support
-    href: /2fertility-journey/
 ---

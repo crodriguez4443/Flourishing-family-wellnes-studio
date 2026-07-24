@@ -34,14 +34,4 @@ highlights:
     text: Realistic changes that fit a busy life — not an all-or-nothing overhaul.
   - title: Progress reviews
     text: We measure and adjust as your body and season change.
-programLinks:
-  - title: Fertility Journey
-    label: Preconception fuel
-    href: /2fertility-journey/
-  - title: Pregnancy Journey
-    label: Nourish the trimesters
-    href: /2pregnancy-journey/
-  - title: Family Membership
-    label: Member course
-    href: /2family-membership/
 ---

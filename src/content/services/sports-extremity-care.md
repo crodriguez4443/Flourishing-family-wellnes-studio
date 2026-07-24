@@ -34,14 +34,4 @@ highlights:
     text: Steady, measurable care to get back to full strength.
   - title: Everyday mobility
     text: For active adults who just want to keep moving freely.
-programLinks:
-  - title: Family Membership
-    label: Care for the teens too
-    href: /2family-membership/
-  - title: Chiropractic
-    label: The core techniques
-    href: /2chiropractic/
-  - title: All Services
-    label: See everything
-    href: /2services/
 ---

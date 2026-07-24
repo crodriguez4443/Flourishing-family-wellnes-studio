@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import DraftReferenceLayout from '../layouts/DraftReferenceLayout.astro';
 import { servicePageShared } from '../data/services';
+import { programs } from '../data/programs';
 import { bookingUrl } from '../data/site';
 
 interface ProgramLink {
@@ -42,7 +43,6 @@ interface Props {
   highlights: Highlight[];
   note?: string;
   planTitle: string;
-  programLinks: ProgramLink[];
 }
 
 const {
@@ -69,8 +69,15 @@ const {
   highlights,
   note,
   planTitle,
-  programLinks,
 } = Astro.props;
+
+// Program cross-links are driven from the programs collection so every service
+// stays in sync as programs are added, removed, or reordered.
+const programLinks: ProgramLink[] = programs.map((program) => ({
+  title: program.eyebrow,
+  label: program.relatedStageLabel,
+  href: `/programs/${program.slug}/`,
+}));
 
 const optimizedImages = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/**/*.{jpg,jpeg,png,webp,avif}',

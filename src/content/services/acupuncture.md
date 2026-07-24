@@ -32,14 +32,4 @@ highlights:
     text: Easing nausea, sleep trouble, and anxiety through the trimesters.
   - title: Stress regulation
     text: Calming an overloaded nervous system so the body can reset.
-programLinks:
-  - title: Fertility Journey
-    label: Acupuncture-led
-    href: /2fertility-journey/
-  - title: Pregnancy Journey
-    label: Prenatal support
-    href: /2pregnancy-journey/
-  - title: Family Membership
-    label: Add-on for parents
-    href: /2family-membership/
 ---
