@@ -2,15 +2,16 @@
 metaDescription: "Gentle, precise adjustments that help your body regulate, move, and recover the way it is meant to. We pick the technique to fit you, in Clark, NJ."
 slug: chiropractic
 routeSlug: 2chiropractic
+calendar: chiropractic
 order: 1
 number: '01'
 highlightTitleSize: 22px
 eyebrow: Chiropractic
 title: Chiropractic
 summary: Gentle, precise adjustments that help your spine and nervous system do their job — so your body regulates, moves, and recovers the way it’s meant to. We choose the technique to fit you, not the other way around.
-image: /assets/opt/ila.jpg
+image: /assets/ila.jpg
 imageAlt: A gentle chiropractic adjustment
-cardImage: /assets/opt/card-family.jpg
+cardImage: /assets/card-family.jpg
 cardTag: Structure & nervous system
 cardBlurb: 'Gentle, precise adjustments: Webster, Gonstead, Non-Force, and Tonal, chosen to fit you.'
 leftTitle: Not a crack-and-go. A method.

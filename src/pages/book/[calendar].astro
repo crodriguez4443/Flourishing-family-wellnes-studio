@@ -1,0 +1,140 @@
+---
+import InternalLayout from '../../layouts/InternalLayout.astro';
+import { bookingCalendars, contactInfo } from '../../data/site';
+
+export function getStaticPaths() {
+  return bookingCalendars.map((calendar) => ({
+    params: { calendar: calendar.slug },
+    props: { calendar },
+  }));
+}
+
+const { calendar } = Astro.props;
+const skedSrc = calendar.skedKey
+  ? `https://portal.sked.life/new-patient?key=${calendar.skedKey}`
+  : null;
+---
+
+<InternalLayout
+  title={`Book ${calendar.label}`}
+  description={calendar.blurb}
+  noindex
+  hideBookingCtas
+  current="services"
+>
+  <section class="book-embed">
+    <p class="i-eyebrow"><span></span>Booking</p>
+    <h1>Book {calendar.label.toLowerCase()}</h1>
+    <p class="book-blurb">{calendar.blurb}</p>
+
+    {skedSrc ? (
+      <div class="sked-portal-container">
+        <iframe
+          id="sked-portal"
+          title={`${calendar.label} booking calendar`}
+          sandbox="allow-top-navigation allow-scripts allow-forms allow-same-origin allow-popups"
+          src={skedSrc}
+        ></iframe>
+      </div>
+    ) : (
+      <div class="book-fallback">
+        <p>Online booking for {calendar.label.toLowerCase()} isn’t live yet.</p>
+        <a class="i-btn h-btn-primary" href={contactInfo.phoneHref}>Call {contactInfo.phone}</a>
+      </div>
+    )}
+
+    <p class="book-help">
+      Not sure which visit you need? <a href="/contact/">Ask us first</a> — or
+      <a href="/programs/">see the programs</a> if you want a plan, not a single visit.
+    </p>
+  </section>
+</InternalLayout>
+
+<style>
+  .book-embed {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 56px 32px 72px;
+  }
+  .book-embed h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4.4vw, 52px);
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    color: #483e5e;
+    margin: 0 0 16px;
+  }
+  .book-blurb {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #194247;
+    opacity: 0.9;
+    max-width: 34em;
+    margin: 0 0 40px;
+  }
+  /* Aspect ratios supplied by Sked — their form gets dramatically taller on
+     narrow screens, hence the 310%. */
+  .sked-portal-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 60%;
+  }
+  .sked-portal-container iframe {
+    border: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .book-fallback {
+    background: #e2dce2;
+    border-radius: 12px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .book-fallback p {
+    font-size: 17px;
+    color: #194247;
+    margin: 0 0 24px;
+  }
+  .book-help {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #194247;
+    opacity: 0.8;
+    margin: 32px 0 0;
+  }
+  .book-help a {
+    color: #483e5e;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 900px) {
+    .sked-portal-container {
+      padding-top: 100%;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .book-embed {
+      padding: 40px 24px 56px;
+    }
+    .sked-portal-container {
+      padding-top: 310%;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Sked posts a redirect URL to the parent once an appointment is confirmed.
+  // Only trust messages coming from the portal itself — without the origin
+  // check any page could navigate this tab anywhere.
+  window.addEventListener('message', function (event) {
+    if (event.origin !== 'https://portal.sked.life') return;
+    try {
+      const message = JSON.parse(event.data);
+      if (message && message.url) window.location.href = message.url;
+    } catch (err) {}
+  });
+</script>

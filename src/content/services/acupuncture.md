@@ -2,6 +2,7 @@
 metaDescription: "Acupuncture with Dr. Alexandra for fertility, pregnancy, and hormone balance, easing what your body carries. In Clark, NJ."
 slug: acupuncture
 routeSlug: 2acupuncture
+calendar: acupuncture
 order: 2
 number: '02'
 eyebrow: Acupuncture
@@ -9,7 +10,7 @@ title: Acupuncture
 summary: Led by Dr. Alexandra, who specializes in female hormone balance, fertility, and pregnancy. It supports the quieter systems — calming the nervous system and easing what the body carries, from cycle to conception to birth.
 image: /assets/services/acupuncture.jpg
 imageAlt: An acupuncture treatment in a calm, natural-light room
-cardImage: /assets/opt/card-fertility.jpg
+cardImage: /assets/services/acupuncture.jpg
 cardTag: Hormones & calm
 cardBlurb: 'Fertility, pregnancy, and hormone support with Dr. Alexandra: the quiet, steadying half of care.'
 leftTitle: The steadying half of care.

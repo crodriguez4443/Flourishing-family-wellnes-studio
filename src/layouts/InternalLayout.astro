@@ -15,9 +15,22 @@ interface Props {
   noindex?: boolean;
   schema?: object | object[];
   current?: string;
+  // Booking/apply pages ARE the destination, so the site-wide "Book a Visit"
+  // CTA and sticky button would just link the visitor back to the page they
+  // are already on (and the sticky button covers the embed).
+  hideBookingCtas?: boolean;
 }
 
-const { title, description, ogImage, ogType, noindex, schema, current = '' } = Astro.props;
+const {
+  title,
+  description,
+  ogImage,
+  ogType,
+  noindex,
+  schema,
+  current = '',
+  hideBookingCtas = false,
+} = Astro.props;
 ---
 
 <Layout
@@ -40,7 +53,7 @@ const { title, description, ogImage, ogType, noindex, schema, current = '' } = A
       <slot />
     </main>
     
-    <StartHereCTA />
+    {!hideBookingCtas && <StartHereCTA />}
    <!-- <section class="i-final-cta">
       <div class="i-final-inner">
         <div>
@@ -108,6 +121,6 @@ const { title, description, ogImage, ogType, noindex, schema, current = '' } = A
       </div>
     </footer>
 
-    <a class="i-sticky h-sticky" href={bookingUrl}>Book a Visit</a>
+    {!hideBookingCtas && <a class="i-sticky h-sticky" href={bookingUrl}>Book a Visit</a>}
   </div>
 </Layout>

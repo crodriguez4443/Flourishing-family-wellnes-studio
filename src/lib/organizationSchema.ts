@@ -47,7 +47,8 @@ export function getOrganizationSchema(site: URL) {
     ],
     potentialAction: {
       '@type': 'ReserveAction',
-      target: bookingUrl,
+      // bookingUrl is a site-relative path; JSON-LD needs it absolute.
+      target: new URL(bookingUrl, site).href,
     },
     openingHoursSpecification: parseHours(contactInfo.hours),
   };

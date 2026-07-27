@@ -2,6 +2,7 @@
 metaDescription: "Not a diet, a plan. Root-cause nutrition and supplement guidance for fertility prep, a healthier pregnancy, and steady family energy, in Clark, NJ."
 slug: functional-nutrition
 routeSlug: 2functional-nutrition
+calendar: nutrition
 order: 3
 number: '03'
 eyebrow: Functional Nutrition
@@ -11,7 +12,7 @@ heroLineHeight: '1.05'
 summary: Not a diet — a plan. Root-cause nutrition and supplement guidance that supports fertility prep, a healthier pregnancy, and steady family energy. Measurable, and adjusted as your body changes.
 image: /assets/services/nutrition.jpg
 imageAlt: A nutrition guidance conversation
-cardImage: /assets/opt/card-pregnancy.jpg
+cardImage: /assets/services/nutrition.jpg
 cardTag: Fuel & foundation
 cardBlurb: 'Root-cause nutrition and supplement guidance: not a diet, but a plan you can actually keep.'
 leftTitle: Food and support, with a reason.

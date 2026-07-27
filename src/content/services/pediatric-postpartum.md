@@ -2,6 +2,7 @@
 metaDescription: "Gentle, low-force milestone care for newborns and children, plus recovery-focused support for mom after birth. The tenderest stages, in careful hands."
 slug: pediatric-postpartum
 routeSlug: 2pediatric-postpartum
+calendar: chiropractic
 order: 4
 number: '04'
 eyebrow: Pediatric & Postpartum
@@ -11,7 +12,7 @@ heroLineHeight: '1.05'
 summary: Gentle, low-force care for newborns and children — we call the first year <em>milestone care</em> — and recovery-focused support for mom after birth. The tenderest stages, in the most careful hands.
 image: /assets/services/pediatric.jpg
 imageAlt: A gentle pediatric wellness visit
-cardImage: /assets/opt/card-family.jpg
+cardImage: /assets/card-family.jpg
 cardTag: The little ones & mom
 cardBlurb: Gentle milestone care for newborns and children, plus recovery-focused support for mom after birth.
 leftEyebrow: For the little ones

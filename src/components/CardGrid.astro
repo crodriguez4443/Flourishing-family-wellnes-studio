@@ -13,9 +13,10 @@ interface Card {
 
 interface Props {
   cards: Card[];
+  cta?: string;
 }
 
-const { cards } = Astro.props;
+const { cards, cta = 'Explore' } = Astro.props;
 
 const optimizedImages = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/**/*.{jpg,jpeg,png,webp,avif}',
@@ -42,7 +43,7 @@ const resolveImage = (path?: string) => (path ? optimizedImages[`/src${path}`]?.
           <p class="i-card-eyebrow">{card.eyebrow}</p>
           <h3>{card.title}</h3>
           <p>{card.text}</p>
-          <span>Explore&nbsp;→</span>
+          <span>{cta}&nbsp;→</span>
         </div>
       </a>
     );

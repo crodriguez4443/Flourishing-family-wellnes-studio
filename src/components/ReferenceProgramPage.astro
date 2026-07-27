@@ -3,7 +3,9 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import DraftReferenceLayout from '../layouts/DraftReferenceLayout.astro';
 import ProgramCards from './ProgramCards.astro';
-import { bookingUrl } from '../data/site';
+// Programs are the primary goal and convert through a qualifying call, not a
+// one-off Sked appointment — so they route to /apply/, never to a calendar.
+const applyHref = '/apply/';
 
 interface IncludeItem {
   component: string;
@@ -112,7 +114,7 @@ interface Props {
 
 const { program, relatedPrograms = [], current = 'programs', linkMode = 'public' } = Astro.props;
 
-const approachImage = program.approachImage ?? '/assets/opt/ila.jpg';
+const approachImage = program.approachImage ?? '/assets/ila.jpg';
 const approachImageAlt = program.approachImageAlt ?? 'A doctor working hands-on and unhurried with a patient';
 const approachBg = program.approachBg ?? 'linear-gradient(155deg,#dde8e2,#ece0d6)';
 const heroSize = program.heroSize ?? 'clamp(44px,6vw,84px)';
@@ -360,7 +362,7 @@ const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
     <div style="max-width:760px; margin:0 auto; text-align:center;">
       <h2 set:html={program.bookTitle} style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(36px,5vw,64px); line-height:1.05; letter-spacing:-.02em; margin:0 0 26px; color:#FCF0DD;"></h2>
       <p set:html={program.finalNote} style="font-size:18px; line-height:1.65; color:#d6cfe0; max-width:32em; margin:0 auto 38px;"></p>
-      <a class="h-btn-primary h-btn-primary-strong" href={bookingUrl} style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);">{program.ctaLabel}</a>
+      <a class="h-btn-primary h-btn-primary-strong" href={applyHref} style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);">{program.ctaLabel}</a>
     </div>
   </section>
 

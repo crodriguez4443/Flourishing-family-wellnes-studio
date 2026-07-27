@@ -169,6 +169,9 @@ collections:
       - { name: "slug", label: "slug", widget: "hidden" }
       - { name: "routeSlug", label: "routeSlug", widget: "hidden" }
       - { name: "order", label: "order", widget: "hidden" }
+      # Which of the three Sked calendars books this service. Hidden because
+      # picking the wrong one sends a patient to the wrong doctor's calendar.
+      - { name: "calendar", label: "calendar", widget: "hidden" }
       - { name: "number", label: "number", widget: "hidden", required: false }
       - { name: "highlightTitleSize", label: "highlightTitleSize", widget: "hidden", required: false }
       - { name: "heroSize", label: "heroSize", widget: "hidden", required: false }
@@ -189,7 +192,20 @@ collections:
         label: "Global Settings"
         file: "src/data/site.json"
         fields:
-          - { name: "bookingUrl", label: "Booking URL (Sked)", widget: "string" }
+          # Generic "Book a Visit" destination — the on-site chooser page.
+          # Hidden: changing it away from /book/ breaks every global CTA.
+          - { name: "bookingUrl", label: "bookingUrl", widget: "hidden" }
+          - { name: "applyUrl", label: "Program call link (Calendly)", widget: "string", required: false, hint: "Paste the full Calendly link for program intake calls, e.g. https://calendly.com/your-name/discovery. Leave blank to show a “call the studio” message instead." }
+          - name: "bookingCalendars"
+            label: "Sked Booking Calendars"
+            widget: "list"
+            summary: "{{fields.label}}"
+            hint: "Three calendars cover the five services. Chiropractic also books Pediatric & Postpartum and Sports & Extremity Care."
+            fields:
+              - { name: "slug", label: "slug", widget: "hidden" }
+              - { name: "label", label: "Calendar name", widget: "string" }
+              - { name: "blurb", label: "Short description", widget: "text" }
+              - { name: "skedKey", label: "Sked key", widget: "string", required: false, hint: "The long key from the end of the Sked embed's iframe src (after ?key=). Leave blank to show a “call the studio” message instead." }
           - name: "contactInfo"
             label: "Contact Info"
             widget: "object"

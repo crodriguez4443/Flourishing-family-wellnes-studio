@@ -2,6 +2,7 @@
 metaDescription: "Extremity adjusting and performance care for student-athletes and active adults: shoulders, hips, knees, ankles, not just the spine. Clark, NJ."
 slug: sports-extremity-care
 routeSlug: 2sports-extremity-care
+calendar: chiropractic
 order: 5
 number: '05'
 eyebrow: Sports & Extremity Care
@@ -11,7 +12,7 @@ heroLineHeight: '1.05'
 summary: Extremity adjusting and performance care for student-athletes and active adults — shoulders, hips, knees, ankles, not just the spine. Keeping the whole family moving well, at every age.
 image: /assets/services/sportsCare.jpg
 imageAlt: Extremity and performance care for active bodies
-cardImage: /assets/opt/hero.jpg
+cardImage: /assets/services/sportsCare2.jpg
 cardTag: Move & perform
 cardBlurb: 'Extremity adjusting and performance care for student-athletes and active adults: beyond the spine.'
 leftTitle: Beyond the spine.

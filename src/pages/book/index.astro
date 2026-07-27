@@ -1,0 +1,78 @@
+---
+import CardGrid from '../../components/CardGrid.astro';
+import InternalLayout from '../../layouts/InternalLayout.astro';
+import { bookingCalendars } from '../../data/site';
+
+const cards = bookingCalendars.map((calendar) => ({
+  href: `/book/${calendar.slug}/`,
+  eyebrow: 'One-off visit',
+  title: calendar.label,
+  text: calendar.blurb,
+}));
+---
+
+<InternalLayout
+  title="Book a Visit"
+  description="Book a one-on-one chiropractic, acupuncture, or functional nutrition visit at our Clark, NJ studio."
+  noindex
+  hideBookingCtas
+  current="services"
+>
+  <section class="book-choose">
+    <p class="i-eyebrow"><span></span>Booking</p>
+    <h1>What are you booking?</h1>
+    <p class="book-choose-blurb">
+      Pick the kind of visit you want and you’ll go straight to that doctor’s calendar.
+    </p>
+
+    <CardGrid cards={cards} cta="Book" />
+
+    <p class="book-choose-help">
+      Looking for a plan rather than a single visit? <a href="/programs/">See the programs</a> —
+      those start with a short call, not a booking. Still not sure?
+      <a href="/contact/">Talk to us first</a>.
+    </p>
+  </section>
+</InternalLayout>
+
+<style>
+  .book-choose {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 56px 32px 88px;
+  }
+  .book-choose h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4.8vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #483e5e;
+    margin: 0 0 18px;
+  }
+  .book-choose-blurb {
+    font-size: 19px;
+    line-height: 1.6;
+    color: #194247;
+    opacity: 0.9;
+    max-width: 32em;
+    margin: 0 0 48px;
+  }
+  .book-choose-help {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #194247;
+    opacity: 0.8;
+    margin: 40px 0 0;
+    max-width: 40em;
+  }
+  .book-choose-help a {
+    color: #483e5e;
+    font-weight: 600;
+  }
+  @media screen and (max-width: 750px) {
+    .book-choose {
+      padding: 40px 24px 64px;
+    }
+  }
+</style>

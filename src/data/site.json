@@ -1,5 +1,26 @@
 {
-  "bookingUrl": "https://portal.sked.life",
+  "bookingUrl": "/book/",
+  "applyUrl": "",
+  "bookingCalendars": [
+    {
+      "slug": "chiropractic",
+      "label": "Chiropractic",
+      "blurb": "Adjustments, pediatric and postpartum visits, and sports or extremity work — with Dr. Shelley or Dr. Ila.",
+      "skedKey": "4c3a988f1ceb55c7b4866241d4267d44efdebc565132894aa12417d9d7d332c7"
+    },
+    {
+      "slug": "acupuncture",
+      "label": "Acupuncture",
+      "blurb": "Fertility, pregnancy, and hormone-focused acupuncture with Dr. Alexandra.",
+      "skedKey": "fefe3c12c746c28d9931a1b31a3dd4155eef3aebb2e16df8aec47cea558b8bef"
+    },
+    {
+      "slug": "nutrition",
+      "label": "Functional Nutrition",
+      "blurb": "Lab-informed nutrition consults built around what your body is actually asking for.",
+      "skedKey": "a6d7ddd991924b225464be3bcecaa9aadd4da24edcd6969981717719bc98fe4c"
+    }
+  ],
   "contactInfo": {
     "phone": "(908) 653-0000",
     "phoneHref": "tel:+19086530000",
