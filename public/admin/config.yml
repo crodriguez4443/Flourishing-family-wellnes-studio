@@ -195,7 +195,6 @@ collections:
           # Generic "Book a Visit" destination — the on-site chooser page.
           # Hidden: changing it away from /book/ breaks every global CTA.
           - { name: "bookingUrl", label: "bookingUrl", widget: "hidden" }
-          - { name: "applyUrl", label: "Program call link (Calendly)", widget: "string", required: false, hint: "Paste the full Calendly link for program intake calls, e.g. https://calendly.com/your-name/discovery. Leave blank to show a “call the studio” message instead." }
           - name: "bookingCalendars"
             label: "Sked Booking Calendars"
             widget: "list"

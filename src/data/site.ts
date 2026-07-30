@@ -7,10 +7,6 @@ import site from './site.json';
 // straight to their own calendar via bookingCalendarUrl() instead.
 export const bookingUrl = site.bookingUrl;
 
-// Program intake (Calendly). Programs are the primary conversion goal and are a
-// qualifying conversation, not a one-off appointment, so they never route to Sked.
-export const applyUrl = site.applyUrl;
-
 // Three Sked calendars serve five services: chiropractic covers chiropractic,
 // pediatric & postpartum, and sports & extremity care. Each service .md names
 // its calendar via a `calendar` field.

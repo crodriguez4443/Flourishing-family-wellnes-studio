@@ -1,6 +1,5 @@
 {
   "bookingUrl": "/book/",
-  "applyUrl": "",
   "bookingCalendars": [
     {
       "slug": "chiropractic",

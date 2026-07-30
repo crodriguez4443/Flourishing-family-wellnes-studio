@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import '../styles/global.css';
 import { getOrganizationSchema } from '../lib/organizationSchema';
 
@@ -54,12 +55,8 @@ const ld = (value: object) => JSON.stringify(value).replace(/</g, '\\u003c');
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImageURL} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <Font cssVariable="--font-fraunces" preload />
+    <Font cssVariable="--font-hanken-grotesk" preload />
 
     <script type="application/ld+json" set:html={ld(organizationSchema)} />
     {pageSchemas.map((item) => <script type="application/ld+json" set:html={ld(item)} />)}

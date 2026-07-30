@@ -19,6 +19,8 @@ interface Props {
   // CTA and sticky button would just link the visitor back to the page they
   // are already on (and the sticky button covers the embed).
   hideBookingCtas?: boolean;
+  startHereLabel?: string;
+  startHereHref?: string;
 }
 
 const {
@@ -30,6 +32,8 @@ const {
   schema,
   current = '',
   hideBookingCtas = false,
+  startHereLabel,
+  startHereHref,
 } = Astro.props;
 ---
 
@@ -53,7 +57,7 @@ const {
       <slot />
     </main>
     
-    {!hideBookingCtas && <StartHereCTA />}
+    {!hideBookingCtas && <StartHereCTA label={startHereLabel} href={startHereHref} />}
    <!-- <section class="i-final-cta">
       <div class="i-final-inner">
         <div>

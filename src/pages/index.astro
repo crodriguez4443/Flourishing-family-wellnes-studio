@@ -34,6 +34,8 @@ const websiteSchema = {
   title="Clark NJ Chiropractor"
   description="One-on-one chiropractic, acupuncture, and family wellness care in Clark, NJ for fertility, pregnancy, postpartum, and family life. Since 2011."
   schema={websiteSchema}
+  startHereLabel="Let's see if we click"
+  startHereHref="/apply/"
 >
 
     <!-- ===== HERO ===== -->
@@ -43,7 +45,7 @@ const websiteSchema = {
           <span style="width:22px; height:1.5px; background:#608F84; display:inline-block;"></span>
           Fertility · Pregnancy · Postpartum · Family
         </div>
-        <h1 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(48px,6.4vw,92px); line-height:1.02; letter-spacing:-.02em; color:#483E5E; margin:0 0 26px;">Feel like<br />yourself again.</h1>
+        <h1 style="font-family:var(--font-fraunces),serif; font-weight:400; font-size:clamp(48px,6.4vw,92px); line-height:1.02; letter-spacing:-.02em; color:#483E5E; margin:0 0 26px;">Feel like<br />yourself again.</h1>
         <p style="font-size:20px; line-height:1.65; color:#194247; max-width:30em; margin:0 0 36px; opacity:.92;">You know your body better than anyone keeps telling you. We're the doctors who actually listen — through trying, expecting, recovering, and every ordinary day in between. One-on-one, start to finish.</p>
         <div style="display:flex; align-items:center; gap:26px; flex-wrap:wrap;">
           <a href="/resources/start-here/" class="h-btn-primary" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 38px; border-radius:999px; box-shadow:0 6px 22px rgba(235,160,64,.32);">Start Here</a>
@@ -53,7 +55,7 @@ const websiteSchema = {
       </div>
 
       <div style="position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#ece0d6; box-shadow:0 30px 60px -28px rgba(72,62,94,.4);">
-        <Image src={heroImage} alt="A Flourishing Family doctor talking through pelvic care with a patient in natural light" widths={[420, 640, 820, 1040, 1280]} sizes="(max-width: 940px) calc(100vw - 56px), 46vw" format="webp" quality="high" priority loading="eager" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
+        <Image src={heroImage} alt="A Flourishing Family doctor talking through pelvic care with a patient in natural light" widths={[420, 640, 820, 1040, 1280, 1600]} sizes="(max-width: 940px) calc(100vw - 56px), 46vw" format="webp" quality="high" priority loading="eager" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
       </div>
     </section>
 
@@ -62,7 +64,7 @@ const websiteSchema = {
       <div style="max-width:1220px; margin:0 auto;">
         <div style="max-width:34em; margin-bottom:56px;">
           <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:18px;">Wherever you are right now</div>
-          <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(34px,4.4vw,56px); line-height:1.06; letter-spacing:-.015em; color:#483E5E; margin:0 0 20px;">Four journeys. One practice that grows with you.</h2>
+          <h2 style="font-family:var(--font-fraunces),serif; font-weight:400; font-size:clamp(34px,4.4vw,56px); line-height:1.06; letter-spacing:-.015em; color:#483E5E; margin:0 0 20px;">Four journeys. One practice that grows with you.</h2>
           <p style="font-size:18px; line-height:1.6; color:#194247; opacity:.88; margin:0;">Most families find us for one thing — and stay for the rest of life. That's not an accident.</p>
         </div>
 
@@ -77,16 +79,16 @@ const websiteSchema = {
       </div>
       <div>
         <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">What makes us different</div>
-        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(32px,4.1vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 26px;">It's just you and a doctor. Every single visit.</h2>
+        <h2 style="font-family:var(--font-fraunces),serif; font-weight:400; font-size:clamp(32px,4.1vw,52px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 26px;">It's just you and a doctor. Every single visit.</h2>
         <p style="font-size:18.5px; line-height:1.68; color:#194247; max-width:32em; margin:0 0 22px; opacity:.92;">No physician's assistants. No students practicing on you. The doctor who meets you is the doctor who treats you — the one who learns your history, explains the why, and remembers it next time. As one patient put it, we're "not just chiropractors — so much more."</p>
-        <p style="font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:17px; line-height:1.5; color:#608F84; max-width:26em; margin:0 0 30px;">"If you get your tires rotated more often than your nervous system gets regulated, we should talk."</p>
+        <p style="font-family:var(--font-fraunces),serif; font-style:italic; font-weight:500; font-size:17px; line-height:1.5; color:#608F84; max-width:26em; margin:0 0 30px;">"If you get your tires rotated more often than your nervous system gets regulated, we should talk."</p>
         <div class="r-twocol" style="display:flex; gap:36px; flex-wrap:nowrap; padding-top:26px; border-top:1px solid rgba(72,62,94,.12);">
           <div style="flex:1 1 0; min-width:0;">
-            <div style="font-family:'Fraunces',serif; font-size:34px; color:#483E5E; line-height:1;">Thorough</div>
+            <div style="font-family:var(--font-fraunces),serif; font-size:34px; color:#483E5E; line-height:1;">Thorough</div>
             <div style="font-size:14px; color:#608F84; font-weight:600; margin-top:8px; letter-spacing:.04em;">We measure, we track, we explain every step — so you're never just told to trust us.</div>
           </div>
           <div style="flex:1 1 0; min-width:0;">
-            <div style="font-family:'Fraunces',serif; font-size:34px; color:#483E5E; line-height:1;">Patient</div>
+            <div style="font-family:var(--font-fraunces),serif; font-size:34px; color:#483E5E; line-height:1;">Patient</div>
             <div style="font-size:14px; color:#608F84; font-weight:600; margin-top:8px; letter-spacing:.04em;">Real change is a relationship, not a single visit. We're in it for the long run.</div>
           </div>
         </div>
@@ -110,7 +112,7 @@ const websiteSchema = {
      <!--<section id="start" class="r-sect r-pad-lg" style="background:#E2DCE2; padding:104px 32px;">
       <div style="max-width:760px; margin:0 auto; text-align:center;">
         <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:22px;">Not sure where to begin?</div>
-        <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(34px,4.6vw,58px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 26px;">Start with a conversation, not a commitment.</h2>
+        <h2 style="font-family:var(--font-fraunces),serif; font-weight:400; font-size:clamp(34px,4.6vw,58px); line-height:1.08; letter-spacing:-.015em; color:#483E5E; margin:0 0 26px;">Start with a conversation, not a commitment.</h2>
         <p style="font-size:19px; line-height:1.65; color:#194247; opacity:.9; max-width:30em; margin:0 auto 40px;">Come tell us what's going on — the achiness, the rough nights, the thing a few doctors already brushed off. We'll be straight with you about whether we can help and what it would really take. No pressure, no hard sell. Just a plan that fits your life and a doctor who'll remember your name next time you walk in.</p>
         <a href="/resources/start-here/" class="h-btn-primary" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; box-shadow:0 6px 22px rgba(235,160,64,.32); display:inline-block;">Start Here</a>
       </div>
@@ -120,7 +122,7 @@ const websiteSchema = {
    <!-- <section id="book" class="r-sect" style="background:#483E5E; color:#FCF0DD; padding:100px 32px 0;">
       <div class="r-book" style="max-width:1220px; margin:0 auto; display:grid; grid-template-columns:1.2fr 1fr; gap:64px; align-items:start; padding-bottom:88px;">
         <div>
-          <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(40px,5.2vw,72px); line-height:1.02; letter-spacing:-.02em; margin:0 0 26px; color:#FCF0DD;">Ready when<br />you are.</h2>
+          <h2 style="font-family:var(--font-fraunces),serif; font-weight:400; font-size:clamp(40px,5.2vw,72px); line-height:1.02; letter-spacing:-.02em; margin:0 0 26px; color:#FCF0DD;">Ready when<br />you are.</h2>
           <p style="font-size:17px; line-height:1.65; color:#d6cfe0; margin:0 0 30px; max-width:30em;">Early mornings, evenings, and Saturdays — hours that fit real life. Every first visit is one-on-one with a doctor.</p>
           <div style="display:flex; align-items:center; gap:22px; flex-wrap:wrap;">
             <a href="/resources/start-here/" class="h-btn-primary h-btn-primary-strong" style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);">Start Here</a>
@@ -155,7 +157,7 @@ const websiteSchema = {
         <div style="display:flex; align-items:center; gap:14px;">
           <span style="width:48px; height:48px; border-radius:50%; background:#FCF0DD; display:flex; align-items:center; justify-content:center; flex:none;"></span>
           <span style="display:flex; flex-direction:column; line-height:1;">
-            <span style="font-family:'Fraunces',serif; font-weight:500; font-size:20px; color:#FCF0DD;">Flourishing&nbsp;Family</span>
+            <span style="font-family:var(--font-fraunces),serif; font-weight:500; font-size:20px; color:#FCF0DD;">Flourishing&nbsp;Family</span>
             <span style="font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:#608F84; margin-top:5px; font-weight:600;">Wellness Studio · Clark, NJ</span>
           </span>
         </div>

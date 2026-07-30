@@ -1,11 +1,12 @@
 ---
 import InternalLayout from '../../layouts/InternalLayout.astro';
-import { applyUrl, contactInfo } from '../../data/site';
+import { bookingCalendars, contactInfo } from '../../data/site';
 
-// Calendly embeds fine as a plain iframe, so we skip their widget.js and the
-// third-party script it drags along.
-const embedSrc = applyUrl
-  ? `${applyUrl}${applyUrl.includes('?') ? '&' : '?'}embed_type=Inline&hide_gdpr_banner=1`
+// Program intake calls all route through the acupuncture calendar (Dr.
+// Alexandra), regardless of which program the visitor came from.
+const acupuncture = bookingCalendars.find((entry) => entry.slug === 'acupuncture');
+const skedSrc = acupuncture?.skedKey
+  ? `https://portal.sked.life/new-patient?key=${acupuncture.skedKey}`
   : null;
 ---
 
@@ -24,9 +25,14 @@ const embedSrc = applyUrl
       honestly whether a program makes sense for you, and what it would actually take.
     </p>
 
-    {embedSrc ? (
-      <div class="apply-embed">
-        <iframe src={embedSrc} title="Program intake call scheduler"></iframe>
+    {skedSrc ? (
+      <div class="sked-portal-container">
+        <iframe
+          id="sked-portal"
+          title="Program intake call scheduler"
+          sandbox="allow-top-navigation allow-scripts allow-forms allow-same-origin allow-popups"
+          src={skedSrc}
+        ></iframe>
       </div>
     ) : (
       <div class="apply-fallback">
@@ -41,6 +47,19 @@ const embedSrc = applyUrl
   </section>
 </InternalLayout>
 
+<script is:inline>
+  // Sked posts a redirect URL to the parent once an appointment is confirmed.
+  // Only trust messages coming from the portal itself — without the origin
+  // check any page could navigate this tab anywhere.
+  window.addEventListener('message', function (event) {
+    if (event.origin !== 'https://portal.sked.life') return;
+    try {
+      const message = JSON.parse(event.data);
+      if (message && message.url) window.location.href = message.url;
+    } catch (err) {}
+  });
+</script>
+
 <style>
   .apply {
     max-width: 1000px;
@@ -48,7 +67,7 @@ const embedSrc = applyUrl
     padding: 56px 32px 72px;
   }
   .apply h1 {
-    font-family: 'Fraunces', serif;
+    font-family: var(--font-fraunces), serif;
     font-weight: 400;
     font-size: clamp(36px, 4.8vw, 56px);
     line-height: 1.05;
@@ -64,11 +83,20 @@ const embedSrc = applyUrl
     max-width: 34em;
     margin: 0 0 40px;
   }
-  .apply-embed iframe {
-    border: none;
+  /* Aspect ratios supplied by Sked — their form gets dramatically taller on
+     narrow screens, hence the 310%. */
+  .sked-portal-container {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 740px;
-    display: block;
+    padding-top: 60%;
+  }
+  .sked-portal-container iframe {
+    border: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
   .apply-fallback {
     background: #e2dce2;
@@ -92,12 +120,17 @@ const embedSrc = applyUrl
     color: #483e5e;
     font-weight: 600;
   }
+  @media screen and (max-width: 900px) {
+    .sked-portal-container {
+      padding-top: 100%;
+    }
+  }
   @media screen and (max-width: 750px) {
     .apply {
       padding: 40px 24px 56px;
     }
-    .apply-embed iframe {
-      height: 1000px;
+    .sked-portal-container {
+      padding-top: 310%;
     }
   }
 </style>

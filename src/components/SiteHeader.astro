@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { programs } from '../data/programs';
 import { services } from '../data/services';
 import { bookingUrl } from '../data/site';
+import logoImage from '../assets/logo-horizontal-transparent.png';
 
 type Variant = 'home' | 'internal';
 
@@ -45,7 +47,7 @@ const navItems = [
 <header class={headerClass}>
   <nav class={navClass} aria-label="Main navigation">
     <a href={logoHref} class={logoLinkClass} aria-label="Flourishing Family Wellness Studio home">
-      <img class={logoClass} src="/assets/logo-horizontal-transparent.png" alt="Flourishing Family Wellness Studio" />
+      <Image class={logoClass} src={logoImage} alt="Flourishing Family Wellness Studio" format="webp" quality="high" loading="eager" decoding="async" />
     </a>
     <div class={linksClass}>
       {navItems.map((item) => (
