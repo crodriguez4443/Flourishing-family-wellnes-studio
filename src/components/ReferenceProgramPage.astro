@@ -236,6 +236,7 @@ const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
         <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#EBA040; margin-bottom:18px;">What’s included</div>
         <h2 set:html={program.includedTitle} style="font-family:var(--font-fraunces),serif; font-weight:400; font-size:clamp(32px,4.2vw,52px); line-height:1.08; letter-spacing:-.015em; color:#FCF0DD; margin:0;"></h2>
       </div>
+
       <div style="background:rgba(252,240,221,.05); border:1px solid rgba(252,240,221,.16); border-radius:12px; padding:14px 34px;">
         {program.includes.map((item, index) => (
           <div class="r-stack-row" style={`display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0; ${index < program.includes.length - 1 ? 'border-bottom:1px solid rgba(252,240,221,.14);' : ''}`}>

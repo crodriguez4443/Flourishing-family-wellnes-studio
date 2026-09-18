@@ -2,11 +2,11 @@
 import InternalLayout from '../../layouts/InternalLayout.astro';
 import { bookingCalendars, contactInfo } from '../../data/site';
 
-// Program intake calls all route through the acupuncture calendar (Dr.
-// Alexandra), regardless of which program the visitor came from.
-const acupuncture = bookingCalendars.find((entry) => entry.slug === 'acupuncture');
-const skedSrc = acupuncture?.skedKey
-  ? `https://portal.sked.life/new-patient?key=${acupuncture.skedKey}`
+// Program intake calls all route through the chiropractic calendar (Dr.
+// Shelley or Dr. Ila), regardless of which program the visitor came from.
+const chiropractic = bookingCalendars.find((entry) => entry.slug === 'chiropractic');
+const skedSrc = chiropractic?.skedKey
+  ? `https://portal.sked.life/new-patient?key=${chiropractic.skedKey}`
   : null;
 ---
 

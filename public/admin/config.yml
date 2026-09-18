@@ -237,3 +237,7 @@ collections:
               - { name: "bio", label: "Bio", widget: "text" }
               # Photo path is glob-mapped from src/assets — changing it is a dev task.
               - { name: "image", label: "image", widget: "hidden" }
+          # Dr. Alexandra's entry, parked out of `doctors` during her maternity
+          # leave. Hidden so a CMS save preserves it rather than dropping it;
+          # move the object back into `doctors` on her return.
+          - { name: "doctorsOnLeave", label: "doctorsOnLeave", widget: "hidden", required: false }

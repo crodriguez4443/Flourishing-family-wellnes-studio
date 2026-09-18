@@ -10,7 +10,7 @@
     {
       "slug": "acupuncture",
       "label": "Acupuncture",
-      "blurb": "Fertility, pregnancy, and hormone-focused acupuncture with Dr. Alexandra.",
+      "blurb": "Fertility, pregnancy, and hormone-focused acupuncture.",
       "skedKey": "fefe3c12c746c28d9931a1b31a3dd4155eef3aebb2e16df8aec47cea558b8bef"
     },
     {
@@ -46,7 +46,9 @@
       "role": "Chiropractor",
       "image": "/assets/doctors/ila.jpg",
       "bio": "Joined in 2021 to reach more families with perinatal and pediatric care. Ila is Webster certified and calm presence that helps people feel understood, and wanting to keep coming back."
-    },
+    }
+  ],
+  "doctorsOnLeave": [
     {
       "name": "Dr. Alexandra",
       "role": "Acupuncturist",

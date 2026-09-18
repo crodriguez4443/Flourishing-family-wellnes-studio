@@ -2,7 +2,7 @@
 metaDescription: "Baby-inclusive postpartum recovery care for mothers who want to feel like themselves again, without being left to figure it out alone."
 slug: postpartum-care
 routeSlug: 2postpartum-care
-order: 3
+order: 4
 eyebrow: Postpartum Care
 programName: The Returning to You Postpartum Program
 heroSize: clamp(42px,5.6vw,78px)

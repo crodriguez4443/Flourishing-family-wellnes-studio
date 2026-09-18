@@ -2,7 +2,7 @@
 metaDescription: "A 90-day, doctor-led plan for women done being told everything looks normal. Acupuncture-led fertility support, one-on-one, in Clark, NJ."
 slug: fertility-preconception
 routeSlug: 2fertility-journey
-order: 1
+order: 2
 eyebrow: Fertility & Preconception
 programName: The Flourishing Fertility Journey
 title: |

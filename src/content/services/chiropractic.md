@@ -13,7 +13,7 @@ image: /assets/ila.jpg
 imageAlt: A gentle chiropractic adjustment
 cardImage: /assets/card-family.jpg
 cardTag: Structure & nervous system
-cardBlurb: 'Gentle, precise adjustments: Webster, Gonstead, Non-Force, and Tonal, chosen to fit you.'
+cardBlurb: 'Gentle, precise adjustments: Webster, Gonstead, Extremities, and Tonal, chosen to fit you.'
 leftTitle: Not a crack-and-go. A method.
 leftText: We analyze exactly what’s going on before we adjust, track how it changes, and explain every step. It’s care built for the long run — regulating the nervous system, not just chasing a sore spot.
 rightTitle: Every body, every stage.
@@ -23,14 +23,14 @@ highlightsTitle: Four tools. One picked for you.
 planTitle: Chiropractic anchors every program.
 details:
   - Webster-informed pregnancy care
-  - Gonstead, Non-Force, and tonal approaches explained simply
+  - Gonstead, Extremities, and tonal approaches explained simply
   - Measurement, tracking, and recommendations you can understand
 highlights:
   - title: Webster
     text: A specific, gentle pelvic adjustment for pregnancy — creating room for baby and comfort for mom.
   - title: Gonstead
     text: A precise, thorough method — we find exactly where the issue is before we adjust. Nothing generic.
-  - title: Non-Force
+  - title: Extremities
     text: Extremely light-touch — no twisting, no cracking. Ideal for newborns, pregnancy, and tender stages.
   - title: Tonal
     text: Focused on how the whole nervous system holds tension — steadying the body’s baseline over time.

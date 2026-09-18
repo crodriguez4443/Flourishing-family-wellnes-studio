@@ -1,7 +1,7 @@
 ---
 slug: pregnancy-care
 routeSlug: 2pregnancy-journey
-order: 2
+order: 3
 eyebrow: Pregnancy Care
 programName: The Flourishing Pregnancy Journey
 title: |

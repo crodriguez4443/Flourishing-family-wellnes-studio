@@ -7,12 +7,12 @@ order: 2
 number: '02'
 eyebrow: Acupuncture
 title: Acupuncture
-summary: Led by Dr. Alexandra, who specializes in female hormone balance, fertility, and pregnancy. It supports the quieter systems — calming the nervous system and easing what the body carries, from cycle to conception to birth.
+summary: Led by our in-house acupuncturist, who specializes in female hormone balance, fertility, and pregnancy. It supports the quieter systems — calming the nervous system and easing what the body carries, from cycle to conception to birth.
 image: /assets/services/acupuncture.jpg
 imageAlt: An acupuncture treatment in a calm, natural-light room
 cardImage: /assets/services/acupuncture.jpg
 cardTag: Hormones & calm
-cardBlurb: 'Fertility, pregnancy, and hormone support with Dr. Alexandra: the quiet, steadying half of care.'
+cardBlurb: 'Fertility, pregnancy, and hormone support from our in-house acupuncturist: the quiet, steadying half of care.'
 leftTitle: The steadying half of care.
 leftText: Where chiropractic works with structure, acupuncture works with regulation — supporting hormonal balance, circulation, and a calmer nervous system. Gentle, and grounded in a doctor’s specialized training.
 rightTitle: Women in every season.

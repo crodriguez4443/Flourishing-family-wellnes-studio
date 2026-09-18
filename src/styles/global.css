@@ -277,7 +277,9 @@ body { margin: 0; }
 .meet-doctors-grid {
   display: grid;
   gap: 28px;
-  grid-template-columns: repeat(3, 1fr);
+  /* auto-fit collapses the empty track, so the row stays balanced whether the
+     roster is two doctors or three. */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .meet-doctor {
