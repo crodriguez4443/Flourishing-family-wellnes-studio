@@ -1,0 +1,10 @@
+---
+import { activeBanner, bookingUrl } from '../data/site';
+---
+
+{activeBanner && (
+  <div class="i-announcement">
+    <span>{activeBanner.text}</span>
+    {activeBanner.linkLabel && <a href={bookingUrl}>{activeBanner.linkLabel}&nbsp;→</a>}
+  </div>
+)}

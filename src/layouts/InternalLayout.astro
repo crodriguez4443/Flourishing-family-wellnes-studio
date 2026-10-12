@@ -1,4 +1,5 @@
 ---
+import AnnouncementBar from '../components/AnnouncementBar.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import StartHereCTA from '../components/StartHereCTA.astro';
@@ -46,10 +47,7 @@ const {
   schema={schema}
 >
   <div class="i-site">
-    <div class="i-announcement">
-      <span>Now welcoming new fertility, pregnancy & family patients in Clark, NJ</span>
-      <a href={bookingUrl}>Book a visit&nbsp;→</a>
-    </div>
+    <AnnouncementBar />
 
     <SiteHeader current={current} />
 

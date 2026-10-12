@@ -21,7 +21,11 @@ export const contactInfo = site.contactInfo;
 
 export const socialLinks = site.socialLinks;
 
-export const doctors = site.doctors;
+// Doctors flagged "On leave" in the CMS stay in site.json but are hidden everywhere.
+export const doctors = site.doctors.filter((doctor) => !doctor.onLeave);
+
+// First banner switched on in the CMS wins; none on = no banner bar.
+export const activeBanner = site.banners.find((banner) => banner.active);
 
 export const testimonials = [
   {

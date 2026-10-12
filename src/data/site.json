@@ -10,7 +10,7 @@
     {
       "slug": "acupuncture",
       "label": "Acupuncture",
-      "blurb": "Fertility, pregnancy, and hormone-focused acupuncture.",
+      "blurb": "Fertility, pregnancy, and hormone-focused acupuncture with Dr. Alexandra.",
       "skedKey": "fefe3c12c746c28d9931a1b31a3dd4155eef3aebb2e16df8aec47cea558b8bef"
     },
     {
@@ -55,21 +55,30 @@
       "name": "Dr. Shelley",
       "role": "Founder · Chiropractor",
       "bio": "Started Flourishing Family in 2011 to practice from a place of abundance: gentle, low-force care for the smallest patients and the tenderest stages.",
-      "image": "/assets/doctors/shelley.jpg"
+      "image": "/assets/doctors/shelley.jpg",
+      "onLeave": false
     },
     {
       "name": "Dr. Ila Clemente",
       "role": "Chiropractor",
       "image": "/assets/doctors/ila.jpg",
-      "bio": "Joined Dr. Shelley in 2018 to reach more families with perinatal and pediatric care. Dr. Ila is Webster certified and calm presence that helps people feel understood, and wanting to keep coming back."
-    }
-  ],
-  "doctorsOnLeave": [
+      "bio": "Joined Dr. Shelley in 2018 to reach more families with perinatal and pediatric care. Dr. Ila is Webster certified and calm presence that helps people feel understood, and wanting to keep coming back.",
+      "onLeave": false
+    },
     {
       "name": "Dr. Alexandra",
       "role": "Acupuncturist",
       "bio": "Completed the picture in 2025. She specializes in fertility and pregnancy acupuncture and female hormone balance - work that women at all stages of life can appreciate.",
-      "image": "/assets/doctors/alex.jpg"
+      "image": "/assets/doctors/alex.jpg",
+      "onLeave": true
+    }
+  ],
+  "banners": [
+    {
+      "name": "New patients welcome",
+      "active": true,
+      "text": "Now welcoming new fertility, pregnancy & family patients in Clark, NJ",
+      "linkLabel": "Book a visit"
     }
   ]
 }

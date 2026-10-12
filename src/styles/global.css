@@ -277,9 +277,9 @@ body { margin: 0; }
 .meet-doctors-grid {
   display: grid;
   gap: 28px;
-  /* auto-fit collapses the empty track, so the row stays balanced whether the
-     roster is two doctors or three. */
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* --cols is set by MeetDoctors.astro: at most 3 per row, extra doctors wrap
+     into balanced rows. The responsive rules below still override it. */
+  grid-template-columns: repeat(var(--cols, 3), 1fr);
 }
 
 .meet-doctor {

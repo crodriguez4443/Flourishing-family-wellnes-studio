@@ -235,9 +235,16 @@ collections:
               - { name: "name", label: "Name", widget: "string" }
               - { name: "role", label: "Role", widget: "string" }
               - { name: "bio", label: "Bio", widget: "text" }
+              - { name: "onLeave", label: "On leave", widget: "boolean", default: false, hint: "Switch ON to hide this doctor from the website (e.g. maternity leave). Switch OFF when they return. Nothing else is lost." }
               # Photo path is glob-mapped from src/assets — changing it is a dev task.
               - { name: "image", label: "image", widget: "hidden" }
-          # Dr. Alexandra's entry, parked out of `doctors` during her maternity
-          # leave. Hidden so a CMS save preserves it rather than dropping it;
-          # move the object back into `doctors` on her return.
-          - { name: "doctorsOnLeave", label: "doctorsOnLeave", widget: "hidden", required: false }
+          - name: "banners"
+            label: "Top Banners"
+            widget: "list"
+            summary: "{{fields.active}} — {{fields.name}}"
+            hint: "The bar at the very top of inner pages. Keep several banners saved and switch the one you want ON. If more than one is on, the first one in this list shows. If none are on, no banner shows."
+            fields:
+              - { name: "name", label: "Banner name (for your reference only)", widget: "string" }
+              - { name: "active", label: "Show this banner", widget: "boolean", default: false }
+              - { name: "text", label: "Banner message", widget: "string" }
+              - { name: "linkLabel", label: "Link text", widget: "string", required: false, hint: "Links to the booking page. Leave blank for a banner with no link." }
