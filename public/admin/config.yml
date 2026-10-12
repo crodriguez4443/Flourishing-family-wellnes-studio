@@ -43,54 +43,158 @@ collections:
     delete: false      # deleting would break that import
     fields:
       # --- Editable copy -----------------------------------------------------
-      - { name: "eyebrow", label: "Eyebrow (small label above title)", widget: "string" }
       - { name: "programName", label: "Program name", widget: "string" }
-      - { name: "title", label: "Headline", widget: "text" }
-      - { name: "summary", label: "Summary", widget: "text" }
-      # Search-result copy. Separate from Summary so the visible page text can
-      # stay long while the Google snippet stays under ~160 characters.
-      - { name: "metaDescription", label: "Google search description (aim for 140–160 characters)", widget: "string", required: false, hint: "What shows under the blue link in Google. If blank, the Summary is used." }
-      # Browser-tab / search-result title. Separate from the Headline so the tag
-      # stays short; " | Flourishing Family" is added automatically.
-      - { name: "metaTitle", label: "Google search title (keep it short, ~35 characters)", widget: "string", required: false, hint: "Shows in the browser tab and as the blue Google link. If blank, the Program name is used." }
-      - { name: "metaLine", label: "Meta line (the short · separated tagline)", widget: "string", required: false }
-      - { name: "imageAlt", label: "Main image alt text", widget: "string", required: false }
-      - { name: "ctaLabel", label: "Primary button label", widget: "string", required: false }
-      - { name: "secondaryCtaLabel", label: "Secondary button label", widget: "string", required: false }
-      - { name: "isThisTitle", label: "‘Is this you?’ heading", widget: "text", required: false }
-      - { name: "isThisText", label: "‘Is this you?’ intro line", widget: "string", required: false }
-      - { name: "before", label: "Intro paragraph (before the approach)", widget: "text", required: false }
-      - { name: "approachEyebrow", label: "Approach — eyebrow", widget: "string", required: false }
-      - { name: "approachImageAlt", label: "Approach image alt text", widget: "string", required: false }
-      - { name: "includedTitle", label: "‘What’s included’ heading", widget: "string", required: false }
-      - { name: "totalLabel", label: "Total value — label", widget: "string", required: false }
-      - { name: "totalValue", label: "Total value — amount", widget: "string", required: false }
-      - { name: "howEyebrow", label: "How it works — eyebrow", widget: "string", required: false }
-      - { name: "howTitle", label: "How it works — heading", widget: "string", required: false }
-      - { name: "howText", label: "How it works — intro", widget: "text", required: false }
-      - { name: "roadmapNote", label: "Roadmap note", widget: "text", required: false }
-      - { name: "trustTitle", label: "Trust section — heading", widget: "string", required: false }
-      - { name: "investmentTitle", label: "Investment — heading", widget: "string", required: false }
-      - { name: "investmentSub", label: "Investment — subtitle", widget: "string", required: false }
-      - { name: "investmentFootnote", label: "Investment — footnote", widget: "text", required: false }
-      - { name: "perspectiveEyebrow", label: "‘For perspective’ eyebrow", widget: "string", required: false }
-      - { name: "promiseTitle", label: "Guarantee — heading", widget: "text", required: false }
-      - { name: "promiseText", label: "Guarantee — body", widget: "text", required: false }
-      - { name: "bookTitle", label: "Final booking heading", widget: "string", required: false }
-      - { name: "finalNote", label: "Final note (scarcity line)", widget: "text", required: false }
-      - { name: "stickyLabel", label: "Sticky button label", widget: "string", required: false }
-      - { name: "relatedStageLabel", label: "Related journey — stage label", widget: "string", required: false }
-      - { name: "relatedSummary", label: "Related journey — summary", widget: "text", required: false }
-      - { name: "proof", label: "Proof line", widget: "string", required: false }
-      # FAQs are plain Q&A — safe and valuable to edit.
-      - name: "faqs"
-        label: "FAQs"
-        widget: "list"
+      - name: "heroSection"
+        label: "1. Top of page (hero & buttons)"
+        widget: "object"
+        collapsed: false
         required: false
-        summary: "{{fields.question}}"
+        hint: "Headline, summary, button labels and the small tagline."
         fields:
-          - { name: "question", label: "Question", widget: "string" }
-          - { name: "answer", label: "Answer", widget: "text" }
+          - { name: "eyebrow", label: "Eyebrow (small label above title)", widget: "string" }
+          - { name: "title", label: "Headline", widget: "text" }
+          - { name: "summary", label: "Summary", widget: "text" }
+          - { name: "imageAlt", label: "Main image alt text", widget: "string", required: false }
+          - { name: "metaLine", label: "Meta line (the short · separated tagline)", widget: "string", required: false }
+          - { name: "ctaLabel", label: "Primary button label", widget: "string", required: false }
+          - { name: "secondaryCtaLabel", label: "Secondary button label", widget: "string", required: false }
+          - { name: "stickyLabel", label: "Sticky button label", widget: "string", required: false }
+      - name: "isThisSection"
+        label: "2. “Is this you?”"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Heading and intro line above the list of situations."
+        fields:
+          - { name: "isThisTitle", label: "‘Is this you?’ heading", widget: "text", required: false }
+          - { name: "isThisText", label: "‘Is this you?’ intro line", widget: "string", required: false }
+      - name: "approachSection"
+        label: "3. Our approach"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Intro paragraph and approach labels."
+        fields:
+          - { name: "before", label: "Intro paragraph (before the approach)", widget: "text", required: false }
+          - { name: "approachEyebrow", label: "Approach — eyebrow", widget: "string", required: false }
+          - { name: "approachImageAlt", label: "Approach image alt text", widget: "string", required: false }
+      - name: "includedSection"
+        label: "4. What’s included & pricing table"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "The itemized price list and the total."
+        fields:
+          - { name: "includedTitle", label: "‘What’s included’ heading", widget: "string", required: false }
+          - name: "includes"
+            label: "What’s included (list with prices)"
+            widget: "list"
+            required: false
+            summary: "{{fields.component}} — {{fields.value}}"
+            hint: "One row per item on the ‘What’s included’ table. Drag to reorder. Update the ‘Total value’ below by hand when prices change."
+            fields:
+              - { name: "component", label: "Item", widget: "string", hint: "Plain text only, e.g. 12 chiropractic adjustments" }
+              - { name: "note", label: "Small grey note (optional)", widget: "string", required: false, hint: "Shown in smaller text after the item, e.g. (60 + 90 min)" }
+              - { name: "bonus", label: "This is a Bonus", widget: "boolean", default: false, required: false, hint: "Adds a gold ‘Bonus —’ label before the item." }
+              - { name: "value", label: "Price or label", widget: "string", hint: "e.g. $480/mo, Included, priceless" }
+              - name: "valueStyle"
+                label: "How the price looks"
+                widget: "select"
+                default: "price"
+                options:
+                  - { label: "Price (gold)", value: "price" }
+                  - { label: "Included (green, caps)", value: "included" }
+                  - { label: "Note (green, italic — e.g. priceless)", value: "italic" }
+          - { name: "totalLabel", label: "Total value — label", widget: "string", required: false }
+          - { name: "totalValue", label: "Total value — amount", widget: "string", required: false }
+      - name: "howSection"
+        label: "5. How it works"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Steps heading, intro and roadmap note."
+        fields:
+          - { name: "howEyebrow", label: "How it works — eyebrow", widget: "string", required: false }
+          - { name: "howTitle", label: "How it works — heading", widget: "string", required: false }
+          - { name: "howText", label: "How it works — intro", widget: "text", required: false }
+          - { name: "roadmapNote", label: "Roadmap note", widget: "text", required: false }
+      - name: "trustSection"
+        label: "6. Trust & proof"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Trust heading and the one-line proof quote."
+        fields:
+          - { name: "trustTitle", label: "Trust section — heading", widget: "string", required: false }
+          - { name: "proof", label: "Proof line", widget: "string", required: false }
+      - name: "investmentSection"
+        label: "7. Investment"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Investment heading, subtitle, footnote and “for perspective” label."
+        fields:
+          - { name: "investmentTitle", label: "Investment — heading", widget: "string", required: false }
+          - { name: "investmentSub", label: "Investment — subtitle", widget: "string", required: false }
+          - { name: "investmentFootnote", label: "Investment — footnote", widget: "text", required: false }
+          - { name: "perspectiveEyebrow", label: "‘For perspective’ eyebrow", widget: "string", required: false }
+      - name: "guaranteeSection"
+        label: "8. Guarantee"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "The promise heading and text."
+        fields:
+          - { name: "promiseTitle", label: "Guarantee — heading", widget: "text", required: false }
+          - { name: "promiseText", label: "Guarantee — body", widget: "text", required: false }
+      - name: "faqSection"
+        label: "9. FAQs"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Questions and answers at the bottom of the page."
+        fields:
+          # FAQs are plain Q&A — safe and valuable to edit.
+          - name: "faqs"
+            label: "FAQs"
+            widget: "list"
+            required: false
+            summary: "{{fields.question}}"
+            fields:
+              - { name: "question", label: "Question", widget: "string" }
+              - { name: "answer", label: "Answer", widget: "text" }
+
+      - name: "closingSection"
+        label: "10. Final booking section"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Closing heading and the scarcity line."
+        fields:
+          - { name: "bookTitle", label: "Final booking heading", widget: "string", required: false }
+          - { name: "finalNote", label: "Final note (scarcity line)", widget: "text", required: false }
+      - name: "relatedSection"
+        label: "11. Related journey"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "The “where this fits in the journey” card."
+        fields:
+          - { name: "relatedStageLabel", label: "Related journey — stage label", widget: "string", required: false }
+          - { name: "relatedSummary", label: "Related journey — summary", widget: "text", required: false }
+      - name: "seoSection"
+        label: "12. Google search & sharing"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "What shows in Google results and the browser tab."
+        fields:
+          # Browser-tab / search-result title. Separate from the Headline so the tag
+          # stays short; " | Flourishing Family" is added automatically.
+          - { name: "metaTitle", label: "Google search title (keep it short, ~35 characters)", widget: "string", required: false, hint: "Shows in the browser tab and as the blue Google link. If blank, the Program name is used." }
+          # Search-result copy. Separate from Summary so the visible page text can
+          # stay long while the Google snippet stays under ~160 characters.
+          - { name: "metaDescription", label: "Google search description (aim for 140–160 characters)", widget: "string", required: false, hint: "What shows under the blue link in Google. If blank, the Summary is used." }
 
       # --- Preserved, not shown (routing / styling / styled-HTML blocks) ------
       # These MUST stay declared so a save doesn't drop them. Do not delete.
@@ -113,7 +217,6 @@ collections:
       - { name: "roadmapVariant", label: "roadmapVariant", widget: "hidden", required: false }
       - { name: "isThisYou", label: "isThisYou", widget: "hidden", required: false }
       - { name: "approachParagraphs", label: "approachParagraphs", widget: "hidden", required: false }
-      - { name: "includes", label: "includes", widget: "hidden", required: false }
       - { name: "roadmap", label: "roadmap", widget: "hidden", required: false }
       - { name: "trust", label: "trust", widget: "hidden", required: false }
       - { name: "relatedStages", label: "relatedStages", widget: "hidden", required: false }
