@@ -236,8 +236,9 @@ collections:
               - { name: "role", label: "Role", widget: "string" }
               - { name: "bio", label: "Bio", widget: "text" }
               - { name: "onLeave", label: "On leave", widget: "boolean", default: false, hint: "Switch ON to hide this doctor from the website (e.g. maternity leave). Switch OFF when they return. Nothing else is lost." }
-              # Photo path is glob-mapped from src/assets — changing it is a dev task.
-              - { name: "image", label: "image", widget: "hidden" }
+              # Uploads land in src/assets/doctors (optimized at build time); the saved
+              # value stays /assets/doctors/<file>, the same shape MeetDoctors.astro resolves.
+              - { name: "image", label: "Photo", widget: "image", media_folder: "/src/assets/doctors", public_folder: "/assets/doctors", hint: "Square-ish headshot works best. Upload a new photo or pick an existing one." }
           - name: "banners"
             label: "Top Banners"
             widget: "list"
