@@ -55,22 +55,29 @@
       "name": "Dr. Shelley",
       "role": "Founder · Chiropractor",
       "bio": "Started Flourishing Family in 2011 to practice from a place of abundance: gentle, low-force care for the smallest patients and the tenderest stages.",
-      "image": "/assets/doctors/shelley.jpg",
-      "onLeave": false
+      "onLeave": false,
+      "image": "/assets/doctors/shelley.jpg"
     },
     {
       "name": "Dr. Ila Clemente",
       "role": "Chiropractor",
-      "image": "/assets/doctors/ila.jpg",
       "bio": "Joined Dr. Shelley in 2018 to reach more families with perinatal and pediatric care. Dr. Ila is Webster certified and calm presence that helps people feel understood, and wanting to keep coming back.",
-      "onLeave": false
+      "onLeave": false,
+      "image": "/assets/doctors/ila.jpg"
     },
     {
       "name": "Dr. Alexandra",
       "role": "Acupuncturist",
       "bio": "Completed the picture in 2025. She specializes in fertility and pregnancy acupuncture and female hormone balance - work that women at all stages of life can appreciate.",
-      "image": "/assets/doctors/alex.jpg",
-      "onLeave": true
+      "onLeave": true,
+      "image": "/assets/doctors/alex.jpg"
+    },
+    {
+      "name": "Dr. Hannah Deitch",
+      "role": "Acupuncturist",
+      "bio": "Dr. Deitch is a talented acupuncturist that joined the team in 2026. She's a talented professional, comfortable working with patients of all ages.",
+      "onLeave": false,
+      "image": "/assets/doctors/hannah pic.jpeg"
     }
   ],
   "banners": [
