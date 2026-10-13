@@ -1,5 +1,5 @@
 ---
-import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
 import reviews from '../../data/reviews.json';
 import { bookingUrl } from '../../data/site';
 
@@ -12,7 +12,7 @@ const testimonialsSchema = {
 };
 ---
 
-<DraftReferenceLayout
+<PageLayout
   title="Success Stories"
   description={`${reviews.length} patient stories from real Flourishing Family families — fertility, pregnancy, postpartum, pediatric, and whole-family care in Clark, NJ and nearby towns.`}
   current="resources"
@@ -50,4 +50,4 @@ const testimonialsSchema = {
       <a class="draft-text-link h-link-underline" href="/resources/start-here/">Read Start Here&nbsp;→</a>
     </div>
   </section>
-</DraftReferenceLayout>
+</PageLayout>

@@ -1,7 +1,6 @@
 ---
 metaDescription: "Not a diet, a plan. Root-cause nutrition and supplement guidance for fertility prep, a healthier pregnancy, and steady family energy, in Clark, NJ."
 slug: functional-nutrition
-routeSlug: 2functional-nutrition
 calendar: nutrition
 order: 3
 number: '03'

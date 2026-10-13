@@ -1,5 +1,5 @@
 ---
-import ReferenceServicePage from '../../components/ReferenceServicePage.astro';
+import ServicePage from '../../components/ServicePage.astro';
 import { services, type Service } from '../../data/services';
 
 export function getStaticPaths() {
@@ -16,4 +16,4 @@ interface Props {
 const { service } = Astro.props;
 ---
 
-<ReferenceServicePage {...service} />
+<ServicePage {...service} />

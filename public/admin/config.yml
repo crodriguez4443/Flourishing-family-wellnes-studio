@@ -199,7 +199,6 @@ collections:
       # --- Preserved, not shown (routing / styling / styled-HTML blocks) ------
       # These MUST stay declared so a save doesn't drop them. Do not delete.
       - { name: "slug", label: "slug", widget: "hidden" }
-      - { name: "routeSlug", label: "routeSlug", widget: "hidden" }
       - { name: "order", label: "order", widget: "hidden" }
       - { name: "heroSize", label: "heroSize", widget: "hidden", required: false }
       - { name: "image", label: "image", widget: "hidden", required: false }
@@ -270,7 +269,6 @@ collections:
 
       # --- Preserved, not shown ---------------------------------------------
       - { name: "slug", label: "slug", widget: "hidden" }
-      - { name: "routeSlug", label: "routeSlug", widget: "hidden" }
       - { name: "order", label: "order", widget: "hidden" }
       # Which of the three Sked calendars books this service. Hidden because
       # picking the wrong one sends a patient to the wrong doctor's calendar.

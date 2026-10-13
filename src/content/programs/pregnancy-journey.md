@@ -1,6 +1,5 @@
 ---
 slug: pregnancy-care
-routeSlug: 2pregnancy-journey
 order: 3
 programName: The Flourishing Pregnancy Journey
 image: /assets/programs/pregnancy1.jpg

@@ -5,7 +5,6 @@ import { programs as defaultPrograms } from '../data/programs';
 
 interface ProgramCard {
   slug: string;
-  routeSlug?: string;
   eyebrow: string;
   title: string;
   summary: string;
@@ -19,14 +18,12 @@ interface ProgramCard {
 interface Props {
   items?: ProgramCard[];
   columns?: 2 | 3 | 4;
-  linkMode?: 'public' | 'draft';
   className?: string;
 }
 
 const {
   items = defaultPrograms,
   columns,
-  linkMode = 'public',
   className = '',
 } = Astro.props;
 
@@ -38,8 +35,6 @@ const optimizedImages = import.meta.glob<{ default: ImageMetadata }>(
 );
 const resolveImage = (path?: string) => (path ? optimizedImages[`/src${path}`]?.default : undefined);
 
-const hrefFor = (program: ProgramCard) =>
-  linkMode === 'draft' && program.routeSlug ? `/${program.routeSlug}/` : `/programs/${program.slug}/`;
 ---
 
 <div class={`program-card-grid ${className}`} data-columns={resolvedColumns}>
@@ -50,7 +45,7 @@ const hrefFor = (program: ProgramCard) =>
     const eyebrow = program.cardEyebrow ?? program.eyebrow;
 
     return (
-      <a class="program-card h-card" href={hrefFor(program)}>
+      <a class="program-card h-card" href={`/programs/${program.slug}/`}>
         {program.image && (
           <div class="program-card-image">
             {optimizedImage ? (

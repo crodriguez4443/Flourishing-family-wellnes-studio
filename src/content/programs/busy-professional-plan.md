@@ -1,6 +1,5 @@
 ---
 slug: busy-professional-plan
-routeSlug: 2busy-professional-plan
 order: 1
 programName: The Busy Professional Plan
 heroSize: clamp(42px,5.6vw,78px)

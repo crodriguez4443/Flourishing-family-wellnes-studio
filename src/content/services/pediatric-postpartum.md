@@ -1,7 +1,6 @@
 ---
 metaDescription: "Gentle, low-force milestone care for newborns and children, plus recovery-focused support for mom after birth. The tenderest stages, in careful hands."
 slug: pediatric-postpartum
-routeSlug: pediatric-postpartum
 calendar: chiropractic
 order: 4
 number: '04'

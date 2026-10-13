@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
 import { bookingUrl } from '../../data/site';
 import expectation from '../../assets/resources/expectation.jpg';
 
@@ -38,7 +38,7 @@ const resourcesSchema = {
 };
 ---
 
-<DraftReferenceLayout
+<PageLayout
   title="Patient Resources"
   description="What to expect at your first visit, how pricing works, and answers before you book — everything Clark-area families ask before starting care with us."
   current="resources"
@@ -134,8 +134,8 @@ const resourcesSchema = {
       <p style="font-size:19px; line-height:1.65; color:#194247; opacity:.9; max-width:30em; margin:0 auto 40px;">Book your first visit, or start with a no-pressure conversation about whether we are the right fit.</p>
       <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
         <a class="h-btn-primary" href={bookingUrl} style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);">Book your first visit</a>
-        <a class="h-link-underline" href="/2contact/" style="text-decoration:none; color:#483E5E; font-weight:600; font-size:16px; border-bottom:2px solid rgba(72,62,94,.25); padding-bottom:3px; align-self:center;">Start with a conversation&nbsp;→</a>
+        <a class="h-link-underline" href="/contact/" style="text-decoration:none; color:#483E5E; font-weight:600; font-size:16px; border-bottom:2px solid rgba(72,62,94,.25); padding-bottom:3px; align-self:center;">Start with a conversation&nbsp;→</a>
       </div>
     </div>
   </section>
-</DraftReferenceLayout>
+</PageLayout>

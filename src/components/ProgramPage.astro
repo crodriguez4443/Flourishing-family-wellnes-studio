@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import DraftReferenceLayout from '../layouts/DraftReferenceLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 import ProgramCards from './ProgramCards.astro';
 // Programs are the primary goal and convert through a qualifying call, not a
 // one-off Sked appointment — so they route to /apply/, never to a calendar.
@@ -38,7 +38,6 @@ interface StageItem {
 
 interface ProgramPageData {
   slug: string;
-  routeSlug: string;
   order: number;
   eyebrow: string;
   programName: string;
@@ -104,17 +103,16 @@ interface ProgramPageData {
 
 type RelatedProgram = Pick<
   ProgramPageData,
-  'slug' | 'routeSlug' | 'eyebrow' | 'title' | 'summary' | 'image' | 'imageAlt'
+  'slug' | 'eyebrow' | 'title' | 'summary' | 'image' | 'imageAlt'
 >;
 
 interface Props {
   program: ProgramPageData;
   relatedPrograms?: RelatedProgram[];
   current?: string;
-  linkMode?: 'draft' | 'public';
 }
 
-const { program, relatedPrograms = [], current = 'programs', linkMode = 'public' } = Astro.props;
+const { program, relatedPrograms = [], current = 'programs' } = Astro.props;
 
 const approachImage = program.approachImage ?? '/assets/ila.jpg';
 const approachImageAlt = program.approachImageAlt ?? 'A doctor working hands-on and unhurried with a patient';
@@ -168,7 +166,7 @@ const faqSchema = program.faqs?.length
 const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
 ---
 
-<DraftReferenceLayout title={program.metaTitle ?? program.programName} description={programDescription} schema={programSchema} current={current}>
+<PageLayout title={program.metaTitle ?? program.programName} description={programDescription} schema={programSchema} current={current}>
   <section id="top" class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:74px 32px 88px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
     <div>
       <div style="display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:34px;">
@@ -385,7 +383,7 @@ const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
       </div>
     </div>
     <div style="margin-bottom:44px;">
-      <ProgramCards items={relatedPrograms} columns={relatedPrograms.length === 2 ? 2 : 3} linkMode={linkMode} />
+      <ProgramCards items={relatedPrograms} columns={relatedPrograms.length === 2 ? 2 : 3} />
     </div>
     <!-- <div style="text-align:center; padding:36px; background:#E2DCE2; border-radius:12px;">
       <p style="font-size:17px; line-height:1.55; color:#194247; max-width:34em; margin:0 auto 22px;">Not sure which stage you’re in? Come tell us what’s going on. We’ll be straight with you about whether we can help and what it would take. No hard sell.</p>
@@ -394,4 +392,4 @@ const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
   </section>
 
   <a class="h-sticky" href="#book" style="position:fixed; bottom:24px; right:24px; z-index:60; background:#EBA040; color:#483E5E; font-weight:700; font-size:15px; padding:15px 26px; border-radius:999px; text-decoration:none; box-shadow:0 10px 30px -6px rgba(72,62,94,.5);">{program.stickyLabel}</a>
-</DraftReferenceLayout>
+</PageLayout>

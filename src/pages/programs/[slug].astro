@@ -1,5 +1,5 @@
 ---
-import ReferenceProgramPage from '../../components/ReferenceProgramPage.astro';
+import ProgramPage from '../../components/ProgramPage.astro';
 import { programs, type Program } from '../../data/programs';
 
 export function getStaticPaths() {
@@ -20,4 +20,4 @@ interface Props {
 const { program, relatedPrograms } = Astro.props;
 ---
 
-<ReferenceProgramPage program={program} relatedPrograms={relatedPrograms} />
+<ProgramPage program={program} relatedPrograms={relatedPrograms} />

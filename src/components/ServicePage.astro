@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import DraftReferenceLayout from '../layouts/DraftReferenceLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 import { servicePageShared } from '../data/services';
 import { programs } from '../data/programs';
 import { bookingCalendarUrl } from '../data/site';
@@ -116,7 +116,7 @@ const serviceSchema = {
 };
 ---
 
-<DraftReferenceLayout title={title} description={serviceDescription} schema={serviceSchema} current={current}>
+<PageLayout title={title} description={serviceDescription} schema={serviceSchema} current={current}>
   <section class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:64px 32px 72px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
     <div>
       <div style="font-size:13px; margin-bottom:26px; color:#194247; opacity:.7;"><a href={servicePageShared.breadcrumbHref} style="color:#608F84; text-decoration:none; font-weight:600;">{servicePageShared.breadcrumbLabel}</a> <span style="opacity:.5;">/</span> {title}</div>
@@ -128,7 +128,6 @@ const serviceSchema = {
       <p style="font-size:20px; line-height:1.62; color:#194247; max-width:31em; margin:0 0 34px; opacity:.92;" set:html={summary}></p>
       <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
         <a class="h-btn-primary" href={bookHref} style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 36px; border-radius:999px; box-shadow:0 6px 22px rgba(235,160,64,.32);">Book a visit</a>
-        {/* <a class="h-link-underline" href="/2patient-resources/#pricing" style="text-decoration:none; color:#483E5E; font-weight:600; font-size:16px; border-bottom:2px solid rgba(72,62,94,.25); padding-bottom:3px;">See pricing&nbsp;→</a> */}
       </div>
     </div>
     <div style="position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background:#ece0d6; box-shadow:0 30px 60px -28px rgba(72,62,94,.4);">
@@ -203,4 +202,4 @@ const serviceSchema = {
       <a class="h-link-underline" href={servicePageShared.finalSecondaryHref} style="text-decoration:none; color:#483E5E; font-weight:600; font-size:16px; border-bottom:2px solid rgba(72,62,94,.25); padding-bottom:3px; align-self:center;">{servicePageShared.finalSecondaryLabel}&nbsp;→</a>
     </div>
   </section>
-</DraftReferenceLayout>
+</PageLayout>

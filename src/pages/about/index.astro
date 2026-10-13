@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
 import MeetDoctors from '../../components/MeetDoctors.astro';
 import ReviewsCube from '../../components/ReviewsCube.astro';
 import doctorsImage from '../../assets/doctors/the-doctors.jpg';
@@ -24,7 +24,7 @@ const aboutSchema = {
 };
 ---
 
-<DraftReferenceLayout
+<PageLayout
   title="About"
   description="Meet the doctors behind Flourishing Family one-on-one care — no PAs, no students, same doctor every visit — serving Clark, Westfield, Cranford & Scotch Plains."
   current="about"
@@ -139,4 +139,4 @@ const aboutSchema = {
       </div>
     </div>
   </section>
-</DraftReferenceLayout>
+</PageLayout>

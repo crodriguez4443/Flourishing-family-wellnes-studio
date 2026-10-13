@@ -1,6 +1,5 @@
 ---
 slug: fertility-preconception
-routeSlug: 2fertility-journey
 order: 2
 programName: The Flourishing Fertility Journey
 image: /assets/programs/fertility.jpg

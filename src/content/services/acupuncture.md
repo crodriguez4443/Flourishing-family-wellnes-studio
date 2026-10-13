@@ -1,7 +1,6 @@
 ---
 metaDescription: "Acupuncture with Dr. Alexandra for fertility, pregnancy, and hormone balance, easing what your body carries. In Clark, NJ."
 slug: acupuncture
-routeSlug: 2acupuncture
 calendar: acupuncture
 order: 2
 number: '02'

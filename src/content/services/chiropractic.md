@@ -1,7 +1,6 @@
 ---
 metaDescription: "Gentle, precise adjustments that help your body regulate, move, and recover the way it is meant to. We pick the technique to fit you, in Clark, NJ."
 slug: chiropractic
-routeSlug: 2chiropractic
 calendar: chiropractic
 order: 1
 number: '01'

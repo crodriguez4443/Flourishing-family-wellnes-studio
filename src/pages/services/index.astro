@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import DraftReferenceLayout from '../../layouts/DraftReferenceLayout.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
 import ProgramCards from '../../components/ProgramCards.astro';
 import { services } from '../../data/services';
 import { bookingUrl } from '../../data/site';
@@ -13,7 +13,7 @@ const cardImages = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 const serviceCards = services.map((service) => ({
-  href: `/${service.routeSlug}/`,
+  href: `/services/${service.slug}/`,
   img: cardImages[`/src${service.cardImage}`]?.default,
   tag: service.cardTag,
   title: service.title,
@@ -40,7 +40,7 @@ const servicesSchema = {
 };
 ---
 
-<DraftReferenceLayout title="Services" description={servicesDescription} schema={servicesSchema} current="services">
+<PageLayout title="Services" description={servicesDescription} schema={servicesSchema} current="services">
   <section class="r-hero r-sect" style="max-width:1220px; margin:0 auto; padding:74px 32px 60px; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;">
     <div>
       <div style="display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:34px;">
@@ -99,8 +99,8 @@ const servicesSchema = {
       <p style="font-size:18px; line-height:1.65; color:#d6cfe0; max-width:32em; margin:0 auto 38px;">Book a first visit one-on-one with a doctor, or start with a no-pressure conversation about what would actually help.</p>
       <div style="display:flex; gap:18px; justify-content:center; flex-wrap:wrap;">
         <a class="h-btn-primary" href={bookingUrl} style="text-decoration:none; background:#EBA040; color:#483E5E; font-weight:700; font-size:17px; padding:18px 40px; border-radius:999px; display:inline-block; box-shadow:0 6px 22px rgba(235,160,64,.32);">Book a visit</a>
-        <a class="h-link-underline" href="/2contact/" style="text-decoration:none; color:#FCF0DD; font-weight:600; font-size:16px; border-bottom:2px solid rgba(252,240,221,.35); padding-bottom:3px; align-self:center;">Start with a conversation&nbsp;→</a>
+        <a class="h-link-underline" href="/contact/" style="text-decoration:none; color:#FCF0DD; font-weight:600; font-size:16px; border-bottom:2px solid rgba(252,240,221,.35); padding-bottom:3px; align-self:center;">Start with a conversation&nbsp;→</a>
       </div>
     </div>
   </section>
-</DraftReferenceLayout>
+</PageLayout>

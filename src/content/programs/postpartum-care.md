@@ -1,6 +1,5 @@
 ---
 slug: postpartum-care
-routeSlug: 2postpartum-care
 order: 4
 programName: The Returning to You Postpartum Program
 heroSize: clamp(42px,5.6vw,78px)
