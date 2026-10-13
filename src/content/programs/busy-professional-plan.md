@@ -69,34 +69,35 @@ approachSection:
 includedSection:
   includedTitle: A complete reset system built to fit between meetings.
   includes:
-    - component: "4 reset sessions / month (10–20 min each)"
-      value: "$480/mo"
+    - component: "Initial chiropractic assessment with adjustment"
+      value: "$200"
+      valueStyle: price
+    - component: "4 reset adjustments / month"
+      value: "$320"
+      valueStyle: price
+    - component: "2 stress-reducing acupuncture sessions"
+      value: "$250"
       valueStyle: price
     - component: "Soft-tissue + physical reset built into every visit"
+      value: "Included"
+      valueStyle: included
+    - component: "Expert extremity adjustments"
+      note: "(shoulders, wrists, knees, feet/ankles, etc.)"
       value: "Included"
       valueStyle: included
     - component: "Nervous-system down-regulation strategies"
       value: "Included"
       valueStyle: included
-    - component: "Priority between-meeting scheduling"
-      value: "Included"
-      valueStyle: included
-    - component: "Quarterly performance + stress-load review"
-      value: "$75/mo"
-      valueStyle: price
-    - component: "No homework, routines, or compliance requirements"
-      value: "Included"
-      valueStyle: included
-    - component: "Desk & travel micro-reset guide"
-      bonus: true
-      value: "$100"
+    - component: "Titronic ThermoScan diagnostics"
+      note: "(advanced thermal imaging that pinpoints nerve stress other exams can't see)"
+      value: "$100 yearly"
       valueStyle: price
     - component: "Same-week reschedule, no penalty"
       bonus: true
       value: "Included"
       valueStyle: included
   totalLabel: Total value
-  totalValue: ~$655/mo
+  totalValue: ~$870
 howSection:
   howEyebrow: How it works
   howTitle: Simple. Fast. Predictable.
@@ -124,6 +125,10 @@ faqSection:
       answer: The goal of every visit is an immediate physiological shift — less physical tension and a calmer nervous system before you walk back out the door.
     - question: Can I pause when work gets intense or I’m traveling?
       answer: Yes. Pause anytime and pick back up when your schedule allows — no penalty.
+    - question: What is Titronic Thermal Scan Technology?
+      answer: See what a standard exam can't. Our practice uses Titronic Thermal Scan Technology to map subtle temperature patterns along your spine — patterns that can reveal areas of nerve stress and inflammation before you ever feel a symptom. It's a fast, painless, non-invasive scan that gives your chiropractor a clearer picture of what's really going on beneath the surface, so your care plan is built around your body's actual needs, not guesswork.
+    - question: What if I want to pay per visit for a follow-up?
+      answer: Sure, you’re always free to choose that. The visit cost is $80 for chiropractic follow up and $150 for an acupuncture follow-up.
 closingSection:
   bookTitle: Feel better in less time — without changing your life.
   finalNote: We limit new client onboarding each week to protect scheduling availability and session quality. Chronic stress patterns become more embedded the longer they’re left unaddressed.

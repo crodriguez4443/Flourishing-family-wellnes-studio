@@ -25,7 +25,7 @@ roadmap:
   - title: Phase-based care
     text: Intensive support moves into maintenance, then tapering as your body stabilizes.
   - title: Progress reviews
-    text: Every 8 visits, we review what is changing and refine the plan.
+    text: Every few visits, we review what is changing and refine the plan.
 trust:
   - 15 years across <strong style="color:#483E5E;">chiropractic care, acupuncture, and family wellness</strong>.
   - Consistent 5-star patient outcomes and continuity-based care relationships.
@@ -34,7 +34,7 @@ trust:
 investmentVariant: price
 investmentPrice: $3,500
 investmentLine: Payment plans available. HSA/FSA eligible. Superbill provided where applicable.
-perspective: The full value stack is estimated at <strong style="color:#483E5E;">~$6,700 – $8,500+</strong>, with clinical care, recovery progression, scheduling support, reimbursement guidance, and education built into one plan.
+perspective: The full value stack is estimated at <strong style="color:#483E5E;">~$2,650</strong>, with chiropractic care, acupuncture, nutrition guidance, ThermoScan diagnostics, and baby-inclusive support built into one plan.
 relatedStages:
   - label: Trying
   - label: Expecting
@@ -62,49 +62,38 @@ approachSection:
 includedSection:
   includedTitle: Fully guided recovery, from assessment to ongoing care.
   includes:
-    - component: "Comprehensive postpartum intake + full-body functional assessment"
-      value: "$350"
-      valueStyle: price
-    - component: "Personalized postpartum care plan, documented + updated over time"
-      value: "$250"
-      valueStyle: price
-    - component: "1-on-1 chiropractic care sessions with postpartum-specific techniques"
-      value: "$120/visit"
-      valueStyle: price
-    - component: "Acupuncture sessions for nervous system and recovery regulation"
-      value: "$120/visit"
-      valueStyle: price
-    - component: "Nutrition guidance integrated into your care plan"
-      value: "$300"
-      valueStyle: price
-    - component: "Multi-disciplinary clinical interpretation + integrated care planning"
-      value: "$400"
-      valueStyle: price
-    - component: "Phase-based progression system — intensive → maintenance → tapering"
-      value: "$600"
-      valueStyle: price
-    - component: "Progress tracking every 8 visits"
-      value: "$300"
-      valueStyle: price
-    - component: "Baby-inclusive care environment"
-      value: "$400"
-      valueStyle: price
-    - component: "Flexible scheduling + priority postpartum booking"
-      value: "$250"
-      valueStyle: price
-    - component: "Payment plan, HSA/FSA, superbill + reimbursement support"
-      value: "$650"
-      valueStyle: price
-    - component: "Baby & Mom At-Home Calm Toolkit"
-      bonus: true
-      value: "$300"
-      valueStyle: price
-    - component: "Partner Support & Communication Kit"
-      bonus: true
+    - component: "Comprehensive postpartum intake with Titronic ThermoScan diagnostics and first adjustment"
       value: "$200"
       valueStyle: price
+    - component: "10 chiropractic visits with postpartum-focused technique"
+      value: "$800"
+      valueStyle: price
+    - component: "10 acupuncture sessions for nervous system and recovery regulation"
+      value: "$1,250"
+      valueStyle: price
+    - component: "Nutrition + supplement guidance"
+      value: "$300"
+      valueStyle: price
+    - component: "Progress tracking every few visits"
+      value: "$100"
+      valueStyle: price
+    - component: "Newborn check-up"
+      note: "(colic, prevents cranial flattening, reduces latching issues)"
+      bonus: true
+      value: "$100"
+      valueStyle: price
+    - component: "Baby-inclusive care environment"
+      note: "(baby holders on staff!)"
+      bonus: true
+      value: "Priceless"
+      valueStyle: italic
+    - component: "Flexible scheduling for unexpected baby needs"
+      note: "(naps, blowout diapers)"
+      bonus: true
+      value: "Included"
+      valueStyle: included
   totalLabel: Total value
-  totalValue: ~$6,700 – $8,500+
+  totalValue: ~$2,750
 howSection:
   howEyebrow: How it works
   howTitle: A clear progression, not another thing to manage.
@@ -133,6 +122,10 @@ faqSection:
       answer: We offer HSA/FSA guidance and provide superbills for reimbursement where applicable.
     - question: Why start early?
       answer: Postpartum recovery is most responsive when addressed early, before the body adapts around unresolved patterns.
+    - question: What is Titronic Thermal Scan Technology?
+      answer: See what a standard exam can't. Our practice uses Titronic Thermal Scan Technology to map subtle temperature patterns along your spine — patterns that can reveal areas of nerve stress and inflammation before you ever feel a symptom. It's a fast, painless, non-invasive scan that gives your chiropractor a clearer picture of what's really going on beneath the surface, so your care plan is built around your body's actual needs, not guesswork.
+    - question: What if I want to pay per visit for a follow-up?
+      answer: Sure, you’re always free to choose that. The visit cost is $80 for chiropractic follow up and $150 for an acupuncture follow-up.
 closingSection:
   bookTitle: Book your postpartum assessment.
   finalNote: We accept only 5 new patients per week across all care journeys to protect the quality, individuality, and continuity of care.

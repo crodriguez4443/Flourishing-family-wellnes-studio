@@ -77,34 +77,36 @@ approachSection:
 includedSection:
   includedTitle: Everything, coordinated. One plan, one doctor.
   includes:
-    - component: "Initial chiropractic + acupuncture assessment"
+    - component: "Initial chiropractic + acupuncture assessment with Titronic ThermoScan diagnostics"
       note: "(60 + 90 min)"
       value: "$300"
       valueStyle: price
     - component: "12 chiropractic adjustments"
       note: "(nervous-system + pelvic alignment)"
-      value: "$780"
+      value: "$960"
       valueStyle: price
     - component: "12 acupuncture sessions"
       note: "(hormonal support + stress regulation)"
       value: "$1,500"
       valueStyle: price
-    - component: "Nutrition + supplement guidance"
-      value: "$600"
+    - component: "Nutrition + supplementation session with one of the doctors"
+      note: "(30 min)"
+      value: "$150"
       valueStyle: price
-    - component: "Monthly progress reviews & care-plan updates"
-      value: "Included"
-      valueStyle: included
-    - component: "priority booking + week-6 check-in call"
+    - component: "Progress reviews with Titronic ThermoScan diagnostics"
+      note: "(advanced thermal imaging that pinpoints nerve stress other exams can't see)"
+      value: "$100/year"
+      valueStyle: price
+    - component: "Priority booking + postpartum check-up"
       bonus: true
       value: "Included"
       valueStyle: included
-    - component: "warm referral to trusted RE / naturopath / pelvic-floor PT"
+    - component: "Warm referral to trusted pelvic-floor PT, doulas, lactation consultants"
       bonus: true
-      value: "priceless"
+      value: "Priceless"
       valueStyle: italic
   totalLabel: Total value
-  totalValue: ~$3,180
+  totalValue: ~$3,010
 howSection:
   howEyebrow: How it works
   howTitle: Ninety days, mapped from the first conversation.
@@ -133,6 +135,10 @@ faqSection:
       answer: We won’t sell you false hope. We’ll be honest about what we can and can’t do, and focus on what’s in your control.
     - question: How does this fit with my OB / RE?
       answer: Alongside it. We coordinate, we don’t compete, and we’ll make warm referrals when you need them.
+    - question: What is Titronic Thermal Scan Technology?
+      answer: See what a standard exam can't. Our practice uses Titronic Thermal Scan Technology to map subtle temperature patterns along your spine — patterns that can reveal areas of nerve stress and inflammation before you ever feel a symptom. It's a fast, painless, non-invasive scan that gives your chiropractor a clearer picture of what's really going on beneath the surface, so your care plan is built around your body's actual needs, not guesswork.
+    - question: What if I want to pay per visit for a follow-up?
+      answer: Sure, you’re always free to choose that. The visit cost is $80 for chiropractic follow up and $150 for an acupuncture follow-up.
 closingSection:
   bookTitle: Book a free Fertility Roadmap Call.
   finalNote: We take only a limited number of new fertility patients each week, so each woman gets the attention she deserves. Acupuncture research points to ~3 months of preparation before trying or transfer — every cycle counts.

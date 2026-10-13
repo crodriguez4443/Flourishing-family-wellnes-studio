@@ -69,14 +69,14 @@
       "name": "Dr. Alexandra",
       "role": "Acupuncturist",
       "bio": "Completed the picture in 2025. She specializes in fertility and pregnancy acupuncture and female hormone balance - work that women at all stages of life can appreciate.",
-      "onLeave": true,
+      "onLeave": false,
       "image": "/assets/doctors/alex.jpg"
     },
     {
       "name": "Dr. Hannah Deitch",
       "role": "Acupuncturist",
       "bio": "Dr. Deitch is a talented acupuncturist that joined the team in 2026. She's a talented professional, comfortable working with patients of all ages.",
-      "onLeave": false,
+      "onLeave": true,
       "image": "/assets/doctors/hannah pic.jpeg"
     }
   ],

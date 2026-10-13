@@ -44,7 +44,7 @@ trust:
     <strong style="color:#483E5E;">One doctor, every visit.</strong>
 investmentVariant: packages
 investmentText: |
-  The earlier you start, the larger the plan. Per-session reference: <strong style="color:#483E5E;">$65 chiropractic · $125 acupuncture</strong>.
+  The earlier you start, the larger the plan. Per-session reference: <strong style="color:#483E5E;">$80 chiropractic · $150 acupuncture</strong>.
 investmentPills:
   - Payment plans
   - FSA / HSA accepted
@@ -76,29 +76,30 @@ approachSection:
 includedSection:
   includedTitle: Care for the whole pregnancy — and the first weeks after.
   includes:
-    - component: "90-min pregnancy assessment & care plan"
+    - component: "90-min pregnancy assessment with Titronic ThermoScan diagnostics and first adjustment"
       value: "$200"
       valueStyle: price
     - component: "10 Webster-certified prenatal adjustments"
-      value: "$650"
+      value: "$800"
       valueStyle: price
-    - component: "Initial + 10 prenatal acupuncture sessions"
-      note: "(nausea / sleep / anxiety)"
-      value: "$1,350"
+    - component: "10 acupuncture sessions"
+      note: "(nausea / sleep / anxiety)" 
+      value: "$1,250"
       valueStyle: price
-    - component: "Warm referral to trusted doula / midwife / lactation"
-      value: "priceless"
+    - component: "Warm referral to trusted pelvic-floor PT, doulas, lactation consultants"
+      value: "Included"
       valueStyle: italic
-    - component: "postpartum re-evaluation (within 12 weeks)"
+    - component: "Postpartum re-evaluation"
       bonus: true
-      value: "$125"
+      value: "$100"
       valueStyle: price
-    - component: "newborn spinal check"
+    - component: "Newborn check-up"
+      note: "(colic, prevents cranial flattening, reduces latching issues)"
       bonus: true
-      value: "$95"
+      value: "$100"
       valueStyle: price
   totalLabel: Total value
-  totalValue: ~$2,422
+  totalValue: ~$2,450
 howSection:
   howEyebrow: How it works — built around your trimester
   howTitle: Care built around where you are.
@@ -126,6 +127,10 @@ faqSection:
       answer: The earlier we start the more we can do — but there’s real value at every stage.
     - question: Does insurance cover it?
       answer: We keep pricing transparent, offer payment plans, accept FSA/HSA, and give you a superbill to submit for reimbursement.
+    - question: What is Titronic Thermal Scan Technology?
+      answer: See what a standard exam can't. Our practice uses Titronic Thermal Scan Technology to map subtle temperature patterns along your spine — patterns that can reveal areas of nerve stress and inflammation before you ever feel a symptom. It's a fast, painless, non-invasive scan that gives your chiropractor a clearer picture of what's really going on beneath the surface, so your care plan is built around your body's actual needs, not guesswork.
+    - question: What if I want to pay per visit for a follow-up?
+      answer: Sure, you’re always free to choose that. The visit cost is $80 for chiropractic follow up and $150 for an acupuncture follow-up.
 closingSection:
   bookTitle: Book your pregnancy assessment.
   finalNote: We hold just one evening new-patient exam slot each week, and holiday and vacation weeks fill fast — starting early matters.
