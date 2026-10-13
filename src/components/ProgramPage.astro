@@ -241,7 +241,9 @@ const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
         {program.includes.map((item, index) => (
           <div class="r-stack-row" style={`display:flex; justify-content:space-between; gap:20px; align-items:baseline; padding:20px 0; ${index < program.includes.length - 1 ? 'border-bottom:1px solid rgba(252,240,221,.14);' : ''}`}>
             <div style="font-size:17px; line-height:1.5; color:#FCF0DD;">
-              {item.bonus && <><span style="color:#EBA040; font-weight:600;">Bonus</span> — </>}{item.component}{item.note && <> <span style="color:#c9c2d4; font-size:14.5px;">{item.note}</span></>}
+              {item.bonus && <><span style="color:#EBA040; font-weight:600;">Bonus</span> — </>}
+              {item.component}
+              {item.note && <span style="color:#c9c2d4; font-size:14.5px;"> {item.note}</span>}
             </div>
             <div
               style={item.valueStyle === 'included'

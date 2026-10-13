@@ -9,7 +9,6 @@ interface Doctor {
   role: string;
   image: string;
   bio: string;
-  onLeave?: boolean;
 }
 
 interface Props {
@@ -36,8 +35,9 @@ const {
   linkLabel = 'Read our story',
 } = Astro.props;
 
-// Max 3 per row, split evenly: 4 -> 2+2, 5 -> 3+2, 6 -> 3+3, 7 -> 3+3+1...
-const columns = doctors.length <= 3 ? Math.max(doctors.length, 1) : Math.ceil(doctors.length / Math.ceil(doctors.length / 3));
+// At most 3 per row, rows split evenly: 2 -> 2, 4 -> 2+2, 5 -> 3+2, 6 -> 3+3.
+const rows = Math.ceil(doctors.length / 3);
+const columns = Math.ceil(doctors.length / rows);
 
 const optimizedImages = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/**/*.{jpg,jpeg,png,webp,avif}',
