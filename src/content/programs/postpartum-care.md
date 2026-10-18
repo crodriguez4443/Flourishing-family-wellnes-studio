@@ -32,7 +32,7 @@ trust:
   - A multidisciplinary approach designed specifically for pregnancy and postpartum recovery.
   - Baby-inclusive support, flexible scheduling, and no-penalty rescheduling.
 investmentVariant: price
-investmentPrice: $3,500
+investmentPrice: $2,600
 investmentLine: Payment plans available. HSA/FSA eligible. Superbill provided where applicable.
 perspective: The full value stack is estimated at <strong style="color:#483E5E;">~$2,650</strong>, with chiropractic care, acupuncture, nutrition guidance, ThermoScan diagnostics, and baby-inclusive support built into one plan.
 relatedStages:
@@ -65,11 +65,15 @@ includedSection:
     - component: "Comprehensive postpartum intake with Titronic ThermoScan diagnostics and first adjustment"
       value: "$200"
       valueStyle: price
+    - component: "Add-on to initial acupuncture"
+      note: "regularly $200"
+      value: "$100"
+      valueStyle: price
     - component: "10 chiropractic visits with postpartum-focused technique"
       value: "$800"
       valueStyle: price
     - component: "10 acupuncture sessions for nervous system and recovery regulation"
-      value: "$1,250"
+      value: "$1,500"
       valueStyle: price
     - component: "Nutrition + supplement guidance"
       value: "$300"
@@ -93,7 +97,7 @@ includedSection:
       value: "Included"
       valueStyle: included
   totalLabel: Total value
-  totalValue: ~$2,750
+  totalValue: <s>$3,100</s>
 howSection:
   howEyebrow: How it works
   howTitle: A clear progression, not another thing to manage.
@@ -108,8 +112,8 @@ investmentSection:
   investmentFootnote: Program details are confirmed at your assessment.
   perspectiveEyebrow: For perspective
 guaranteeSection:
-  promiseTitle: If your first visit is not the most thorough, clear, and supportive healthcare experience you’ve had, it is free.
-  promiseText: Complete your initial care plan and if you do not feel clearly guided, supported, and confident in your progress, care continues at no additional charge until your plan is understood and stable.
+  promiseTitle: From the very first visit, we guarantee a thorough, clear, and supportive healthcare experience to help you feel supported and confident in the months to come. 
+  promiseText: 
 faqSection:
   faqs:
     - question: Can I bring my baby?

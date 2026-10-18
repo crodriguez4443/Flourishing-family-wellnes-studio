@@ -230,6 +230,56 @@ const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
     </div>
   </section>
 
+  <section class="r-invest r-sect r-pad-lg" style="background:#E2DCE2; padding:100px 32px; display:grid; grid-template-columns:1fr 1fr; gap:64px; max-width:1220px; margin:0 auto; align-items:start;">
+    <div>
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">Why trust this</div>
+      <h2 set:html={program.trustTitle} style="font-family:var(--font-fraunces),serif; font-weight:400; font-size:clamp(30px,3.6vw,44px); line-height:1.1; letter-spacing:-.015em; color:#483E5E; margin:0 0 30px;"></h2>
+      <div style="display:flex; flex-direction:column; gap:22px;">
+        {program.trust.map((item) => (
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
+            <p set:html={item} style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;"></p>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div style="background:#FCF0DD; border-radius:12px; padding:40px 38px; box-shadow:0 20px 44px -24px rgba(72,62,94,.45);">
+      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">The investment</div>
+      {investmentVariant === 'packages' ? (
+        <>
+          <div set:html={program.investmentTitle} style="font-family:var(--font-fraunces),serif; font-size:clamp(30px,3.6vw,40px); color:#483E5E; line-height:1.15; margin-bottom:10px;"></div>
+          {program.investmentPrice && (
+            <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:14px;">
+              <div set:html={program.investmentPrice} style="font-family:var(--font-fraunces),serif; font-size:clamp(44px,6vw,64px); color:#483E5E; line-height:1;"></div>
+              <div set:html={program.investmentSub} style="font-size:16px; color:#194247; opacity:.8;"></div>
+            </div>
+          )}
+          <p set:html={program.investmentText} style="font-size:16px; line-height:1.55; color:#194247; opacity:.85; margin:0 0 22px;"></p>
+          {program.investmentPills && (
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px;">
+              {program.investmentPills.map((pill) => (
+                <span style="font-size:13.5px; font-weight:600; color:#194247; background:rgba(96,143,132,.14); padding:8px 14px; border-radius:999px;">{pill}</span>
+              ))}
+            </div>
+          )}
+        </>
+      ) : (
+        <>
+          <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:8px;">
+            <div set:html={program.investmentPrice} style="font-family:var(--font-fraunces),serif; font-size:clamp(44px,6vw,64px); color:#483E5E; line-height:1;"></div>
+            <div set:html={program.investmentSub} style="font-size:16px; color:#194247; opacity:.8;"></div>
+          </div>
+          {program.investmentLine && <div set:html={program.investmentLine} style="font-size:16px; color:#194247; margin-bottom:26px;"></div>}
+        </>
+      )}
+      <div style={`padding:22px 24px; background:rgba(96,143,132,.12); border-radius:8px; margin:${investmentVariant === 'packages' ? '0 0 20px' : '0 0 24px'};`}>
+        <div style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:#608F84; margin-bottom:8px;">{perspectiveEyebrow}</div>
+        <p set:html={program.perspective} style="font-size:16px; line-height:1.55; color:#194247; margin:0;"></p>
+      </div>
+      <p set:html={program.investmentFootnote} style="font-size:14.5px; line-height:1.55; color:#194247; opacity:.78; margin:0;"></p>
+    </div>
+  </section>
+
   <section id="included" class="r-sect r-pad-lg" style="background:#483E5E; color:#FCF0DD; padding:100px 32px;">
     <div style="max-width:1000px; margin:0 auto;">
       <div style="max-width:34em; margin-bottom:48px;">
@@ -292,50 +342,6 @@ const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
       </div>
     )}
     {program.roadmapNote && <p set:html={program.roadmapNote} style="font-size:14.5px; line-height:1.55; color:#194247; opacity:.72; margin:28px 0 0; text-align:center;"></p>}
-  </section>
-
-  <section class="r-invest r-sect r-pad-lg" style="background:#E2DCE2; padding:100px 32px; display:grid; grid-template-columns:1fr 1fr; gap:64px; max-width:1220px; margin:0 auto; align-items:start;">
-    <div>
-      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">Why trust this</div>
-      <h2 set:html={program.trustTitle} style="font-family:var(--font-fraunces),serif; font-weight:400; font-size:clamp(30px,3.6vw,44px); line-height:1.1; letter-spacing:-.015em; color:#483E5E; margin:0 0 30px;"></h2>
-      <div style="display:flex; flex-direction:column; gap:22px;">
-        {program.trust.map((item) => (
-          <div style="display:flex; gap:14px; align-items:flex-start;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#608F84" stroke-width="1.8" style="flex:none; margin-top:2px;"><path d="M5 12l5 5 9-11"></path></svg>
-            <p set:html={item} style="font-size:16.5px; line-height:1.55; color:#194247; margin:0;"></p>
-          </div>
-        ))}
-      </div>
-    </div>
-    <div style="background:#FCF0DD; border-radius:12px; padding:40px 38px; box-shadow:0 20px 44px -24px rgba(72,62,94,.45);">
-      <div style="font-size:12.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#608F84; margin-bottom:20px;">The investment</div>
-      {investmentVariant === 'packages' ? (
-        <>
-          <div set:html={program.investmentTitle} style="font-family:var(--font-fraunces),serif; font-size:clamp(30px,3.6vw,40px); color:#483E5E; line-height:1.15; margin-bottom:10px;"></div>
-          <p set:html={program.investmentText} style="font-size:16px; line-height:1.55; color:#194247; opacity:.85; margin:0 0 22px;"></p>
-          {program.investmentPills && (
-            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px;">
-              {program.investmentPills.map((pill) => (
-                <span style="font-size:13.5px; font-weight:600; color:#194247; background:rgba(96,143,132,.14); padding:8px 14px; border-radius:999px;">{pill}</span>
-              ))}
-            </div>
-          )}
-        </>
-      ) : (
-        <>
-          <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:8px;">
-            <div set:html={program.investmentPrice} style="font-family:var(--font-fraunces),serif; font-size:clamp(44px,6vw,64px); color:#483E5E; line-height:1;"></div>
-            <div set:html={program.investmentSub} style="font-size:16px; color:#194247; opacity:.8;"></div>
-          </div>
-          {program.investmentLine && <div set:html={program.investmentLine} style="font-size:16px; color:#194247; margin-bottom:26px;"></div>}
-        </>
-      )}
-      <div style={`padding:22px 24px; background:rgba(96,143,132,.12); border-radius:8px; margin:${investmentVariant === 'packages' ? '0 0 20px' : '0 0 24px'};`}>
-        <div style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:#608F84; margin-bottom:8px;">{perspectiveEyebrow}</div>
-        <p set:html={program.perspective} style="font-size:16px; line-height:1.55; color:#194247; margin:0;"></p>
-      </div>
-      <p set:html={program.investmentFootnote} style="font-size:14.5px; line-height:1.55; color:#194247; opacity:.78; margin:0;"></p>
-    </div>
   </section>
 
   <section class="r-sect r-pad-lg" style="background:#483E5E; padding:104px 32px;">

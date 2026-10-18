@@ -43,6 +43,7 @@ trust:
   - |
     <strong style="color:#483E5E;">One doctor, every visit.</strong>
 investmentVariant: packages
+investmentPrice: '$2,300'
 investmentText: |
   The earlier you start, the larger the plan. Per-session reference: <strong style="color:#483E5E;">$80 chiropractic · $150 acupuncture</strong>.
 investmentPills:
@@ -79,12 +80,16 @@ includedSection:
     - component: "90-min pregnancy assessment with Titronic ThermoScan diagnostics and first adjustment"
       value: "$200"
       valueStyle: price
+    - component: "Add-on to initial acupuncture"
+      note: "regularly $200"
+      value: "$100"
+      valueStyle: price
     - component: "10 Webster-certified prenatal adjustments"
       value: "$800"
       valueStyle: price
     - component: "10 acupuncture sessions"
       note: "(nausea / sleep / anxiety)" 
-      value: "$1,250"
+      value: "$1,500"
       valueStyle: price
     - component: "Warm referral to trusted pelvic-floor PT, doulas, lactation consultants"
       value: "Included"
@@ -99,7 +104,7 @@ includedSection:
       value: "$100"
       valueStyle: price
   totalLabel: Total value
-  totalValue: ~$2,450
+  totalValue: <s>$2,800</s>
 howSection:
   howEyebrow: How it works — built around your trimester
   howTitle: Care built around where you are.
@@ -113,8 +118,8 @@ investmentSection:
   perspectiveEyebrow: For perspective
   investmentFootnote: Acupuncture is never discounted.
 guaranteeSection:
-  promiseTitle: We guarantee the care and the experience — never a medical outcome.
-  promiseText: Complete your visits and follow your plan; if you don’t feel measurably better, we keep working with you at no added cost. Stop anytime and any unused care comes back to you — we never keep money for services we didn’t provide.
+  promiseTitle: We guarantee the care and the experience, never a medical outcome.
+  promiseText: 
 faqSection:
   faqs:
     - question: Is chiropractic safe during pregnancy?

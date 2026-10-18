@@ -97,7 +97,7 @@ includedSection:
       value: "Included"
       valueStyle: included
   totalLabel: Total value
-  totalValue: ~$870
+  totalValue: <s>$1020</s>
 howSection:
   howEyebrow: How it works
   howTitle: Simple. Fast. Predictable.
@@ -111,8 +111,8 @@ investmentSection:
   perspectiveEyebrow: Compare to à la carte
   investmentFootnote: Program details and pricing are confirmed at your first session. HSA/FSA eligible where applicable.
 guaranteeSection:
-  promiseTitle: If your first session isn’t the clearest, most valuable healthcare experience you’ve had, it’s free.
-  promiseText: Every visit is focused, time-efficient, and guided by clear clinical intent — adapted to your current stress and physical load. If the first one doesn’t deliver, you don’t pay for it.
+  promiseTitle: Every visit is focused, time-efficient, and guided by clear clinical intent — adapted to your current stress and physical load.
+  promiseText: 
 faqSection:
   faqs:
     - question: How long does a session actually take?

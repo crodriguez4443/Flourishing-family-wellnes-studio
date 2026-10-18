@@ -41,7 +41,7 @@ trust:
   - |
     Caring for families <strong style="color:#483E5E;">since 2011</strong>.
 investmentVariant: price
-investmentPrice: '$2,800'
+investmentPrice: '$2,730'
 investmentLine: |
   Payment plan available — <strong style="color:#483E5E;">3 × $1,000</strong>.
 perspective: |
@@ -87,7 +87,7 @@ includedSection:
       valueStyle: price
     - component: "12 acupuncture sessions"
       note: "(hormonal support + stress regulation)"
-      value: "$1,500"
+      value: "$1,800"
       valueStyle: price
     - component: "Nutrition + supplementation session with one of the doctors"
       note: "(30 min)"
@@ -106,7 +106,7 @@ includedSection:
       value: "Priceless"
       valueStyle: italic
   totalLabel: Total value
-  totalValue: ~$3,010
+  totalValue: <s>$3,310</s>
 howSection:
   howEyebrow: How it works
   howTitle: Ninety days, mapped from the first conversation.
@@ -119,8 +119,7 @@ investmentSection:
   investmentFootnote: Acupuncture is never discounted; chiropractic and nutrition can be bundled.
 guaranteeSection:
   promiseTitle: We guarantee the care, not a medical outcome.
-  promiseText: |
-    Complete your 90 days and follow the plan; if you don’t feel your body is in a better place for conception, we keep working with you. And if life changes and you need to stop, any care you haven’t used comes back to you. We never keep money for care we didn’t provide.
+  promiseText:
 faqSection:
   faqs:
     - question: Can chiropractic and acupuncture actually help with fertility?
