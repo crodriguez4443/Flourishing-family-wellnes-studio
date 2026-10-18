@@ -48,18 +48,20 @@ const skedSrc = chiropractic?.skedKey
 </InternalLayout>
 
 <script is:inline>
-  // Sked posts a redirect URL to the parent once an appointment is confirmed.
+  // Sked posts a "confirm" message to the parent once an appointment is booked,
+  // with a redirect URL only if one is set in Sked. The message also carries
+  // the patient's name/email/phone — never forward those to GA.
   // Only trust messages coming from the portal itself — without the origin
   // check any page could navigate this tab anywhere.
   window.addEventListener('message', function (event) {
     if (event.origin !== 'https://portal.sked.life') return;
     try {
       const message = JSON.parse(event.data);
-      if (!message || !message.url) return;
+      if (!message || message.actionType !== 'confirm') return;
       // Redirect once GA confirms the hit, or after 1s if GA is blocked.
       let done = false;
       const go = function () {
-        if (done) return;
+        if (done || !message.url) return;
         done = true;
         window.location.href = message.url;
       };
