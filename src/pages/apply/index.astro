@@ -55,7 +55,16 @@ const skedSrc = chiropractic?.skedKey
     if (event.origin !== 'https://portal.sked.life') return;
     try {
       const message = JSON.parse(event.data);
-      if (message && message.url) window.location.href = message.url;
+      if (!message || !message.url) return;
+      // Redirect once GA confirms the hit, or after 1s if GA is blocked.
+      let done = false;
+      const go = function () {
+        if (done) return;
+        done = true;
+        window.location.href = message.url;
+      };
+      setTimeout(go, 1000);
+      gtag('event', 'program_call_booked', { event_callback: go });
     } catch (err) {}
   });
 </script>

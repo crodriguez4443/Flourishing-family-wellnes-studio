@@ -126,7 +126,7 @@ const skedSrc = calendar.skedKey
   }
 </style>
 
-<script is:inline>
+<script define:vars={{ calendar: calendar.slug }}>
   // Sked posts a redirect URL to the parent once an appointment is confirmed.
   // Only trust messages coming from the portal itself — without the origin
   // check any page could navigate this tab anywhere.
@@ -134,7 +134,16 @@ const skedSrc = calendar.skedKey
     if (event.origin !== 'https://portal.sked.life') return;
     try {
       const message = JSON.parse(event.data);
-      if (message && message.url) window.location.href = message.url;
+      if (!message || !message.url) return;
+      // Redirect once GA confirms the hit, or after 1s if GA is blocked.
+      let done = false;
+      const go = function () {
+        if (done) return;
+        done = true;
+        window.location.href = message.url;
+      };
+      setTimeout(go, 1000);
+      gtag('event', 'book_appointment', { calendar: calendar, event_callback: go });
     } catch (err) {}
   });
 </script>
