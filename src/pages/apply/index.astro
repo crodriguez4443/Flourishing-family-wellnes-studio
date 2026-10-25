@@ -66,7 +66,7 @@ const skedSrc = chiropractic?.skedKey
         window.location.href = message.url;
       };
       setTimeout(go, 1000);
-      gtag('event', 'program_call_booked', { event_callback: go });
+      gtag('event', 'generate_lead', { event_callback: go });
     } catch (err) {}
   });
 </script>
