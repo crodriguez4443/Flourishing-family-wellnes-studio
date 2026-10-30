@@ -36,6 +36,14 @@ interface StageItem {
   active?: boolean;
 }
 
+// One row of the "normal pricing vs plan" table; amounts are row totals in dollars.
+interface ComparisonRow {
+  label: string;
+  note?: string;
+  normal: number;
+  plan: number;
+}
+
 interface ProgramPageData {
   slug: string;
   order: number;
@@ -88,7 +96,8 @@ interface ProgramPageData {
   investmentText?: string;
   investmentPills?: string[];
   perspectiveEyebrow?: string;
-  perspective: string;
+  perspective?: string;
+  comparison?: ComparisonRow[];
   investmentFootnote: string;
   promiseTitle: string;
   promiseText: string;
@@ -121,6 +130,11 @@ const heroSize = program.heroSize ?? 'clamp(44px,6vw,84px)';
 const roadmapVariant = program.roadmapVariant ?? 'steps';
 const investmentVariant = program.investmentVariant ?? 'price';
 const perspectiveEyebrow = program.perspectiveEyebrow ?? 'For perspective';
+const money = (n: number) => `$${n.toLocaleString('en-US')}`;
+const comparisonTotal = program.comparison?.reduce(
+  (sum, row) => ({ normal: sum.normal + row.normal, plan: sum.plan + row.plan }),
+  { normal: 0, plan: 0 },
+);
 const approachSectionId = program.secondaryCtaHref?.startsWith('#') && program.secondaryCtaHref !== '#included'
   ? program.secondaryCtaHref.slice(1)
   : undefined;
@@ -274,7 +288,46 @@ const programSchema = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
       )}
       <div style={`padding:22px 24px; background:rgba(96,143,132,.12); border-radius:8px; margin:${investmentVariant === 'packages' ? '0 0 20px' : '0 0 24px'};`}>
         <div style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:#608F84; margin-bottom:8px;">{perspectiveEyebrow}</div>
-        <p set:html={program.perspective} style="font-size:16px; line-height:1.55; color:#194247; margin:0;"></p>
+        {program.comparison && comparisonTotal ? (
+          <table style="width:100%; border-collapse:collapse; font-size:15px; color:#194247;">
+            <thead>
+              <tr style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#194247; opacity:.7;">
+                <th scope="col" style="text-align:left; font-weight:600; padding:6px 8px 10px 0;"></th>
+                <th scope="col" style="text-align:right; font-weight:600; padding:6px 8px 10px;">Normal</th>
+                <th scope="col" style="text-align:right; font-weight:700; padding:6px 0 10px 8px; color:#483E5E; opacity:1;">Plan</th>
+              </tr>
+            </thead>
+            <tbody>
+              {program.comparison.map((row) => (
+                <tr style="border-top:1px solid rgba(25,66,71,.14);">
+                  <th scope="row" style="text-align:left; font-weight:600; padding:12px 8px 12px 0; line-height:1.35;">
+                    {row.label}
+                    {row.note && <div style="font-size:13px; font-weight:400; opacity:.75;">{row.note}</div>}
+                  </th>
+                  <td style="text-align:right; padding:12px 8px; white-space:nowrap; opacity:.75;"><s>{money(row.normal)}</s></td>
+                  <td style="text-align:right; padding:12px 0 12px 8px; white-space:nowrap; font-weight:700; color:#483E5E;">{money(row.plan)}</td>
+                </tr>
+              ))}
+              <tr style="border-top:2px solid rgba(25,66,71,.3);">
+                <th scope="row" style="text-align:left; font-weight:700; padding:12px 8px 12px 0;">6-month total</th>
+                <td style="text-align:right; padding:12px 8px; white-space:nowrap; opacity:.75;"><s>{money(comparisonTotal.normal)}</s></td>
+                <td style="text-align:right; padding:12px 0 12px 8px; white-space:nowrap; font-family:var(--font-fraunces),serif; font-size:20px; color:#483E5E;">{money(comparisonTotal.plan)}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" style="padding:14px 0 0;">
+                  <div style="background:#483E5E; color:#FCF0DD; border-radius:6px; padding:12px 16px; display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;">
+                    <span style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:700;">You save</span>
+                    <span style="font-family:var(--font-fraunces),serif; font-size:24px; color:#EBA040;">{money(comparisonTotal.normal - comparisonTotal.plan)}</span>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        ) : (
+          <p set:html={program.perspective} style="font-size:16px; line-height:1.55; color:#194247; margin:0;"></p>
+        )}
       </div>
       <p set:html={program.investmentFootnote} style="font-size:14.5px; line-height:1.55; color:#194247; opacity:.78; margin:0;"></p>
     </div>

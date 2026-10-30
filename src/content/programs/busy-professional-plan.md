@@ -40,10 +40,17 @@ trust:
   - |
     One consistent clinical approach — you always know what we’re doing, why, and what to expect.
 investmentVariant: price
-investmentPrice: '$249<span style="font-size:.5em; opacity:.75;">/mo</span>'
+investmentPrice: '$380<span style="font-size:.5em; opacity:.75;">/mo</span>'
 investmentLine: Cancel anytime. Pause when travel or deadlines take over.
-perspective: |
-  Four reset sessions at $120 each = <strong style="color:#483E5E;">$480/mo</strong>, before assessment and priority scheduling.
+comparison:
+  - label: Month 1
+    note: Chiropractic + acupuncture evaluations
+    normal: 1020
+    plan: 820
+  - label: Months 2–6
+    note: 2 chiropractic + 2 acupuncture visits/mo · $460 vs $380 × 5
+    normal: 2300
+    plan: 1900
 relatedStages:
   - label: Trying
   - label: Expecting
@@ -72,11 +79,15 @@ includedSection:
     - component: "Initial chiropractic assessment with adjustment"
       value: "$200"
       valueStyle: price
+    - component: "Add-on initial acupuncture evaluation"
+      note: "(regularly $200)"
+      value: "$100"
+      valueStyle: price
     - component: "4 reset adjustments / month"
       value: "$320"
       valueStyle: price
     - component: "2 stress-reducing acupuncture sessions"
-      value: "$250"
+      value: "$300"
       valueStyle: price
     - component: "Soft-tissue + physical reset built into every visit"
       value: "Included"
@@ -97,7 +108,7 @@ includedSection:
       value: "Included"
       valueStyle: included
   totalLabel: Total value
-  totalValue: <s>$1020</s>
+  totalValue: <s>$1,020</s> $820
 howSection:
   howEyebrow: How it works
   howTitle: Simple. Fast. Predictable.
@@ -107,8 +118,8 @@ trustSection:
   trustTitle: This is not a wellness appointment.
   proof: Performance-based care, one-on-one with a doctor.
 investmentSection:
-  investmentSub: for ongoing reset access
-  perspectiveEyebrow: Compare to à la carte
+  investmentSub: after an $820 first month
+  perspectiveEyebrow: Your first 6 months, compared
   investmentFootnote: Program details and pricing are confirmed at your first session. HSA/FSA eligible where applicable.
 guaranteeSection:
   promiseTitle: Every visit is focused, time-efficient, and guided by clear clinical intent — adapted to your current stress and physical load.

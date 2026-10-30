@@ -199,6 +199,7 @@ collections:
       - { name: "investmentText", label: "investmentText", widget: "hidden", required: false }
       - { name: "investmentPills", label: "investmentPills", widget: "hidden", required: false }
       - { name: "perspective", label: "perspective", widget: "hidden", required: false }
+      - { name: "comparison", label: "comparison", widget: "hidden", required: false }
       - { name: "roadmapVariant", label: "roadmapVariant", widget: "hidden", required: false }
       - { name: "isThisYou", label: "isThisYou", widget: "hidden", required: false }
       - { name: "approachParagraphs", label: "approachParagraphs", widget: "hidden", required: false }
