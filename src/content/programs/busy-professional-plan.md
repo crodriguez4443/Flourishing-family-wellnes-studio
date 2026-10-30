@@ -41,7 +41,7 @@ trust:
     One consistent clinical approach — you always know what we’re doing, why, and what to expect.
 investmentVariant: price
 investmentPrice: '$380<span style="font-size:.5em; opacity:.75;">/mo</span>'
-investmentLine: Cancel anytime. Pause when travel or deadlines take over.
+investmentLine: 
 comparison:
   - label: Month 1
     note: Chiropractic + acupuncture evaluations
@@ -74,7 +74,7 @@ approachSection:
   approachEyebrow: Our approach — the Performance Reset System
   approachImageAlt: A doctor delivering focused, time-efficient care
 includedSection:
-  includedTitle: A complete reset system built to fit between meetings.
+  includedTitle: "Everything in your first month, at a glance."
   includes:
     - component: "Initial chiropractic assessment with adjustment"
       value: "$200"
